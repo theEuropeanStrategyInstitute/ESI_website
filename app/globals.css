@@ -2265,3 +2265,161 @@ body {
     align-items: flex-start;
   }
 }
+
+/* Centred identity with a compact bridge-mark state beyond the hero. */
+.bridge-opening {
+  grid-template-rows: 1fr auto;
+  padding-top: 139px;
+}
+.bridge .site-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: min(100%, 1600px);
+  transform: translateX(-50%);
+  z-index: 50;
+  color: white;
+  background: transparent;
+  transition:
+    min-height 260ms ease,
+    padding 260ms ease,
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+.bridge .brand-link {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  z-index: 2;
+}
+.logo-crop {
+  position: relative;
+  display: block;
+  width: 222px;
+  height: 76px;
+  overflow: hidden;
+  transition:
+    width 300ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    height 300ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.logo-image {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 222px;
+  max-width: none;
+  transform: translateY(-50%);
+  transition:
+    width 300ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 180ms ease;
+}
+.logo-image-navy {
+  opacity: 0;
+}
+.bridge .site-header.is-scrolled {
+  min-height: 84px;
+  padding-block: 12px;
+  color: var(--navy);
+  background: rgba(255, 255, 255, 0.96);
+  border-color: var(--line);
+  box-shadow: 0 8px 30px rgba(21, 9, 88, 0.07);
+  backdrop-filter: blur(12px);
+}
+.site-header.is-scrolled .logo-crop {
+  width: 90px;
+  height: 62px;
+}
+.site-header.is-scrolled .logo-image {
+  width: 180px;
+}
+.site-header.is-scrolled .logo-image-white {
+  opacity: 0;
+}
+.site-header.is-scrolled .logo-image-navy {
+  opacity: 1;
+}
+.bridge-hero h1 {
+  max-width: 1220px;
+  font-size: clamp(58px, 6.6vw, 100px);
+}
+.bridge-hero .cta {
+  margin-top: 38px;
+}
+
+@media (max-width: 1100px) {
+  .bridge .site-header > nav {
+    display: none;
+  }
+  .bridge .mobile-menu {
+    display: block;
+    margin-left: auto;
+  }
+  .bridge .mobile-menu[open] nav {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    min-width: 210px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: start;
+    gap: 18px;
+    color: var(--navy);
+    background: white;
+    box-shadow: 0 8px 30px rgba(21, 9, 88, 0.12);
+  }
+}
+
+@media (max-width: 800px) {
+  .bridge-opening {
+    padding-top: 104px;
+  }
+  .logo-crop {
+    width: 200px;
+    height: 68px;
+  }
+  .logo-image {
+    width: 200px;
+  }
+  .site-header.is-scrolled .logo-crop {
+    width: 82px;
+    height: 56px;
+  }
+  .site-header.is-scrolled .logo-image {
+    width: 164px;
+  }
+  .bridge-hero h1 {
+    font-size: clamp(48px, 9vw, 74px);
+  }
+}
+
+@media (max-width: 540px) {
+  .bridge-opening {
+    padding-top: 92px;
+  }
+  .logo-crop {
+    width: 170px;
+    height: 58px;
+  }
+  .logo-image {
+    width: 170px;
+  }
+  .site-header.is-scrolled {
+    min-height: 72px;
+    padding-block: 8px;
+  }
+  .site-header.is-scrolled .logo-crop {
+    width: 72px;
+    height: 49px;
+  }
+  .site-header.is-scrolled .logo-image {
+    width: 144px;
+  }
+  .bridge-hero h1 {
+    font-size: clamp(43px, 12vw, 56px);
+  }
+}

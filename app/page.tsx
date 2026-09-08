@@ -1,5 +1,7 @@
 /* oxlint-disable next/no-img-element */
 
+import { SiteHeader } from '@/components/site-header';
+
 const Arrow = () => <span aria-hidden="true">→</span>;
 
 function Logo({ white = false }: { white?: boolean }) {
@@ -11,43 +13,6 @@ function Logo({ white = false }: { white?: boolean }) {
       width="680"
       height="231"
     />
-  );
-}
-
-function Header() {
-  return (
-    <header className="site-header inverse">
-      <a
-        className="brand-link"
-        href="#home"
-        aria-label="European Strategy Institute home"
-      >
-        <Logo white />
-      </a>
-      <span className="header-tagline">
-        Empowering European Business
-        <br /> Navigate for a Better Future
-      </span>
-      <nav aria-label="Primary navigation">
-        <a href="#institute">Institute</a>
-        <a href="#work">Our work</a>
-        <a href="#people">Our people</a>
-        <a href="#contact" className="nav-contact">
-          Get in touch <Arrow />
-        </a>
-      </nav>
-      <details className="mobile-menu">
-        <summary aria-label="Open navigation">
-          Menu <span aria-hidden="true">+</span>
-        </summary>
-        <nav aria-label="Mobile navigation">
-          <a href="#institute">Institute</a>
-          <a href="#work">Our work</a>
-          <a href="#people">Our people</a>
-          <a href="#contact">Get in touch</a>
-        </nav>
-      </details>
-    </header>
   );
 }
 
@@ -248,19 +213,14 @@ export default function Home() {
           height="1099"
           fetchPriority="high"
         />
-        <Header />
+        <SiteHeader />
         <div className="bridge-hero">
           <Eyebrow>Central &amp; Eastern Europe ↔ Brussels</Eyebrow>
           <h1 id="hero-title">
-            Build the connection.
+            Empowering European Business
             <br />
-            <em>Shape the future.</em>
+            <em>Navigating for a better future</em>
           </h1>
-          <p>
-            Empowering European business to move
-            <br />
-            from regulatory reaction to strategic influence.
-          </p>
           <CTA text="Discover the Institute" href="#institute" />
         </div>
         <div className="bridge-bottom">
