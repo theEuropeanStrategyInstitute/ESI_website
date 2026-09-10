@@ -6,10 +6,14 @@ import { useEffect, useState } from 'react';
 
 const Arrow = () => <span aria-hidden="true">→</span>;
 
-export function SiteHeader() {
+export function SiteHeader({ solid = false }: { solid?: boolean }) {
   const [isPastHero, setIsPastHero] = useState(false);
 
   useEffect(() => {
+    if (solid) {
+      return;
+    }
+
     let frame = 0;
 
     const updateHeader = () => {
@@ -31,15 +35,15 @@ export function SiteHeader() {
       window.removeEventListener('scroll', updateHeader);
       window.removeEventListener('resize', updateHeader);
     };
-  }, []);
+  }, [solid]);
 
   return (
     <header
-      className={`site-header inverse${isPastHero ? ' is-scrolled' : ''}`}
+      className={`site-header inverse${solid || isPastHero ? ' is-scrolled' : ''}`}
     >
       <a
         className="brand-link"
-        href="#home"
+        href="/"
         aria-label="European Strategy Institute home"
       >
         <span className="logo-crop" aria-hidden="true">
@@ -60,10 +64,11 @@ export function SiteHeader() {
         </span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#institute">Institute</a>
-        <a href="#work">Our work</a>
-        <a href="#people">Our people</a>
-        <a href="#contact" className="nav-contact">
+        <a href="/mission">Institute</a>
+        <a href="/projects">Our work</a>
+        <a href="/#people">Our people</a>
+        <a href="/partnership">Partner with us</a>
+        <a href="/contact" className="nav-contact">
           Get in touch <Arrow />
         </a>
       </nav>
@@ -72,10 +77,11 @@ export function SiteHeader() {
           Menu <span aria-hidden="true">+</span>
         </summary>
         <nav aria-label="Mobile navigation">
-          <a href="#institute">Institute</a>
-          <a href="#work">Our work</a>
-          <a href="#people">Our people</a>
-          <a href="#contact">Get in touch</a>
+          <a href="/mission">Institute</a>
+          <a href="/projects">Our work</a>
+          <a href="/#people">Our people</a>
+          <a href="/partnership">Partner with us</a>
+          <a href="/contact">Get in touch</a>
         </nav>
       </details>
     </header>
