@@ -1,0 +1,48 @@
+---
+import InnerLayout from "../layouts/InnerLayout.astro";
+import { EnquiryForm } from "../components/EnquiryForm";
+import { strategicObjectives } from "../data/esi-content";
+
+const pageTitle = "Membership | The European Strategy Institute";
+const description =
+  "Express your interest in becoming a member of The European Strategy Institute.";
+---
+
+<InnerLayout
+  eyebrow="Membership"
+  title="Help shape change.<br /><em>Do not simply react to it.</em>"
+  intro="Deregulation, competitiveness, industrial policy and geopolitical realignment are reshaping Europe. ESI membership is for organisations ready to participate."
+  pageTitle={pageTitle}
+  description={description}
+>
+  <section class="content-section membership-case">
+    <div>
+      <p class="section-number">01 / Why ESI</p>
+      <h2>Let's co-create a better future for Europe.</h2>
+      <blockquote>
+        The question is not whether Europe will change. The question is who will
+        play a decisive role in shaping that change.
+      </blockquote>
+    </div>
+    <ol class="objective-list compact">
+      {strategicObjectives.map((objective, index) => (
+        <li>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <p>{objective}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="content-section form-section">
+    <div class="form-intro">
+      <p class="section-number">02 / Expression of interest</p>
+      <h2>Start the membership conversation.</h2>
+      <p>
+        Share a few details about you and your organisation. The ESI team will
+        follow up directly.
+      </p>
+    </div>
+    <EnquiryForm kind="membership" client:load />
+  </section>
+</InnerLayout>

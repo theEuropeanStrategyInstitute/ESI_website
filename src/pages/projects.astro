@@ -1,0 +1,73 @@
+---
+import InnerLayout from "../layouts/InnerLayout.astro";
+import { influenceTools, sectors, programmes } from "../data/esi-content";
+
+const pageTitle = "Programmes & Insights | The European Strategy Institute";
+const description =
+  "ESI programmes, strategic influence tools and priority sectors.";
+---
+
+<InnerLayout
+  eyebrow="Programmes & insights"
+  title="Strategic influence. <br /> <em>Practical instruments.</em>"
+  intro="ESI connects leaders from business, finance and public institutions across Poland, Benelux and Central and Eastern Europe."
+  pageTitle={pageTitle}
+  description={description}
+>
+  <section class="content-section tools-section">
+    <div class="content-heading">
+      <p class="section-number">01 / How we work</p>
+      <h2>Built on trust, confidentiality and long-term relationships.</h2>
+    </div>
+    <div class="tool-grid">
+      {influenceTools.map((tool) => (
+        <article>
+          <span>{tool.number}</span>
+          <h3>{tool.title}</h3>
+          <p>{tool.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-section sectors-section" id="sectors">
+    <div class="content-heading">
+      <p class="section-number">02 / Priority sectors</p>
+      <h2>Where European rules have a direct impact on competitiveness.</h2>
+    </div>
+    <div class="sector-detail-list">
+      {sectors.map((sector, index) => (
+        <article>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <h3>{sector.title}</h3>
+          <p>{sector.topics}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="content-section programmes-section">
+    <div class="content-heading">
+      <p class="section-number">03 / Flagship programmes</p>
+      <h2>Two forums for Europe's defining questions.</h2>
+    </div>
+    <div class="programme-grid">
+      {programmes.map((programme) => (
+        <article>
+          <span>{programme.number}</span>
+          <h3>{programme.title}</h3>
+          <p>{programme.body}</p>
+          <small>{programme.note}</small>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="page-cta">
+    <p class="eyebrow">Work with us</p>
+    <h2>Bring your sector expertise into the European conversation.</h2>
+    <a class="cta" href="/partnership">
+      Discuss a partnership <span aria-hidden="true">→</span>
+    </a>
+  </section>
+</InnerLayout>

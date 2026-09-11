@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import esiWhite from "../../assets/esi-white.png";
+
+const links: [string, string][] = [
+  ["Mission", "/mission"],
+  ["Programmes & insights", "/projects"],
+  ["Partnerships", "/partnership"],
+  ["Membership", "/member"],
+  ["Contact", "/contact"],
+  ["Privacy", "/privacy"],
+];
+---
+
+<footer class="global-footer">
+  <div class="footer-lead">
+    <Image
+      class="footer-logo"
+      src={esiWhite}
+      alt="The European Strategy Institute"
+    />
+    <p>
+      An independent Brussels-based think tank connecting Central and Eastern
+      European business with European policymaking.
+    </p>
+  </div>
+  <nav class="footer-nav" aria-label="Footer navigation">
+    {links.map(([label, href]) => (
+      <a href={href}>{label}</a>
+    ))}
+  </nav>
+  <div class="footer-contact">
+    <p>Brussels · Warsaw</p>
+    <a href="mailto:partnerships@esi-eu.com">
+      partnerships@esi-eu.com <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+  <div class="footer-base">
+    <span>© 2026 The European Strategy Institute</span>
+    <span>Think Tank · European Leadership · Strategic Solutions</span>
+  </div>
+</footer>
