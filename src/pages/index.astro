@@ -1,13 +1,11 @@
 ---
+import InnerLayout from "../layouts/InnerLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ESI — Astro scaffold</title>
-  </head>
-  <body>
-    <h1>Astro scaffold running</h1>
-  </body>
-</html>
+<InnerLayout
+  eyebrow="Astro scaffold"
+  title="Shared shell placeholder"
+  intro="This page exists only to verify the ported layout, header, footer, and global CSS render correctly. Real page content lands in later slices."
+>
+  <p>Placeholder body content.</p>
+</InnerLayout>

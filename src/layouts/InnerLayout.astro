@@ -1,0 +1,39 @@
+---
+import SiteFooter from "../components/layout/SiteFooter.astro";
+import { SiteHeader } from "../components/layout/SiteHeader";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  pageTitle?: string;
+  description?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  intro,
+  pageTitle = `${title} — The European Strategy Institute`,
+  description = intro,
+} = Astro.props;
+---
+
+<BaseLayout title={pageTitle} description={description}>
+  <div class="website inner-page">
+    <a class="skip" href="#main-content">
+      Skip to content
+    </a>
+    <SiteHeader solid client:load />
+    <main id="main-content">
+      <header class="page-hero">
+        <p class="eyebrow">{eyebrow}</p>
+        <h1>{title}</h1>
+        <p class="page-intro">{intro}</p>
+      </header>
+      <slot />
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>
