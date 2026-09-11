@@ -1,0 +1,51 @@
+---
+import InnerLayout from "../layouts/InnerLayout.astro";
+import { EnquiryForm } from "../components/EnquiryForm";
+
+const pageTitle = "Contact | The European Strategy Institute";
+const description = "Contact The European Strategy Institute in Brussels.";
+---
+
+<InnerLayout
+  eyebrow="Contact"
+  title="A conversation<br /><em>starts here.</em>"
+  intro="For partnership, programme, membership or media enquiries, contact the Institute directly."
+  pageTitle={pageTitle}
+  description={description}
+>
+  <section class="content-section contact-layout">
+    <div class="contact-details">
+      <p class="section-number">The Institute</p>
+      <h2>The European Strategy Institute AISBL</h2>
+      <dl>
+        <div>
+          <dt>Email</dt>
+          <dd>
+            <a href="mailto:partnerships@esi-eu.com">partnerships@esi-eu.com</a>
+          </dd>
+        </div>
+        <div>
+          <dt>Presence</dt>
+          <dd>Brussels · Warsaw</dd>
+        </div>
+        <div>
+          <dt>Representatives</dt>
+          <dd>
+            Agnieszka Sitek-Kobosko
+            <br />
+            Daria Smolarek
+          </dd>
+        </div>
+        <div>
+          <dt>Registration details</dt>
+          <dd>Pending confirmation before public launch</dd>
+        </div>
+        <div>
+          <dt>EU Transparency Register</dt>
+          <dd>Pending confirmation before public launch</dd>
+        </div>
+      </dl>
+    </div>
+    <EnquiryForm kind="contact" client:load />
+  </section>
+</InnerLayout>
