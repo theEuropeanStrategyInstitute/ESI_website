@@ -58,6 +58,21 @@ export const sectors = [
   },
 ];
 
+export const programmes = [
+  {
+    number: "Programme 01",
+    title: "Future of Europe",
+    body: "A platform for senior dialogue on Europe's economic direction, competitiveness and capacity to act.",
+    note: "Detailed programme information to be confirmed.",
+  },
+  {
+    number: "Programme 02",
+    title: "Challenges for Europe & the World",
+    body: "A forum examining the geopolitical, industrial and societal forces redefining Europe's place in the world.",
+    note: "Detailed programme information to be confirmed.",
+  },
+];
+
 export const founders = [
   {
     name: "Agnieszka Sitek-Kobosko",
