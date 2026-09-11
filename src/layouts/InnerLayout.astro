@@ -11,16 +11,15 @@ interface Props {
   description?: string;
 }
 
-const {
-  eyebrow,
-  title,
-  intro,
-  pageTitle = `${title} — The European Strategy Institute`,
-  description = intro,
-} = Astro.props;
+const { eyebrow, title, intro, pageTitle, description } = Astro.props;
+
+const finalPageTitle =
+  pageTitle ||
+  `${title.replace(/<[^>]*>/g, "")} — The European Strategy Institute`;
+const finalDescription = description || intro;
 ---
 
-<BaseLayout title={pageTitle} description={description}>
+<BaseLayout title={finalPageTitle} description={finalDescription}>
   <div class="website inner-page">
     <a class="skip" href="#main-content">
       Skip to content
@@ -29,7 +28,7 @@ const {
     <main id="main-content">
       <header class="page-hero">
         <p class="eyebrow">{eyebrow}</p>
-        <h1>{title}</h1>
+        <h1 set:html={title} />
         <p class="page-intro">{intro}</p>
       </header>
       <slot />
