@@ -8,16 +8,14 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
   const [isPastHero, setIsPastHero] = useState(false);
 
   useEffect(() => {
-    if (solid) {
-      return;
-    }
-
     let frame = 0;
 
     const updateHeader = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        const hero = document.querySelector<HTMLElement>(".bridge-opening");
+        const hero = document.querySelector<HTMLElement>(
+          ".bridge-opening, .page-hero",
+        );
         setIsPastHero(
           Boolean(hero && hero.getBoundingClientRect().bottom <= 84),
         );
@@ -33,11 +31,11 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
       window.removeEventListener("scroll", updateHeader);
       window.removeEventListener("resize", updateHeader);
     };
-  }, [solid]);
+  }, []);
 
   return (
     <header
-      className={`site-header inverse${solid || isPastHero ? " is-scrolled" : ""}`}
+      className={`site-header inverse${solid ? " is-solid" : ""}${isPastHero ? " is-scrolled" : ""}`}
     >
       <a
         className="brand-link"

@@ -1049,7 +1049,7 @@ img {
     linear-gradient(0deg, #0609247a, transparent 45%);
   pointer-events: none;
 }
-.bridge .site-header {
+.website .site-header {
   position: relative;
   z-index: 1;
   border-color: #ffffff26;
@@ -2093,17 +2093,17 @@ body {
       rgba(6, 9, 36, 0.3) 100%
     );
 }
-.bridge .site-header {
+.website .site-header {
   align-self: start;
 }
-.bridge .brand-link {
+.website .brand-link {
   flex-shrink: 0;
 }
-.bridge .site-header nav > a:not(.nav-contact) {
+.website .site-header nav > a:not(.nav-contact) {
   position: relative;
   padding-block: 12px;
 }
-.bridge .site-header nav > a:not(.nav-contact):after {
+.website .site-header nav > a:not(.nav-contact):after {
   content: "";
   position: absolute;
   left: 0;
@@ -2113,7 +2113,7 @@ body {
   background: currentColor;
   transition: right 180ms ease;
 }
-.bridge .site-header nav > a:not(.nav-contact):hover:after {
+.website .site-header nav > a:not(.nav-contact):hover:after {
   right: 0;
 }
 .bridge-hero {
@@ -2213,7 +2213,7 @@ body {
   .bridge-opening {
     min-height: 760px;
   }
-  .bridge .site-header {
+  .website .site-header {
     min-height: 104px;
   }
   .bridge .mobile-menu summary {
@@ -2239,11 +2239,11 @@ body {
   .bridge-opening {
     min-height: 700px;
   }
-  .bridge .site-header {
+  .website .site-header {
     min-height: 92px;
     padding-block: 18px;
   }
-  .bridge .site-header .logo {
+  .website .site-header .logo {
     width: 170px;
   }
   .bridge-hero {
@@ -2265,12 +2265,12 @@ body {
   }
 }
 
-/* Centred identity with a compact bridge-mark state beyond the hero. */
+/* Shared left-aligned identity with a compact bridge mark beyond each hero. */
 .bridge-opening {
   grid-template-rows: 1fr auto;
   padding-top: 139px;
 }
-.bridge .site-header {
+.website .site-header {
   position: fixed;
   top: 0;
   left: 50%;
@@ -2288,10 +2288,10 @@ body {
     border-color 220ms ease,
     box-shadow 220ms ease;
 }
-.bridge .site-header nav {
+.website .site-header nav {
   margin-left: auto;
 }
-.bridge .brand-link {
+.website .brand-link {
   position: absolute;
   left: var(--space);
   top: 50%;
@@ -2324,7 +2324,7 @@ body {
 .logo-image-navy {
   opacity: 0;
 }
-.bridge .site-header.is-scrolled {
+.website .site-header.is-scrolled {
   min-height: 84px;
   padding-block: 12px;
   color: var(--navy);
@@ -2355,7 +2355,7 @@ body {
 }
 
 @media (max-width: 1100px) {
-  .bridge .site-header > nav {
+  .website .site-header > nav {
     display: none;
   }
   .bridge .mobile-menu {
@@ -2633,30 +2633,18 @@ body {
 
 .inner-page {
   min-height: 100svh;
-  padding-top: 84px;
+  padding-top: 139px;
 }
-.inner-page .site-header {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  width: min(100%, 1600px);
-  min-height: 84px;
-  padding-block: 12px;
-  transform: translateX(-50%);
-  z-index: 50;
+.website .site-header.is-solid {
   color: var(--navy);
   background: rgba(255, 255, 255, 0.96);
   border-color: var(--line);
-  box-shadow: 0 8px 30px rgba(21, 9, 88, 0.07);
-  backdrop-filter: blur(12px);
 }
-.inner-page .brand-link {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  z-index: 2;
+.site-header.is-solid .logo-image-white {
+  opacity: 0;
+}
+.site-header.is-solid .logo-image-navy {
+  opacity: 1;
 }
 .inner-page .mobile-menu[open] nav {
   display: flex;
@@ -3067,7 +3055,7 @@ body {
 }
 
 @media (max-width: 1280px) {
-  .bridge .site-header > nav,
+  .website .site-header > nav,
   .inner-page .site-header > nav {
     display: none;
   }
@@ -3155,5 +3143,16 @@ body {
   }
   .footer-contact {
     margin-top: 12px;
+  }
+}
+
+@media (max-width: 800px) {
+  .inner-page {
+    padding-top: 104px;
+  }
+}
+@media (max-width: 540px) {
+  .inner-page {
+    padding-top: 92px;
   }
 }
