@@ -756,6 +756,10 @@ img {
 .cta:hover span {
   transform: translateX(5px);
 }
+.cta:active {
+  scale: 0.85;
+  transition: scale 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
 .text-link {
   display: inline-block;
   padding: 12px 0;
@@ -829,6 +833,10 @@ img {
 }
 .work-list summary::-webkit-details-marker {
   display: none;
+}
+.work-list summary:active {
+  transform: scale(0.98);
+  transition: transform 100ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .plus {
   margin-left: auto;
@@ -1044,15 +1052,6 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: center 72%;
-}
-.bridge-opening:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, #0609247a, transparent 85%),
-    linear-gradient(0deg, #0609247a, transparent 45%);
-  pointer-events: none;
 }
 .website .site-header {
   position: relative;
@@ -2081,22 +2080,7 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 .bridge-bg {
-  animation: bridge-arrival 1400ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-.bridge-opening:after {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(6, 9, 36, 0.82) 0%,
-      rgba(6, 9, 36, 0.34) 56%,
-      rgba(6, 9, 36, 0.08) 100%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(6, 9, 36, 0.82) 0%,
-      rgba(6, 9, 36, 0.08) 52%,
-      rgba(6, 9, 36, 0.3) 100%
-    );
+  animation: bridge-arrival 1000ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 .website .site-header {
   align-self: start;
@@ -2125,7 +2109,7 @@ body {
   align-self: center;
   padding-top: 54px;
   padding-bottom: 74px;
-  animation: copy-arrival 800ms 120ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation: copy-arrival 600ms 160ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 .bridge-hero h1 {
   max-width: 1050px;
@@ -2310,9 +2294,6 @@ body {
   width: 222px;
   height: 76px;
   overflow: hidden;
-  transition:
-    width 300ms cubic-bezier(0.2, 0.7, 0.2, 1),
-    height 300ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .logo-image {
   position: absolute;
@@ -2321,10 +2302,7 @@ body {
   width: 222px;
   max-width: none;
   transform: translateY(-50%);
-  transition:
-    left 300ms cubic-bezier(0.2, 0.7, 0.2, 1),
-    width 300ms cubic-bezier(0.2, 0.7, 0.2, 1),
-    opacity 180ms ease;
+  transition: opacity 180ms ease;
 }
 .logo-image-navy {
   opacity: 0;
@@ -2337,13 +2315,6 @@ body {
   border-color: var(--line);
   box-shadow: 0 8px 30px rgba(21, 9, 88, 0.07);
   backdrop-filter: blur(12px);
-}
-.site-header.is-scrolled .logo-crop {
-  width: 104px;
-  height: 76px;
-}
-.site-header.is-scrolled .logo-image {
-  left: -118px;
 }
 .site-header.is-scrolled .logo-image-white {
   opacity: 0;
@@ -2394,13 +2365,6 @@ body {
   .logo-image {
     width: 200px;
   }
-  .site-header.is-scrolled .logo-crop {
-    width: 95px;
-    height: 68px;
-  }
-  .site-header.is-scrolled .logo-image {
-    left: -105px;
-  }
   .bridge-hero h1 {
     font-size: clamp(48px, 9vw, 74px);
   }
@@ -2420,13 +2384,6 @@ body {
   .site-header.is-scrolled {
     min-height: 72px;
     padding-block: 8px;
-  }
-  .site-header.is-scrolled .logo-crop {
-    width: 80px;
-    height: 58px;
-  }
-  .site-header.is-scrolled .logo-image {
-    left: -90px;
   }
   .bridge-hero h1 {
     font-size: clamp(43px, 12vw, 56px);
@@ -2842,9 +2799,40 @@ body {
   border: 1px solid var(--line);
 }
 .tool-grid article {
+  position: relative;
+  overflow: hidden;
   min-height: 300px;
   padding: 28px;
   background: white;
+}
+.tool-grid article::before,
+.tool-grid article::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: var(--navy);
+  opacity: 0;
+  transition:
+    opacity 400ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.tool-grid article::before {
+  top: 0;
+  right: 0;
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  transform: translate(14px, -14px);
+}
+.tool-grid article::after {
+  bottom: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  transform: translate(-14px, 14px);
+}
+.tool-grid article:hover::before,
+.tool-grid article:hover::after {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 .tool-grid h3 {
   margin: 58px 0 18px;
@@ -2887,10 +2875,41 @@ body {
   border: 1px solid #5a5186;
 }
 .programme-grid article {
+  position: relative;
+  overflow: hidden;
   min-height: 390px;
   padding: 32px;
   color: white;
   background: var(--navy);
+}
+.programme-grid article::before,
+.programme-grid article::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: white;
+  opacity: 0;
+  transition:
+    opacity 400ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.programme-grid article::before {
+  top: 0;
+  right: 0;
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  transform: translate(14px, -14px);
+}
+.programme-grid article::after {
+  bottom: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  transform: translate(-14px, 14px);
+}
+.programme-grid article:hover::before,
+.programme-grid article:hover::after {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 .programme-grid article > span,
 .programme-grid small {
