@@ -748,9 +748,13 @@ img {
 .cta span {
   font-size: 22px;
   line-height: 1;
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .cta:hover {
   background: #31256f;
+}
+.cta:hover span {
+  transform: translateX(5px);
 }
 .text-link {
   display: inline-block;
@@ -829,6 +833,7 @@ img {
 .plus {
   margin-left: auto;
   font-size: 24px;
+  transition: transform 180ms cubic-bezier(0.77, 0, 0.175, 1);
 }
 .work-list details[open] .plus {
   transform: rotate(45deg);
@@ -2111,7 +2116,7 @@ body {
   bottom: 4px;
   height: 1px;
   background: currentColor;
-  transition: right 180ms ease;
+  transition: right 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .website .site-header nav > a:not(.nav-contact):hover:after {
   right: 0;
@@ -2136,7 +2141,7 @@ body {
 .bridge-bottom a span {
   display: inline-block;
   margin-left: 8px;
-  transition: transform 180ms ease;
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .bridge-bottom a:hover span {
   transform: translateY(4px);
@@ -2162,7 +2167,7 @@ body {
 .bridge .people-grid article {
   transition:
     border-color 180ms ease,
-    transform 180ms ease;
+    transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .bridge .pillars article:hover,
 .bridge .people-grid article:hover {
@@ -2174,9 +2179,6 @@ body {
 }
 .bridge .work-list summary:hover {
   color: #443683;
-}
-.bridge .work-list .plus {
-  transition: transform 180ms ease;
 }
 .bridge .contact .download {
   margin-top: 50px;
@@ -2460,7 +2462,7 @@ body {
 }
 .sector-list a > span:last-child {
   font-size: 20px;
-  transition: transform 180ms ease;
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .sector-list a:hover > span:last-child {
   transform: translateX(5px);
