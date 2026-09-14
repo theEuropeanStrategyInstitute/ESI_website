@@ -2150,6 +2150,9 @@ body {
 .bridge-pillar-wrap {
   scroll-margin-top: 24px;
 }
+#institute {
+  scroll-margin-top: -70px;
+}
 .bridge-story {
   padding-top: clamp(78px, 9vw, 132px);
   padding-bottom: 68px;
