@@ -81,7 +81,7 @@ export const founders = [
   },
   {
     name: "Daria Smolarek",
-    role: "Founder",
+    role: "Communication & Program Director",
     email: "daria.smolarek@esi-eu.com",
   },
 ];

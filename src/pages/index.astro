@@ -6,6 +6,7 @@ import SiteFooter from "../components/layout/SiteFooter.astro";
 import Eyebrow from "../components/helpers/Eyebrow.astro";
 import Arrow from "../components/helpers/Arrow.astro";
 import LinkButton from "../components/helpers/LinkButton.astro";
+import { CouncilCarousel } from "../components/CouncilCarousel";
 import {
   council,
   founders,
@@ -44,7 +45,7 @@ const description =
         <LinkButton text="Discover the Institute" href="#institute" />
       </div>
       <div class="bridge-bottom">
-        <span>Think Tank / European Leadership / Strategic Solutions</span>
+        <span>Think Tank | European Leadership | Strategic Solutions</span>
         <a href="#institute">
           Explore our purpose <span aria-hidden="true">↓</span>
         </a>
@@ -116,10 +117,12 @@ const description =
           {influenceTools.map((item, index) => (
             <details open={index === 0}>
               <summary>
-                <span class="index">{item.number}</span>
-                <span>{item.title}</span>
-                <span class="plus" aria-hidden="true">
-                  +
+                <span class="summary-row">
+                  <span class="index">{item.number}</span>
+                  <span>{item.title}</span>
+                  <span class="plus" aria-hidden="true">
+                    +
+                  </span>
                 </span>
               </summary>
               <p>{item.body}</p>
@@ -189,6 +192,18 @@ const description =
             </article>
           ))}
         </div>
+
+        <div class="council-heading">
+          <div>
+            <Eyebrow>Strategic Council — auto-rotating concept</Eyebrow>
+            <p>
+              Same profiles, animated: advances every 2 seconds and pauses on
+              hover. Name stays visible; role slides up on hover to leave room
+              for a photo.
+            </p>
+          </div>
+        </div>
+        <CouncilCarousel council={council} client:visible />
       </section>
 
       <section class="partnership-call">

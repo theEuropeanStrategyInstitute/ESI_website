@@ -748,9 +748,17 @@ img {
 .cta span {
   font-size: 22px;
   line-height: 1;
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .cta:hover {
   background: #31256f;
+}
+.cta:hover span {
+  transform: translateX(5px);
+}
+.cta:active {
+  scale: 0.85;
+  transition: scale 200ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .text-link {
   display: inline-block;
@@ -788,7 +796,7 @@ img {
   gap: 40px;
 }
 .pillars article {
-  border-top: 1px solid #b9b3d0;
+  border-top: 1px solid #423a72;
   padding-top: 22px;
 }
 .pillars h3 {
@@ -798,11 +806,11 @@ img {
 }
 .pillars p {
   font-size: 14px;
-  color: #696479;
+  color: #d8d4e8;
   max-width: 320px;
 }
 .work {
-  background: #f5f5f8;
+  background: #fff;
   display: grid;
   grid-template-columns: 1fr 1.25fr;
   gap: 100px;
@@ -815,20 +823,27 @@ img {
   padding: 24px 0;
 }
 .work-list summary {
-  display: flex;
-  align-items: center;
-  gap: 24px;
   cursor: pointer;
-  font-size: 19px;
   list-style: none;
-  line-height: 1.4;
 }
 .work-list summary::-webkit-details-marker {
   display: none;
 }
+.work-list summary .summary-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 19px;
+  line-height: 1.4;
+}
+.work-list summary:active .summary-row {
+  transform: scale(0.98);
+  transition: transform 100ms cubic-bezier(0.23, 1, 0.32, 1);
+}
 .plus {
   margin-left: auto;
   font-size: 24px;
+  transition: transform 180ms cubic-bezier(0.77, 0, 0.175, 1);
 }
 .work-list details[open] .plus {
   transform: rotate(45deg);
@@ -1040,15 +1055,6 @@ img {
   object-fit: cover;
   object-position: center 72%;
 }
-.bridge-opening:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, #0609247a, transparent 85%),
-    linear-gradient(0deg, #0609247a, transparent 45%);
-  pointer-events: none;
-}
 .website .site-header {
   position: relative;
   z-index: 1;
@@ -1103,10 +1109,12 @@ img {
   margin-top: 30px;
 }
 .bridge-pillar-wrap {
-  padding: 0 var(--space) 85px;
+  padding: 72px var(--space) 85px;
+  background: #0b1039;
+  color: white;
 }
 .bridge .work {
-  background: #f3f5f8;
+  background: #fff;
 }
 .bridge .contact {
   background: #0b1039;
@@ -1802,7 +1810,7 @@ img {
     grid-column: 2;
     font-size: 14px;
   }
-  .work-list summary {
+  .work-list summary .summary-row {
     font-size: 17px;
     gap: 14px;
   }
@@ -2076,22 +2084,7 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 .bridge-bg {
-  animation: bridge-arrival 1400ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-.bridge-opening:after {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(6, 9, 36, 0.82) 0%,
-      rgba(6, 9, 36, 0.34) 56%,
-      rgba(6, 9, 36, 0.08) 100%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(6, 9, 36, 0.82) 0%,
-      rgba(6, 9, 36, 0.08) 52%,
-      rgba(6, 9, 36, 0.3) 100%
-    );
+  animation: bridge-arrival 1000ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 .website .site-header {
   align-self: start;
@@ -2111,7 +2104,7 @@ body {
   bottom: 4px;
   height: 1px;
   background: currentColor;
-  transition: right 180ms ease;
+  transition: right 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .website .site-header nav > a:not(.nav-contact):hover:after {
   right: 0;
@@ -2120,7 +2113,7 @@ body {
   align-self: center;
   padding-top: 54px;
   padding-bottom: 74px;
-  animation: copy-arrival 800ms 120ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation: copy-arrival 600ms 160ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 .bridge-hero h1 {
   max-width: 1050px;
@@ -2136,7 +2129,7 @@ body {
 .bridge-bottom a span {
   display: inline-block;
   margin-left: 8px;
-  transition: transform 180ms ease;
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .bridge-bottom a:hover span {
   transform: translateY(4px);
@@ -2144,6 +2137,9 @@ body {
 .bridge main > section,
 .bridge-pillar-wrap {
   scroll-margin-top: 24px;
+}
+#institute {
+  scroll-margin-top: -70px;
 }
 .bridge-story {
   padding-top: clamp(78px, 9vw, 132px);
@@ -2162,9 +2158,12 @@ body {
 .bridge .people-grid article {
   transition:
     border-color 180ms ease,
-    transform 180ms ease;
+    transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
-.bridge .pillars article:hover,
+.bridge .pillars article:hover {
+  border-color: white;
+  transform: translateY(-3px);
+}
 .bridge .people-grid article:hover {
   border-color: var(--navy);
   transform: translateY(-3px);
@@ -2174,9 +2173,6 @@ body {
 }
 .bridge .work-list summary:hover {
   color: #443683;
-}
-.bridge .work-list .plus {
-  transition: transform 180ms ease;
 }
 .bridge .contact .download {
   margin-top: 50px;
@@ -2305,9 +2301,6 @@ body {
   width: 222px;
   height: 76px;
   overflow: hidden;
-  transition:
-    width 300ms cubic-bezier(0.2, 0.7, 0.2, 1),
-    height 300ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .logo-image {
   position: absolute;
@@ -2316,10 +2309,7 @@ body {
   width: 222px;
   max-width: none;
   transform: translateY(-50%);
-  transition:
-    left 300ms cubic-bezier(0.2, 0.7, 0.2, 1),
-    width 300ms cubic-bezier(0.2, 0.7, 0.2, 1),
-    opacity 180ms ease;
+  transition: opacity 180ms ease;
 }
 .logo-image-navy {
   opacity: 0;
@@ -2332,13 +2322,6 @@ body {
   border-color: var(--line);
   box-shadow: 0 8px 30px rgba(21, 9, 88, 0.07);
   backdrop-filter: blur(12px);
-}
-.site-header.is-scrolled .logo-crop {
-  width: 104px;
-  height: 76px;
-}
-.site-header.is-scrolled .logo-image {
-  left: -118px;
 }
 .site-header.is-scrolled .logo-image-white {
   opacity: 0;
@@ -2389,13 +2372,6 @@ body {
   .logo-image {
     width: 200px;
   }
-  .site-header.is-scrolled .logo-crop {
-    width: 95px;
-    height: 68px;
-  }
-  .site-header.is-scrolled .logo-image {
-    left: -105px;
-  }
   .bridge-hero h1 {
     font-size: clamp(48px, 9vw, 74px);
   }
@@ -2416,13 +2392,6 @@ body {
     min-height: 72px;
     padding-block: 8px;
   }
-  .site-header.is-scrolled .logo-crop {
-    width: 80px;
-    height: 58px;
-  }
-  .site-header.is-scrolled .logo-image {
-    left: -90px;
-  }
   .bridge-hero h1 {
     font-size: clamp(43px, 12vw, 56px);
   }
@@ -2437,13 +2406,14 @@ body {
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;
   gap: clamp(50px, 8vw, 120px);
-  background: #fff;
+  background: #0b1039;
+  color: white;
 }
 .sector-heading h2 {
   max-width: 560px;
 }
 .sector-list {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid #423a72;
 }
 .sector-list a {
   display: grid;
@@ -2451,7 +2421,7 @@ body {
   gap: 20px;
   align-items: center;
   min-height: 76px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid #423a72;
 }
 .sector-list a strong {
   font-family: var(--serif);
@@ -2460,7 +2430,7 @@ body {
 }
 .sector-list a > span:last-child {
   font-size: 20px;
-  transition: transform 180ms ease;
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .sector-list a:hover > span:last-child {
   transform: translateX(5px);
@@ -2542,6 +2512,78 @@ body {
 .council-strip p {
   color: #d8d4e8;
   font-size: 14px;
+}
+.council-carousel {
+  margin: 38px calc(var(--space) * -1) 0;
+  padding: 0 var(--space) 24px;
+}
+.council-carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, 31%);
+  gap: 1px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scrollbar-color: #8178a6 #eeedf3;
+  scrollbar-width: thin;
+}
+.council-carousel-card {
+  position: relative;
+  min-height: 310px;
+  padding: 28px;
+  color: white;
+  background: var(--navy);
+  overflow: hidden;
+  scroll-snap-align: start;
+  cursor: default;
+}
+.council-carousel-card:nth-child(even) {
+  background: #24205f;
+}
+.council-carousel-card .index {
+  position: relative;
+  z-index: 2;
+}
+.council-carousel-photo {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0) 60%
+  );
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+}
+.council-carousel-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 20px 28px 24px;
+  background: linear-gradient(0deg, #0b1039 55%, transparent 100%);
+}
+.council-carousel-info h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+}
+.council-carousel-role {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.council-carousel-card:hover .council-carousel-role,
+.council-carousel-card:focus-visible .council-carousel-role {
+  grid-template-rows: 1fr;
+}
+.council-carousel-role p {
+  overflow: hidden;
+  margin: 0;
+  padding-top: 8px;
+  color: #d8d4e8;
+  font-size: 13px;
+  line-height: 1.4;
 }
 .partnership-call {
   display: grid;
@@ -2837,9 +2879,40 @@ body {
   border: 1px solid var(--line);
 }
 .tool-grid article {
+  position: relative;
+  overflow: hidden;
   min-height: 300px;
   padding: 28px;
   background: white;
+}
+.tool-grid article::before,
+.tool-grid article::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: var(--navy);
+  opacity: 0;
+  transition:
+    opacity 400ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.tool-grid article::before {
+  top: 0;
+  right: 0;
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  transform: translate(14px, -14px);
+}
+.tool-grid article::after {
+  bottom: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  transform: translate(-14px, 14px);
+}
+.tool-grid article:hover::before,
+.tool-grid article:hover::after {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 .tool-grid h3 {
   margin: 58px 0 18px;
@@ -2882,10 +2955,41 @@ body {
   border: 1px solid #5a5186;
 }
 .programme-grid article {
+  position: relative;
+  overflow: hidden;
   min-height: 390px;
   padding: 32px;
   color: white;
   background: var(--navy);
+}
+.programme-grid article::before,
+.programme-grid article::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: white;
+  opacity: 0;
+  transition:
+    opacity 400ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.programme-grid article::before {
+  top: 0;
+  right: 0;
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  transform: translate(14px, -14px);
+}
+.programme-grid article::after {
+  bottom: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  transform: translate(-14px, 14px);
+}
+.programme-grid article:hover::before,
+.programme-grid article:hover::after {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 .programme-grid article > span,
 .programme-grid small {
