@@ -73,7 +73,14 @@ export const programmes = [
   },
 ];
 
-export const founders = [
+export type Person = {
+  name: string;
+  role: string;
+  bio?: string;
+  email?: string;
+};
+
+export const founders: Person[] = [
   {
     name: "Agnieszka Sitek-Kobosko",
     role: "Founder & Executive Director",
@@ -86,7 +93,7 @@ export const founders = [
   },
 ];
 
-export const council = [
+export const council: Person[] = [
   {
     name: "Elżbieta Bieńkowska",
     role: "Former European Commissioner for the Internal Market and Industry; former Minister of Regional Development",
@@ -126,5 +133,25 @@ export const council = [
   {
     name: "Žygimantas Vaičiūnas",
     role: "Former Minister of Energy of Lithuania; former Energy Attaché to the European Union",
+  },
+];
+
+// Placeholder roster — replace with real names/roles/bios before launch.
+export const experts: Person[] = [
+  {
+    name: "TBD",
+    role: "Expert profile pending",
+  },
+  {
+    name: "TBD",
+    role: "Expert profile pending",
+  },
+  {
+    name: "TBD",
+    role: "Expert profile pending",
+  },
+  {
+    name: "TBD",
+    role: "Expert profile pending",
   },
 ];
