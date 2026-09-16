@@ -77,7 +77,9 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
           <a href="/projects">Our work</a>
           <a href="/our-experts">Our Experts</a>
           <a href="/partnership">Partner with us</a>
-          <a href="/member">Become a member</a>
+          <a href="/member" className="nav-contact">
+            Become a member <Arrow />
+          </a>
         </nav>
       </details>
     </header>
