@@ -62,10 +62,10 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
       <nav aria-label="Primary navigation">
         <a href="/mission">Institute</a>
         <a href="/projects">Our work</a>
-        <a href="/#people">Our people</a>
+        <a href="/our-experts">Our Experts</a>
         <a href="/partnership">Partner with us</a>
-        <a href="/contact" className="nav-contact">
-          Get in touch <Arrow />
+        <a href="/member" className="nav-contact">
+          Become a member <Arrow />
         </a>
       </nav>
       <details className="mobile-menu">
@@ -75,9 +75,11 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
         <nav aria-label="Mobile navigation">
           <a href="/mission">Institute</a>
           <a href="/projects">Our work</a>
-          <a href="/#people">Our people</a>
+          <a href="/our-experts">Our Experts</a>
           <a href="/partnership">Partner with us</a>
-          <a href="/contact">Get in touch</a>
+          <a href="/member" className="nav-contact">
+            Become a member <Arrow />
+          </a>
         </nav>
       </details>
     </header>

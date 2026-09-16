@@ -8,7 +8,13 @@ const subjects: Record<FormKind, string> = {
   membership: "ESI membership application",
 };
 
-export function EnquiryForm({ kind }: { kind: FormKind }) {
+export function EnquiryForm({
+  kind,
+  compact = false,
+}: {
+  kind: FormKind;
+  compact?: boolean;
+}) {
   function prepareEmail(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -17,11 +23,43 @@ export function EnquiryForm({ kind }: { kind: FormKind }) {
       .map(([key, value]) => `${key}: ${String(value)}`)
       .join("\n");
 
+    const subject =
+      kind === "contact"
+        ? `Contact: ${String(data.get("Name") ?? "")}`
+        : subjects[kind];
+
     window.location.href =
       "mailto:partnerships@esi-eu.com?subject=" +
-      encodeURIComponent(subjects[kind]) +
+      encodeURIComponent(subject) +
       "&body=" +
       encodeURIComponent(entries);
+  }
+
+  if (compact) {
+    return (
+      <form
+        className="enquiry-form enquiry-form-compact"
+        onSubmit={prepareEmail}
+      >
+        <div className="compact-row">
+          <Field label="Name" name="Name" required />
+          <Field label="Email address" name="Email" type="email" required />
+        </div>
+        <label className="message-field">
+          <span>Message</span>
+          <textarea name="Message" rows={1} required />
+        </label>
+        <label className="privacy-check">
+          <input name="privacy" type="checkbox" required />
+          <span>
+            I have read and accept the <a href="/privacy">Privacy notice</a>.
+          </span>
+        </label>
+        <button className="form-submit" type="submit">
+          Send <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    );
   }
 
   return (

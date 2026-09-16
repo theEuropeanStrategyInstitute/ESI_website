@@ -1,0 +1,35 @@
+---
+import InnerLayout from "../layouts/InnerLayout.astro";
+
+const pageTitle = "Legal & Governance | The European Strategy Institute";
+const description =
+  "Legal entity and governance information for The European Strategy Institute.";
+---
+
+<InnerLayout
+  eyebrow="Legal"
+  title="Legal entity.<br /><em>Governance structure.</em>"
+  intro="This page will hold The European Strategy Institute's legal and governance disclosures."
+  pageTitle={pageTitle}
+  description={description}
+>
+  <section class="content-section policy-copy">
+    <p class="section-number">Legal entity</p>
+    <div>
+      <h2>Legal entity details to be added.</h2>
+      <p class="draft-note">
+        Registration details, legal form and registered address will be
+        published here.
+      </p>
+    </div>
+  </section>
+  <section class="content-section policy-copy">
+    <p class="section-number">Governance structure</p>
+    <div>
+      <h2>Governance structure details to be added.</h2>
+      <p class="draft-note">
+        Board composition and decision-making structure will be published here.
+      </p>
+    </div>
+  </section>
+</InnerLayout>

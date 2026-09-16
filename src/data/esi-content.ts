@@ -31,12 +31,7 @@ export const influenceTools = [
 
 export const sectors = [
   {
-    title: "Energy & energy-intensive industries",
-    topics:
-      "ETS1/ETS2 · CBAM · Fit for 55 · Net-Zero Industry Act · hydrogen · RED IV",
-  },
-  {
-    title: "Defence & security",
+    title: "Defence, security & dual-use",
     topics: "European Defence Fund · EDIP · SAFE",
   },
   {
@@ -48,14 +43,24 @@ export const sectors = [
     topics: "Critical Raw Materials Act · resilient supply chains",
   },
   {
-    title: "Space & New Space Economy",
-    topics:
-      "EU Space Act · European Space Programme · EUSPA · dual-use technologies",
-  },
-  {
     title: "Chemicals & construction",
     topics: "REACH · CBAM for the cement sector",
   },
+  {
+    title: "Special Projects",
+    topics: "Fit for 55 · Net-Zero Industry Act · EU Space Act · European Space Programme",
+  },
+  //{
+  //  title: "Space & New Space Economy",
+  //  topics:
+  //    "EU Space Act · European Space Programme · EUSPA · dual-use technologies",
+  //},
+  //{
+  //  title: "Energy & energy-intensive industries",
+  //  topics:
+  //    "ETS1/ETS2 · CBAM · Fit for 55 · Net-Zero Industry Act · hydrogen · RED IV",
+  //},
+
 ];
 
 export const programmes = [
@@ -73,7 +78,14 @@ export const programmes = [
   },
 ];
 
-export const founders = [
+export type Person = {
+  name: string;
+  role: string;
+  bio?: string;
+  email?: string;
+};
+
+export const founders: Person[] = [
   {
     name: "Agnieszka Sitek-Kobosko",
     role: "Founder & Executive Director",
@@ -86,7 +98,7 @@ export const founders = [
   },
 ];
 
-export const council = [
+export const council: Person[] = [
   {
     name: "Elżbieta Bieńkowska",
     role: "Former European Commissioner for the Internal Market and Industry; former Minister of Regional Development",
@@ -126,5 +138,25 @@ export const council = [
   {
     name: "Žygimantas Vaičiūnas",
     role: "Former Minister of Energy of Lithuania; former Energy Attaché to the European Union",
+  },
+];
+
+// Placeholder roster — replace with real names/roles/bios before launch.
+export const experts: Person[] = [
+  {
+    name: "TBD",
+    role: "Expert profile pending",
+  },
+  {
+    name: "TBD",
+    role: "Expert profile pending",
+  },
+  {
+    name: "TBD",
+    role: "Expert profile pending",
+  },
+  {
+    name: "TBD",
+    role: "Expert profile pending",
   },
 ];
