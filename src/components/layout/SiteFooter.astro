@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import esiWhite from "../../assets/esi-white.png";
+import { EnquiryForm } from "../EnquiryForm";
 
 const links: [string, string][] = [
   ["Mission", "/mission"],
@@ -35,6 +36,9 @@ const links: [string, string][] = [
     <a href="mailto:partnerships@esi-eu.com">
       partnerships@esi-eu.com <span aria-hidden="true">↗</span>
     </a>
+  </div>
+  <div class="footer-form">
+    <EnquiryForm kind="contact" client:visible />
   </div>
   <div class="footer-base">
     <span>© 2026 The European Strategy Institute</span>

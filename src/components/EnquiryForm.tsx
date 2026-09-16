@@ -17,9 +17,14 @@ export function EnquiryForm({ kind }: { kind: FormKind }) {
       .map(([key, value]) => `${key}: ${String(value)}`)
       .join("\n");
 
+    const subject =
+      kind === "contact"
+        ? `Contact: ${String(data.get("Name") ?? "")}`
+        : subjects[kind];
+
     window.location.href =
       "mailto:partnerships@esi-eu.com?subject=" +
-      encodeURIComponent(subjects[kind]) +
+      encodeURIComponent(subject) +
       "&body=" +
       encodeURIComponent(entries);
   }
