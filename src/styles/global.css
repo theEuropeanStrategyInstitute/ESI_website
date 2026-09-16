@@ -3377,18 +3377,21 @@ body {
   color: #696479;
 }
 
-/* Founders — text + photo placeholder row, matching the homepage's founder-grid rhythm */
+/* Founders — same 4-column track as .expert-grid: each founder takes one
+   column for text and one for the photo, so two founders sit side by side
+   and the photo column is exactly as wide as a council/expert card. */
 .expert-founder-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 36px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 .expert-founder-card {
+  display: contents;
+}
+.expert-founder-info {
+  grid-column: span 1;
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 160px;
-  gap: 24px;
-  align-items: start;
+  align-self: stretch;
   border-top: 1px solid var(--navy);
   padding: 24px 0 32px;
 }
@@ -3408,14 +3411,16 @@ body {
   font-size: 14px;
 }
 .expert-founder-photo {
+  grid-column: span 1;
+  position: relative;
   align-self: stretch;
-  min-height: 140px;
+  min-height: 340px;
+  border-top: 1px solid var(--navy);
   background: linear-gradient(
     155deg,
     rgba(21, 9, 88, 0.12),
     rgba(21, 9, 88, 0.04) 60%
   );
-  border: 1px dashed rgba(21, 9, 88, 0.18);
 }
 
 /* Council / Experts — photo card with name always visible, role revealed on hover (matches CouncilCarousel) */
@@ -3492,10 +3497,6 @@ body {
   line-height: 1;
   cursor: pointer;
 }
-.expert-founder-card .expert-card-open {
-  position: static;
-  margin-top: 8px;
-}
 .expert-card-open:hover,
 .expert-card-open:focus-visible {
   background: var(--ink);
@@ -3551,18 +3552,16 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
   .expert-founder-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 540px) {
-  .expert-grid {
+  .expert-grid,
+  .expert-founder-grid {
     grid-template-columns: 1fr;
   }
   .expert-heading {
     flex-direction: column;
     align-items: start;
-  }
-  .expert-founder-card {
-    grid-template-columns: 1fr;
   }
 }
