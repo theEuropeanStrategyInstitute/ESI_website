@@ -31,12 +31,7 @@ export const influenceTools = [
 
 export const sectors = [
   {
-    title: "Energy & energy-intensive industries",
-    topics:
-      "ETS1/ETS2 · CBAM · Fit for 55 · Net-Zero Industry Act · hydrogen · RED IV",
-  },
-  {
-    title: "Defence & security",
+    title: "Defence, security & dual-use",
     topics: "European Defence Fund · EDIP · SAFE",
   },
   {
@@ -48,14 +43,24 @@ export const sectors = [
     topics: "Critical Raw Materials Act · resilient supply chains",
   },
   {
-    title: "Space & New Space Economy",
-    topics:
-      "EU Space Act · European Space Programme · EUSPA · dual-use technologies",
-  },
-  {
     title: "Chemicals & construction",
     topics: "REACH · CBAM for the cement sector",
   },
+  {
+    title: "Special Projects",
+    topics: "Fit for 55 · Net-Zero Industry Act · EU Space Act · European Space Programme",
+  },
+  //{
+  //  title: "Space & New Space Economy",
+  //  topics:
+  //    "EU Space Act · European Space Programme · EUSPA · dual-use technologies",
+  //},
+  //{
+  //  title: "Energy & energy-intensive industries",
+  //  topics:
+  //    "ETS1/ETS2 · CBAM · Fit for 55 · Net-Zero Industry Act · hydrogen · RED IV",
+  //},
+
 ];
 
 export const programmes = [
