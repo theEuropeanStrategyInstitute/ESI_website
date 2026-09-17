@@ -3,6 +3,11 @@ import { useEffect, useRef, useState } from "react";
 type CouncilMember = {
   name: string;
   role: string;
+  photo?: {
+    src: string;
+    width: number;
+    height: number;
+  };
 };
 
 type QueuedMember = CouncilMember & { originalIndex: number };
@@ -91,7 +96,17 @@ export function CouncilCarousel({ council }: { council: CouncilMember[] }) {
             <span className="index">
               {String(person.originalIndex + 1).padStart(2, "0")}
             </span>
-            <div className="council-carousel-photo" aria-hidden="true" />
+            <div className="council-carousel-photo" aria-hidden="true">
+              {person.photo && (
+                <img
+                  src={person.photo.src}
+                  alt=""
+                  width={person.photo.width}
+                  height={person.photo.height}
+                  className="expert-photo-img"
+                />
+              )}
+            </div>
             <div className="council-carousel-info">
               <h3>{person.name}</h3>
               <div className="council-carousel-role">
