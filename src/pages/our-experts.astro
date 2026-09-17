@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import InnerLayout from "../layouts/InnerLayout.astro";
 import { founders, council, experts, type Person } from "../data/esi-content";
 
@@ -53,6 +54,15 @@ const cardGroups: Array<{
               )}
             </div>
             <div class="expert-founder-photo">
+              {person.photo && (
+                <Image
+                  src={person.photo}
+                  alt=""
+                  widths={[302, 604]}
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  class="expert-photo-img"
+                />
+              )}
               <button
                 type="button"
                 class="expert-card-open"
@@ -93,7 +103,17 @@ const cardGroups: Array<{
           const dialogId = `${group.id}-dialog-${index}`;
           return (
             <article class="expert-card" tabindex="0">
-              <div class="expert-card-photo" aria-hidden="true" />
+              <div class="expert-card-photo" aria-hidden="true">
+                {person.photo && (
+                  <Image
+                    src={person.photo}
+                    alt=""
+                    widths={[302, 604]}
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    class="expert-photo-img"
+                  />
+                )}
+              </div>
               <div class="expert-card-info">
                 <h3>{person.name}</h3>
                 <div class="expert-card-role-reveal">

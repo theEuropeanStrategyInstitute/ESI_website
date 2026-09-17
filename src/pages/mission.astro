@@ -17,28 +17,55 @@ const representation = [
 
 <InnerLayout
   eyebrow="Our mission"
-  title="A stronger CEE voice<br /><em>at the European table.</em>"
-  intro="ESI creates a space for entrepreneurs and leaders from Central and Eastern Europe who want to help shape the future direction of the European economy."
+  title="We strengthen European business,<br /><em> and build a better Europe.</em>"
+  intro="We need a stronger, more competitive and resilient Europe where every region contributes to shaping the continent’s future, and where CEE are recognised as a driver of innovation, economic growth and strategic leadership."
   pageTitle={pageTitle}
   description={description}
 >
+  <section class="content-section single-copy">
+    <div>
+      <h2>
+        We need a stronger, more competitive and resilient Europe where every
+        region contributes to shaping the continent’s future, and where CEE are
+        recognised as a driver of innovation, economic growth and strategic
+        leadership.
+      </h2>
+      <p>
+        ESI connects local and regional businesses - particularly those
+        operating in sectors with limited institutional representation or
+        support - with policymakers, experts, investors and European
+        institutions.
+      </p>
+      <p>
+        Our ambition is not only to discuss policy, but to ensure that European
+        policy responds to real economic needs - including those companies,
+        sectors and regions that currently have none or very limited access to
+        institutional support and decision-making processes.
+      </p>
+
+      <p><strong>Strategic objectives:</strong></p>
+      <p>Giving Central & Eastern Europe's business community a permanent and professional voice in Brussels</p>
+      <p>Transforming CEE companies from regulation-takers into regulation co-authors</p>
+      <p>Providing a trusted platform through which businesses from CEE can contribute to European policy discussions and forming of the EU regulations in strategic sectors.</p>
+
+
+    </div>
+  </section>
+
   <section class="content-section split-copy">
     <p class="section-number">01 / The challenge</p>
     <div>
       <h2>
-        The region helps drive Europe's growth. Its voice in Brussels remains
-        limited.
+        CEE region helps drive Europe's growth. Its voice in Brussels remains limited.
       </h2>
       <p>
-        Central and Eastern Europe represents more than 100 million consumers
-        and is deeply integrated into European supply chains and the single
-        market. Yet the region's business perspective is still underrepresented
-        where European regulation takes shape.
+        Central and Eastern Europe represents more than 100 million consumers and is deeply integrated into European supply chains and the single market. Yet the region's business perspective is still underrepresented where European regulation takes shape.
       </p>
       <p>
-        Policy develops through evidence, informal dialogue and networks of
-        trust long before a formal vote. Too often, CEE companies enter the
-        conversation only after the decisive stage has passed.
+        We work with local businesses, entrepreneurs, industry organisations and other stakeholders from CEE to better understand challenges they face and to bring their experience into national and European policy debates. 
+      </p>
+      <p>
+        By identifying areas where institutional support is insufficient, ESI seeks to provide businesses and communities with a stronger voice and greater access to expertise, partnerships and European-level debate 
       </p>
     </div>
   </section>
@@ -52,19 +79,68 @@ const representation = [
         research supplied to ESI.
       </p>
     </div>
-    <div class="evidence-grid">
-      {representation.map(([value, label], index) => (
-        <article class={index === representation.length - 1 ? "highlight" : ""}>
-          <strong>{value}</strong>
-          <span>{label}</span>
-        </article>
-      ))}
+    <div class="evidence-split">
+      <h3 class="evidence-note">
+        If Central and Eastern Europe is to play a greater role in shaping
+        Europe's future, stronger and more sustained investment is needed in
+        organisations that build visibility, influence and strategic engagement
+        in Brussels, such as The European Strategy Institute.
+      </h3>
+      <div class="evidence-grid-col">
+        <div class="evidence-grid">
+          {representation.map(([value, label], index) => (
+            <article
+              class={index === representation.length - 1 ? "highlight" : ""}
+            >
+              <strong data-count-to={value}>0</strong>
+              <span>{label}</span>
+            </article>
+          ))}
+        </div>
+        <p class="draft-note">LobbyFacts, Dec 2025.</p>
+      </div>
     </div>
-    <p class="draft-note">
-      LobbyFacts, Dec 2025.
-    </p>
   </section>
 
+  <script>
+    const counters = document.querySelectorAll(
+      ".evidence-grid strong[data-count-to]",
+    );
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    function animateCount(el: HTMLElement) {
+      const target = parseInt(el.dataset.countTo || "0", 10);
+      if (prefersReducedMotion || Number.isNaN(target)) {
+        el.textContent = String(target);
+        return;
+      }
+      const duration = String(target).length >= 3 ? 2400 : 1200;
+      const start = performance.now();
+      function tick(now: number) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = String(Math.round(target * eased));
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCount(entry.target as HTMLElement);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 },
+    );
+
+    counters.forEach((counter) => observer.observe(counter));
+  </script>
   <section class="content-section objectives-section">
     <div>
       <p class="section-number">02 / Our response</p>

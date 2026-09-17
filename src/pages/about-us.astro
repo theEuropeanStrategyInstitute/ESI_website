@@ -1,0 +1,40 @@
+---
+import InnerLayout from "../layouts/InnerLayout.astro";
+
+const pageTitle = "About Us | The European Strategy Institute";
+const description =
+  "Who ESI is, what it stands for, and why it is building its work from Brussels.";
+
+const sections: Array<{ number: string; label: string; heading: string }> = [
+  { number: "01", label: "Who We Are", heading: "Who we are." },
+  { number: "02", label: "Mission", heading: "Our mission." },
+  { number: "03", label: "Vision", heading: "Our vision." },
+  { number: "04", label: "Values", heading: "Our values." },
+  { number: "05", label: "Why Brussels", heading: "Why Brussels." },
+  {
+    number: "06",
+    label: "Areas of Focus",
+    heading: "Areas of focus.",
+  },
+];
+---
+
+<InnerLayout
+  eyebrow="About us"
+  title="Who we are<br /><em>and what we stand for.</em>"
+  intro="An introduction to The European Strategy Institute — our mission, vision, values and the sectors we focus on."
+  pageTitle={pageTitle}
+  description={description}
+>
+  {sections.map((section) => (
+    <section class="content-section split-copy">
+      <p class="section-number">
+        {section.number} / {section.label}
+      </p>
+      <div>
+        <h2>{section.heading}</h2>
+        <p>Content coming soon.</p>
+      </div>
+    </section>
+  ))}
+</InnerLayout>
