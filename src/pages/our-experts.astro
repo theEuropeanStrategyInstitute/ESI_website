@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import InnerLayout from "../layouts/InnerLayout.astro";
-import { founders, council, experts, type Person } from "../data/esi-content";
+import {council, experts, type Person } from "../data/esi-content";
 
 const pageTitle = "Our Experts | The European Strategy Institute";
 const description =
@@ -36,13 +36,13 @@ const cardGroups: Array<{
   pageTitle={pageTitle}
   description={description}
 >
-  <section class="content-section expert-section" id="founders">
+  <!-- <section class="content-section expert-section" id="executiveTeam">
     <div class="expert-heading">
       <p class="eyebrow">Executive team</p>
       <p>The people who lead ESI's day-to-day work.</p>
     </div>
     <div class="expert-founder-grid">
-      {founders.map((person, index) => {
+      {executiveTeam.map((person, index) => {
         const dialogId = `founders-dialog-${index}`;
         return (
           <article class="expert-founder-card">
@@ -90,7 +90,7 @@ const cardGroups: Array<{
         );
       })}
     </div>
-  </section>
+  </section> -->
 
   {cardGroups.map((group) => (
     <section class="content-section expert-section" id={group.id}>
