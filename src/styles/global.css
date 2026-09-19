@@ -633,12 +633,12 @@ img {
   padding: 0;
   gap: 4px;
   margin: auto;
-  border-radius: 0;
+  border-radius: 8px;
 }
 .direction-tabs [data-slot="tabs-trigger"] {
   height: 42px;
   padding: 10px 15px;
-  border-radius: 3px;
+  border-radius: 8px;
   box-shadow: none;
   font-size: 13px;
   color: #655f73;
@@ -720,6 +720,7 @@ img {
   align-items: center;
   background: white;
   color: var(--navy);
+  border-radius: 8px;
   transition:
     background-color 200ms cubic-bezier(0.23, 1, 0.32, 1),
     color 200ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -775,6 +776,7 @@ img {
   font-size: 13px;
   line-height: 1.5;
   min-height: 56px;
+  border-radius: 8px;
 }
 .cta span {
   font-size: 22px;
@@ -1145,7 +1147,20 @@ img {
   color: white;
 }
 .bridge .work {
-  background: #fff;
+  background: #0b1039;
+  color: white;
+}
+.bridge .work .section-heading > p:last-child {
+  color: #d8d4e8;
+}
+.bridge .work-list {
+  border-top-color: rgba(255, 255, 255, 0.25);
+}
+.bridge .work-list details {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+.bridge .work-list details p {
+  color: #d8d4e8;
 }
 .bridge .contact {
   background: #0b1039;
@@ -1704,7 +1719,8 @@ img {
   .bridge-hero h1 {
     font-size: clamp(58px, 9vw, 84px);
   }
-  .bridge-story {
+  .bridge-story,
+  .people-intro-row {
     grid-template-columns: 1fr;
     gap: 0;
   }
@@ -2200,10 +2216,10 @@ body {
   transform: translateY(-3px);
 }
 .bridge .work-list details[open] summary {
-  color: var(--navy);
+  color: white;
 }
 .bridge .work-list summary:hover {
-  color: #443683;
+  color: #b7aee6;
 }
 .bridge .contact .download {
   margin-top: 50px;
@@ -2452,14 +2468,23 @@ body {
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;
   gap: clamp(50px, 8vw, 120px);
-  background: #0b1039;
-  color: white;
+  background: #fff;
+  color: var(--navy);
 }
 .sector-heading h2 {
   max-width: 560px;
 }
+.objective-map {
+  max-width: 510px;
+  margin-top: 40px;
+}
+.objective-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .sector-list {
-  border-top: 1px solid #423a72;
+  border-top: 1px solid #c5c1d2;
 }
 .sector-list a {
   display: grid;
@@ -2467,7 +2492,7 @@ body {
   gap: 20px;
   align-items: center;
   min-height: 76px;
-  border-bottom: 1px solid #423a72;
+  border-bottom: 1px solid #c5c1d2;
 }
 .sector-list a strong {
   font-family: var(--serif);
@@ -2480,6 +2505,24 @@ body {
 }
 .sector-list a:hover > span:last-child {
   transform: translateX(5px);
+}
+.objective-preview-list {
+  border-top: 1px solid #423a72;
+}
+.objective-preview-list .objective-row {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 20px;
+  align-items: start;
+  min-height: 76px;
+  padding: 24px 0;
+  border-bottom: 1px solid #423a72;
+}
+.objective-preview-list .objective-row p {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
 }
 .founder-grid {
   display: grid;
@@ -2507,13 +2550,28 @@ body {
   border-bottom: 1px solid currentColor;
   font-size: 14px;
 }
+.section.council {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.people-intro-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+}
+.people-intro-row p:not(.eyebrow) {
+  font-size: 16px;
+  color: #635d76;
+  max-width: 640px;
+  margin-top: 30px;
+}
 .council-heading {
   display: flex;
   justify-content: space-between;
   gap: 30px;
   align-items: end;
-  margin-top: 88px;
-  padding-top: 30px;
+  margin-top: 30px;
+  padding-top: 20px;
   border-top: 1px solid var(--line);
 }
 .council-heading .eyebrow {
@@ -2930,6 +2988,26 @@ body {
   color: #625d74;
   font-size: 16px;
 }
+.split-copy > div > strong {
+  display: block;
+  margin-top: 28px;
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--navy);
+}
+.split-copy > div > ul {
+  max-width: 720px;
+  margin-top: 20px;
+  padding-left: 20px;
+  color: #625d74;
+  font-size: 16px;
+}
+.split-copy > div > ul li + li {
+  margin-top: 16px;
+}
+.split-copy > div > ul strong {
+  color: var(--navy);
+}
 .evidence-section {
   color: white;
   background: var(--navy);
@@ -2991,6 +3069,15 @@ body {
   line-height: 1.2;
   color: white;
 }
+
+.evidence-note-navy {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(28px, 3.34vw, 45px);
+  line-height: 1.2;
+  color: var(--navy);
+}
+
 .draft-note {
   max-width: 720px;
   margin-top: 24px;

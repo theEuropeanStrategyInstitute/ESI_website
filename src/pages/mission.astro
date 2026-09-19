@@ -1,10 +1,18 @@
 ---
 import InnerLayout from "../layouts/InnerLayout.astro";
+import Eyebrow from "../components/helpers/Eyebrow.astro";
 import { strategicObjectives } from "../data/esi-content";
+import europeMap from "../assets/europe-cee.svg?raw";
 
 const pageTitle = "Mission | The European Strategy Institute";
 const description =
   "Why Central and Eastern European business needs a permanent, professional voice in Brussels.";
+
+const strategicGoals: string[] = [
+  "Giving Central & Eastern Europe's business community a permanent and professional voice in Brussels",
+  "Transforming CEE companies from regulation-takers into regulation co-authors",
+  "Providing a trusted platform through which businesses from CEE can contribute to European policy discussions and forming of the EU regulations in strategic sectors.",
+];
 
 const representation = [
   ["256", "German organisations"],
@@ -24,31 +32,34 @@ const representation = [
 >
   <section class="content-section single-copy">
     <div>
-      <h2>
-        We need a stronger, more competitive and resilient Europe where every
-        region contributes to shaping the continent’s future, and where CEE are
-        recognised as a driver of innovation, economic growth and strategic
-        leadership.
-      </h2>
-      <p>
+      <h3 class="evidence-note-navy">
         ESI connects local and regional businesses - particularly those
         operating in sectors with limited institutional representation or
         support - with policymakers, experts, investors and European
         institutions.
-      </p>
-      <p>
+      </h3>
+      <h3 class="evidence-note-navy">
         Our ambition is not only to discuss policy, but to ensure that European
         policy responds to real economic needs - including those companies,
         sectors and regions that currently have none or very limited access to
         institutional support and decision-making processes.
-      </p>
+      </h3>
+    </div>
+  </section>
 
-      <p><strong>Strategic objectives:</strong></p>
-      <p>Giving Central & Eastern Europe's business community a permanent and professional voice in Brussels</p>
-      <p>Transforming CEE companies from regulation-takers into regulation co-authors</p>
-      <p>Providing a trusted platform through which businesses from CEE can contribute to European policy discussions and forming of the EU regulations in strategic sectors.</p>
-
-
+  <section class="content-section sector-preview">
+    <div class="sector-heading">
+      <Eyebrow>Strategic objectives</Eyebrow>
+      <h2>What ESI is built to achieve.</h2>
+      <div class="objective-map" set:html={europeMap} />
+    </div>
+    <div class="objective-preview-list">
+      {strategicGoals.map((goal, index) => (
+        <div class="objective-row">
+          <span class="index">0{index + 1}</span>
+          <p>{goal}</p>
+        </div>
+      ))}
     </div>
   </section>
 
@@ -56,16 +67,24 @@ const representation = [
     <p class="section-number">01 / The challenge</p>
     <div>
       <h2>
-        CEE region helps drive Europe's growth. Its voice in Brussels remains limited.
+        CEE region helps drive Europe's growth. Its voice in Brussels remains
+        limited.
       </h2>
       <p>
-        Central and Eastern Europe represents more than 100 million consumers and is deeply integrated into European supply chains and the single market. Yet the region's business perspective is still underrepresented where European regulation takes shape.
+        Central and Eastern Europe represents more than 100 million consumers
+        and is deeply integrated into European supply chains and the single
+        market. Yet the region's business perspective is still underrepresented
+        where European regulation takes shape.
       </p>
       <p>
-        We work with local businesses, entrepreneurs, industry organisations and other stakeholders from CEE to better understand challenges they face and to bring their experience into national and European policy debates. 
+        We work with local businesses, entrepreneurs, industry organisations and
+        other stakeholders from CEE to better understand challenges they face
+        and to bring their experience into national and European policy debates.
       </p>
       <p>
-        By identifying areas where institutional support is insufficient, ESI seeks to provide businesses and communities with a stronger voice and greater access to expertise, partnerships and European-level debate 
+        By identifying areas where institutional support is insufficient, ESI
+        seeks to provide businesses and communities with a stronger voice and
+        greater access to expertise, partnerships and European-level debate
       </p>
     </div>
   </section>

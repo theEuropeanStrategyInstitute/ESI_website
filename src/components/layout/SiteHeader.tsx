@@ -74,6 +74,7 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
           Menu <span aria-hidden="true">+</span>
         </summary>
         <nav aria-label="Mobile navigation">
+          <a href="/about-us">About us</a>
           <a href="/mission">Mission</a>
           <a href="/projects">Our work</a>
           <a href="/our-experts">Our Experts</a>
