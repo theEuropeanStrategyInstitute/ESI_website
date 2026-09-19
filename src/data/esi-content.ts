@@ -54,41 +54,41 @@ export const influenceTools = [
   {
     number: "02",
     title: "Flagship programmes",
-    body: "Invitation-only forums focused on Europe’s future and the strategic challenges facing the continent.",
+    body: "Multi-year initiatives connecting industry, policymakers and experts around Europe's most consequential strategic challenges.",
   },
   {
     number: "03",
     title: "Reports & briefings",
-    body: "Industry reports and tailored executive briefings connecting policy developments to business decisions.",
+    body: "Independent analysis, developed with leading experts, turning regulatory and geopolitical developments into clear, actionable insight.",
   },
   {
     number: "04",
     title: "Strategic support",
-    body: "Direct support for companies strengthening their position and relationships across European markets.",
+    body: "Tailored advisory drawing on our network of experts to help organisations navigate Europe's evolving policy and security landscape.",
+  },
+  {
+    number: "05",
+    title: "European Dialogue platform",
+    body: "Operating at the intersection of business, policy and European institutions, translating sector needs into a stronger Central and Eastern European voice on Europe's geopolitical agenda.",
   },
 ];
 
 export const sectors = [
   {
-    title: "Defence, security & dual-use",
+    title: "Defence, Security & Strategic Resilience",
     topics: "European Defence Fund · EDIP · SAFE",
   },
   {
-    title: "Industry & manufacturing",
-    topics: "EU Industrial Strategy · circular economy · competitiveness",
+    title: "Energy, Industry & Industrial Transformation",
+    topics: "EU Industrial Strategy · circular economy · competitiveness · Net-Zero Industry Act · Fit for 55",
   },
   {
-    title: "Critical raw materials",
+    title: "Critical Resources & Supply Chains",
     topics: "Critical Raw Materials Act · resilient supply chains",
   },
   {
-    title: "Chemicals & construction",
-    topics: "REACH · CBAM for the cement sector",
-  },
-  {
-    title: "Special Projects",
-    topics:
-      "Fit for 55 · Net-Zero Industry Act · EU Space Act · European Space Programme",
+    title: "Space, Nuclear & Emerging Technologies",
+    topics: "EU Space Act · European Space Programme",
   },
   //{
   //  title: "Space & New Space Economy",
@@ -100,6 +100,10 @@ export const sectors = [
   //  topics:
   //    "ETS1/ETS2 · CBAM · Fit for 55 · Net-Zero Industry Act · hydrogen · RED IV",
   //},
+  // {
+  //   title: "Chemicals & construction",
+  //   topics: "REACH · CBAM for the cement sector",
+  // },
 ];
 
 export const programmes = [
@@ -120,7 +124,20 @@ export const programmes = [
 export const founders: Person[] = [
   person({
     name: "Agnieszka Sitek-Kobosko",
-    role: "Founder & Executive Director",
+    role: "Co-Founder & CEO",
+    email: "agnieszka.sitek@esi-eu.com",
+  }),
+  person({
+    name: "Daria Smolarek",
+    role: "Communication & Program Director",
+    email: "daria.smolarek@esi-eu.com",
+  }),
+];
+
+export const executiveTeam: Person[] = [
+  person({
+    name: "Agnieszka Sitek-Kobosko",
+    role: "Co-Founder & CEO",
     email: "agnieszka.sitek@esi-eu.com",
   }),
   person({
@@ -147,6 +164,7 @@ export const council: Person[] = [
     name: "Piotr Wielgomas",
     role: "Founder and President of BIGRAM",
     photoSlug: "piotr_wielgomas",
+    bio: "Born in Warsaw, he is married and has three adult children. He graduated from the Faculty of Law at the University of Warsaw and has participated in international business scholarship programmes in the United Kingdom, including at Nottingham Trent University, and in the United States. He is the founder and President of BIGRAM, a human resources consultancy that has been successfully operating on the Polish market for more than 30 years. The company specialises in executive recruitment and HR advisory services, including management audits, 360-degree assessments and outplacement. BIGRAM is also the exclusive Polish partner of two renowned global networks: IIC Partners Executive Search, where Piotr Wielgomas served for several years as a member of the Global Board, and Career Star Group. For many years, BIGRAM has also been running Enactus Poland, part of the international Enactus student entrepreneurship initiative, which operates across 40 countries and 1,700 universities worldwide. Piotr Wielgomas also has extensive corporate governance experience, having served for many years on the supervisory boards of a number of companies. Beyond his professional activities, he has served for many years as Vice President of the Association of Collectors of Historical Securities. He is also a co-creator of a unique project reconstructing pre-war Warsaw in the form of a detailed scale model, developed together with the renowned Polish actor and director Emilian Kamiński."
   }),
   person({
     name: "Prof. Piotr Wachowiak",
@@ -165,10 +183,14 @@ export const council: Person[] = [
   person({
     name: "Prof. Joanna Kulczycka",
     role: "Professor at AGH University of Krakow; Head of the Circular Economy Division at IGSMiE PAN",
+    photoSlug: "joanna_kulczycka",
+    bio: "Professor of Management Mineral and Energy Economy Research Institute Polish Academy of Sciences and  AGH University of Krakow, Poland Prof. Joanna Kulczycka is the Head and Founder of the Division of Strategic Research and the Department of Circular Economy at the Mineral and Energy Economy Research Institute of the Polish Academy of Sciences (MEERI PAS), and a Professor at the Academy of Krakow, Faculty of Management, where she delivers lectures on economics, circular economy, eco-innovation in industry, and corporate social responsibility (CSR). She also serves as Director of the IATI Bureau—the largest virtual research institute in Poland—and as President of the Waste Management and Recycling Cluster, a Key National Cluster in Poland. She is the author of over 250 publications, including the first Polish-language book on Life Cycle Assessment (LCA), the first Polish Minerals Yearbook, and more than 120 peer-reviewed scientific articles addressing raw materials, the circular economy, energy and waste management, eco-efficiency of industrial processes, corporate social responsibility (CSR), and just transition. She is a member of the UNEP International Resource Panel (IRP) and a co-author of two flagship reports: Global Resources Outlook 2024 and Global Environment Outlook 7. She has been actively involved in numerous national and European research and innovation projects. She also served as the organizer and Chair of the Steering Committee of EUIndTech2025 – Industrial Technologies and Materials for a Sustainable Europe, the EU flagship event held under the Polish Presidency of the Council of the European Union."
   }),
   person({
     name: "Adam Guibourgé-Czetwertyński",
     role: "Former Deputy Minister at the Polish Ministry of Climate and Environment",
+    photoSlug: "adam_guibourge-czetwertynski",
+    bio: "Former Secretary of State (Deputy Minister) at the Polish Ministry of Climate and Environment,former Government Plenipotentiary for Strategic Energy Infrastructure.  He currently works at Transport & Environment (T&E), providing evidence-based analysis and policy recommendations to Polish decision-makers on the transition to clean transport. Previously, he served as Head of the Environment Section at Poland’s Permanent Representation to the EU and as a Deputy Minister in the Polish government. He was also a member of Poland’s UNFCCC Presidency negotiating team at COP19 in Warsaw and Poland’s chief negotiator at COP24 in Katowice."
   }),
   person({
     name: "Žygimantas Vaičiūnas",
@@ -197,5 +219,25 @@ export const experts: Person[] = [
   person({
     name: "TBD",
     role: "Expert profile pending",
+  }),
+];
+
+// Placeholder roster — replace with real names/roles/bios before launch.
+export const board: Person[] = [
+  person({
+    name: "TBD",
+    role: "Board member profile pending",
+  }),
+  person({
+    name: "TBD",
+    role: "Board member profile pending",
+  }),
+  person({
+    name: "TBD",
+    role: "Board member profile pending",
+  }),
+  person({
+    name: "TBD",
+    role: "Board member profile pending",
   }),
 ];
