@@ -152,6 +152,7 @@ export const executiveTeam: Person[] = [
     name: "Daria Smolarek",
     role: "Communication & Program Director",
     email: "daria.smolarek@esi-eu.com",
+    photoSlug: "daria_smolarek",
   }),
 ];
 
