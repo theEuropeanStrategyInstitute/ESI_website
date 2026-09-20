@@ -1,7 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import esiWhite from "../../assets/esi-white.png";
-import { EnquiryForm } from "../EnquiryForm";
+
+/** Placeholder subscribe endpoint — swap for the real ESP embed URL once chosen. */
+const NEWSLETTER_ENDPOINT = "https://newsletter.esi-eu.com/subscribe";
 
 const links: [string, string][] = [
   ["About us", "/about-us"],
@@ -22,26 +24,14 @@ const links: [string, string][] = [
       src={esiWhite}
       alt="The European Strategy Institute"
     />
-    <p>
-      The European Strategy Institute AISBL
-    </p>
+    <p>The European Strategy Institute AISBL</p>
     <p>
       An independent Brussels-based think tank connecting Central and Eastern
       European business with European policymaking.
     </p>
-    <p>
-      numer przedsiębiorstwa/KBO (po rejestracji)
-      adres siedziby w Belgii
-    </p>
-    <p>
-      e-mail kontaktowy
-    </p>
-    <p>
-      Privacy Policy
-      Cookie Policy
-      Terms of Use
-    </p>
-
+    <p>numer przedsiębiorstwa/KBO (po rejestracji) adres siedziby w Belgii</p>
+    <p>e-mail kontaktowy</p>
+    <p>Privacy Policy Cookie Policy Terms of Use</p>
   </div>
   <nav class="footer-nav" aria-label="Footer navigation">
     {links.map(([label, href]) => (
@@ -50,7 +40,28 @@ const links: [string, string][] = [
   </nav>
   <div class="footer-contact">
     <p>Brussels · Warsaw</p>
-    <EnquiryForm kind="contact" compact client:visible />
+    <form class="footer-newsletter" method="post" action={NEWSLETTER_ENDPOINT}>
+      <div class="footer-newsletter-row">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Email address"
+          aria-label="Email address"
+        />
+        <button type="submit">Subscribe</button>
+      </div>
+      <label class="footer-newsletter-consent">
+        <input type="checkbox" name="consent" required />
+        <span>
+          I agree to receive emails from ESI and accept the
+          <a href="/privacy">Privacy notice</a>.
+        </span>
+      </label>
+    </form>
+    <a href="/contact" class="footer-contact-link">
+      Contact us
+    </a>
   </div>
   <div class="footer-base">
     <span>© 2026 The European Strategy Institute</span>
