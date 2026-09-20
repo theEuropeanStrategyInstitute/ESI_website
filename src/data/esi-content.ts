@@ -75,6 +75,14 @@ export const influenceTools = [
 
 export const sectors = [
   {
+    title: "Addressing Europe's Strategic Challenges",
+    topics: "TBD",
+  },
+  {
+    title: "Competitiveness & Industrial Policy",
+    topics: "TBD",
+  },
+  {
     title: "Defence, Security & Strategic Resilience",
     topics: "European Defence Fund · EDIP · SAFE",
   },
