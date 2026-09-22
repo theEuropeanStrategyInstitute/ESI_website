@@ -7,7 +7,12 @@ import Eyebrow from "../components/helpers/Eyebrow.astro";
 import Arrow from "../components/helpers/Arrow.astro";
 import LinkButton from "../components/helpers/LinkButton.astro";
 import { CouncilCarousel } from "../components/CouncilCarousel";
-import { council, influenceTools, sectors } from "../data/esi-content";
+import {
+  executiveTeam,
+  council,
+  influenceTools,
+  sectors,
+} from "../data/esi-content";
 import bridgePhoto from "../assets/bridge.jpg";
 
 const title =
@@ -55,13 +60,18 @@ const description =
           <p>
             The European Strategy Institute is an independent, Brussels-based
             think tank - or, more precisely, a "do-tank" - established as a
-            Belgian non-profit association (AISBL). Its mission is to build
-            compelling, fact-based narratives at the heart of Europe and to give
-            Central and Eastern Europe a stronger, more professional voice in
-            the European debate. Positioned at the centre of EU decision-making,
-            the Institute will serve as a platform where policymakers, business
-            leaders and experts come together to shape ideas that matter for the
-            region’s competitiveness, security and long-term prosperity.
+            Belgian non-profit association (AISBL).
+            <br />
+            <br />
+            Its mission is to buildcompelling, fact-based narratives at the
+            heart of Europe and to give Central and Eastern Europe a stronger,
+            more professional voice in the European debate.
+            <br />
+            <br />
+            Positioned at the centre of EU decision-making, the Institute will
+            serve as a platform where policymakers, business leaders and experts
+            come together to shape ideas that matter for the region’s
+            competitiveness, security and long-term prosperity.
           </p>
           <a class="text-link" href="/mission">
             Read about our mission <Arrow />
@@ -74,15 +84,15 @@ const description =
           {[
             [
               "Insight",
-              "Independent analysis of the regulatory and geopolitical shifts shaping Europe's future.",
+              "Independent analysis, strategic reports, policy briefs and expert insights that help organisations and decision-makers understand emerging trends, regulatory developments and strategic challenges.",
             ],
             [
               "Dialogue",
-              "Trusted engagement between business leaders and European institutions.",
+              "We create opportunities for meaningful discussion through roundtables, conferences, executive forums and expert meetings in Brussels and across Europe.",
             ],
             [
-              "Influence",
-              "Cross-border coalitions built on evidence and expertise.",
+              "Engagement",
+              "We engage with policymakers, institutions, industry leaders and stakeholder communities to contribute expertise, facilitate dialogue and support evidence-based policymaking.",
             ],
           ].map(([number, title, body]) => (
             <article>
@@ -98,9 +108,8 @@ const description =
         <div class="people-intro-row">
           <Eyebrow>The people behind ESI</Eyebrow>
           <div>
-            <h2>
-              Leaders. Experts.
-              <br />A European perspective.
+            <h2 class="council-label">
+              Experience. Credibility. Leadership. <br />A European perspective.
             </h2>
             <p>
               The Institute brings together experience from business, European
@@ -109,8 +118,8 @@ const description =
           </div>
         </div>
         <div class="council-heading">
+          <p class="council-label">Strategic Council</p>
           <div>
-            <Eyebrow>Strategic Council</Eyebrow>
             <p>
               The Strategic Council is an independent advisory body bringing
               together distinguished leaders from European institutions,
@@ -120,11 +129,11 @@ const description =
               priorities.
             </p>
           </div>
-          <a class="text-link" href="/our-experts#council">
-            Meet the Council <Arrow />
-          </a>
         </div>
         <CouncilCarousel council={council} client:visible />
+        <a class="text-link council-cta" href="/our-experts#council">
+          Meet the Council <Arrow />
+        </a>
       </section>
       <section class="section work" id="work">
         <div class="section-heading">
@@ -134,6 +143,7 @@ const description =
             <br />
             built over time.
           </h2>
+          <br />
           <p>
             ESI convenes leaders across business, finance and public
             institutions through trusted, long-term relationships.
@@ -143,8 +153,8 @@ const description =
           </a>
         </div>
         <div class="work-list">
-          {influenceTools.map((item, index) => (
-            <details open={index === 0}>
+          {influenceTools.map((item) => (
+            <details>
               <summary>
                 <span class="summary-row">
                   <span class="index">{item.number}</span>
@@ -162,8 +172,10 @@ const description =
 
       <section class="section sector-preview">
         <div class="sector-heading">
-          <Eyebrow>Priority sectors</Eyebrow>
-          <h2>Where regulation shapes competitiveness.</h2>
+          <Eyebrow>AREAS OF FOCUS</Eyebrow>
+          <h2>
+            From analysis to action - for a stronger Central and Eastern Europe.
+          </h2>
         </div>
         <div class="sector-list">
           {sectors.map((sector, index) => (
@@ -182,13 +194,79 @@ const description =
           <h2>Partnerships built around ideas, shaped together</h2>
         </div>
         <div>
+          <h3>
+            <strong>Building Partnerships for European Impact</strong>
+          </h3>
+          <br />
           <p>
-            We welcome companies, investors and institutions ready to contribute
-            expertise to ESI's programmes, projects and events.
+            ESI works with companies, institutions, universities, associations,
+            foundations and public-sector organisations that share a commitment
+            to strengthening Europe's future.
           </p>
           <div class="button-row">
             <LinkButton text="Partner with ESI" href="/partnership" />
           </div>
+        </div>
+      </section>
+
+      <section class="content-section expert-section" id="excutiveTeam">
+        <div class="expert-heading">
+          <p class="eyebrow">Executive team</p>
+          <p>
+            Makes ESI's mission happen through daily engagement across Central
+            and Eastern Europe.
+          </p>
+        </div>
+        <div class="expert-founder-grid">
+          {executiveTeam.map((person, index) => {
+            const dialogId = `founders-dialog-${index}`;
+            return (
+              <article class="expert-founder-card">
+                <div class="expert-founder-info">
+                  <h3>{person.name}</h3>
+                  <p>{person.role}</p>
+                  {person.email && (
+                    <a href={`mailto:${person.email}`}>{person.email}</a>
+                  )}
+                </div>
+                <div class="expert-founder-photo">
+                  {person.photo && (
+                    <Image
+                      src={person.photo}
+                      alt=""
+                      widths={[302, 604]}
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      class="expert-photo-img"
+                    />
+                  )}
+                  <button
+                    type="button"
+                    class="expert-card-open"
+                    aria-haspopup="dialog"
+                    data-dialog-id={dialogId}
+                    aria-label={`Read more about ${person.name}`}
+                  >
+                    <span aria-hidden="true">+</span>
+                  </button>
+                </div>
+                <dialog id={dialogId} class="expert-card-dialog">
+                  <button
+                    type="button"
+                    class="expert-card-close"
+                    data-close-dialog
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">×</span>
+                  </button>
+                  <h3>{person.name}</h3>
+                  <p class="expert-card-role">{person.role}</p>
+                  <p class="expert-card-bio">
+                    {person.bio ?? "Bio coming soon."}
+                  </p>
+                </dialog>
+              </article>
+            );
+          })}
         </div>
       </section>
     </main>

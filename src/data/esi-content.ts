@@ -53,7 +53,7 @@ export const influenceTools = [
   },
   {
     number: "02",
-    title: "Flagship programmes",
+    title: "Flagship programmes & Special projects",
     body: "Multi-year initiatives connecting industry, policymakers and experts around Europe's most consequential strategic challenges.",
   },
   {
@@ -76,42 +76,28 @@ export const influenceTools = [
 export const sectors = [
   {
     title: "Addressing Europe's Strategic Challenges",
-    topics: "TBD",
+    topics: "ESI focuses on policy areas that will determine Europe's future competitiveness, security and prosperity.",
   },
   {
     title: "Competitiveness & Industrial Policy",
-    topics: "TBD",
-  },
-  {
-    title: "Defence, Security & Strategic Resilience",
-    topics: "European Defence Fund · EDIP · SAFE",
+    topics: "Supporting a stronger, more innovative and globally competitive European economy.",
   },
   {
     title: "Energy, Industry & Industrial Transformation",
-    topics: "EU Industrial Strategy · circular economy · competitiveness · Net-Zero Industry Act · Fit for 55",
+    topics:"Energy systems, energy-intensive industries, advanced manufacturing, chemicals, construction and industrial competitiveness.",
+  },
+  {
+    title: "Defence, Security & Strategic Resilience",
+    topics: "Defence industries, security policy, dual-use technologies and Europe's resilience in an increasingly complex geopolitical environment.",
   },
   {
     title: "Critical Resources & Supply Chains",
-    topics: "Critical Raw Materials Act · resilient supply chains",
+    topics: "Critical raw materials, strategic value chains, resource security and the foundations of Europe's industrial sovereignty.",
   },
   {
     title: "Space, Nuclear & Emerging Technologies",
-    topics: "EU Space Act · European Space Programme",
+    topics: "Space and New Space industries, civil nuclear and SMR technologies, as well as emerging technologies critical to Europe's future competitiveness and strategic autonomy.",
   },
-  //{
-  //  title: "Space & New Space Economy",
-  //  topics:
-  //    "EU Space Act · European Space Programme · EUSPA · dual-use technologies",
-  //},
-  //{
-  //  title: "Energy & energy-intensive industries",
-  //  topics:
-  //    "ETS1/ETS2 · CBAM · Fit for 55 · Net-Zero Industry Act · hydrogen · RED IV",
-  //},
-  // {
-  //   title: "Chemicals & construction",
-  //   topics: "REACH · CBAM for the cement sector",
-  // },
 ];
 
 export const programmes = [
@@ -131,14 +117,12 @@ export const programmes = [
 
 export const founders: Person[] = [
   person({
-    name: "Agnieszka Sitek-Kobosko",
-    role: "Co-Founder & CEO",
-    email: "agnieszka.sitek@esi-eu.com",
+    name: "TBD",
+    role: "Board member profile pending",
   }),
   person({
-    name: "Daria Smolarek",
-    role: "Communication & Program Director",
-    email: "daria.smolarek@esi-eu.com",
+    name: "TBD",
+    role: "Board member profile pending",
   }),
 ];
 
@@ -164,16 +148,20 @@ export const council: Person[] = [
   person({
     name: "Dominika Bettman",
     role: "Former President of Microsoft Poland; former head of the Siemens group in Poland",
+    photoSlug: "dominika_bettman",
+    bio: 'Manager with many years of experience; CFO and CEO of international technological corporations. Leader, mentor, and speaker. Author of the books "Technological Magnolias" and "When No One\'s Watching: Ethical Dilemmas in Business" (December 2025). Connects the worlds of technology and business with an ethical approach, arguing that progress only makes sense when it serves people and the environment. She promotes leadership based on values, empathy, and trust. Graduate of the Faculty of International Trade at the Warsaw School of Economics and the Advanced Management Program at IESE in Barcelona. Member of supervisory boards, academic committees, and the program boards of congresses and business initiatives.',
   }),
   person({
     name: "Dr Ewa Łabno-Falęcka",
     role: "Former Communications Director at Mercedes-Benz Poland; founder, Foundation for Development of Education for Industry",
+    photoSlug: "ewa_labno-falecka",
+    bio: "Academic, former diplomat and senior business executive with extensive experience at the intersection of industry, public policy, communications and Polish-German relations.  From 1993 to 1999, she served as Counsellor at the Embassy of the Republic of Poland in Bonn. In 2000, she joined Mercedes-Benz Group in Poland, where she held senior roles spanning strategy, change management, marketing communications, governmental affairs and public policy. From 2015, she coordinated Mercedes-Benz investment projects in Poland. Since 2024, she has run her own consultancy, ELF Consulting & Communication.  She is an expert in Industry 4.0 and sustainable development and lectures on New Mobility at the Warsaw University of Technology. She has co-founded and led several initiatives, including the Partnership for Road Safety, the Friends of the Museum of Modern Art in Warsaw and the Foundation for the Development of Education for Industry.  A contemporary art collector and regular commentator in business media, she has received numerous industry and public distinctions, including Businesswoman of the Year (2016) and the Cross of the Order of Merit of the Federal Republic of Germany. In 2025, she received the European University Viadrina Prize for her contribution to Polish-German political, economic and social dialogue and her support for women’s rights.",
   }),
   person({
     name: "Piotr Wielgomas",
     role: "Founder and President of BIGRAM",
     photoSlug: "piotr_wielgomas",
-    bio: "Born in Warsaw, he is married and has three adult children. He graduated from the Faculty of Law at the University of Warsaw and has participated in international business scholarship programmes in the United Kingdom, including at Nottingham Trent University, and in the United States. He is the founder and President of BIGRAM, a human resources consultancy that has been successfully operating on the Polish market for more than 30 years. The company specialises in executive recruitment and HR advisory services, including management audits, 360-degree assessments and outplacement. BIGRAM is also the exclusive Polish partner of two renowned global networks: IIC Partners Executive Search, where Piotr Wielgomas served for several years as a member of the Global Board, and Career Star Group. For many years, BIGRAM has also been running Enactus Poland, part of the international Enactus student entrepreneurship initiative, which operates across 40 countries and 1,700 universities worldwide. Piotr Wielgomas also has extensive corporate governance experience, having served for many years on the supervisory boards of a number of companies. Beyond his professional activities, he has served for many years as Vice President of the Association of Collectors of Historical Securities. He is also a co-creator of a unique project reconstructing pre-war Warsaw in the form of a detailed scale model, developed together with the renowned Polish actor and director Emilian Kamiński."
+    bio: "Born in Warsaw, he is married and has three adult children. He graduated from the Faculty of Law at the University of Warsaw and has participated in international business scholarship programmes in the United Kingdom, including at Nottingham Trent University, and in the United States. He is the founder and President of BIGRAM, a human resources consultancy that has been successfully operating on the Polish market for more than 30 years. The company specialises in executive recruitment and HR advisory services, including management audits, 360-degree assessments and outplacement. BIGRAM is also the exclusive Polish partner of two renowned global networks: IIC Partners Executive Search, where Piotr Wielgomas served for several years as a member of the Global Board, and Career Star Group. For many years, BIGRAM has also been running Enactus Poland, part of the international Enactus student entrepreneurship initiative, which operates across 40 countries and 1,700 universities worldwide. Piotr Wielgomas also has extensive corporate governance experience, having served for many years on the supervisory boards of a number of companies. Beyond his professional activities, he has served for many years as Vice President of the Association of Collectors of Historical Securities. He is also a co-creator of a unique project reconstructing pre-war Warsaw in the form of a detailed scale model, developed together with the renowned Polish actor and director Emilian Kamiński.",
   }),
   person({
     name: "Prof. Piotr Wachowiak",
@@ -193,17 +181,19 @@ export const council: Person[] = [
     name: "Prof. Joanna Kulczycka",
     role: "Professor at AGH University of Krakow; Head of the Circular Economy Division at IGSMiE PAN",
     photoSlug: "joanna_kulczycka",
-    bio: "Professor of Management Mineral and Energy Economy Research Institute Polish Academy of Sciences and  AGH University of Krakow, Poland Prof. Joanna Kulczycka is the Head and Founder of the Division of Strategic Research and the Department of Circular Economy at the Mineral and Energy Economy Research Institute of the Polish Academy of Sciences (MEERI PAS), and a Professor at the Academy of Krakow, Faculty of Management, where she delivers lectures on economics, circular economy, eco-innovation in industry, and corporate social responsibility (CSR). She also serves as Director of the IATI Bureau—the largest virtual research institute in Poland—and as President of the Waste Management and Recycling Cluster, a Key National Cluster in Poland. She is the author of over 250 publications, including the first Polish-language book on Life Cycle Assessment (LCA), the first Polish Minerals Yearbook, and more than 120 peer-reviewed scientific articles addressing raw materials, the circular economy, energy and waste management, eco-efficiency of industrial processes, corporate social responsibility (CSR), and just transition. She is a member of the UNEP International Resource Panel (IRP) and a co-author of two flagship reports: Global Resources Outlook 2024 and Global Environment Outlook 7. She has been actively involved in numerous national and European research and innovation projects. She also served as the organizer and Chair of the Steering Committee of EUIndTech2025 – Industrial Technologies and Materials for a Sustainable Europe, the EU flagship event held under the Polish Presidency of the Council of the European Union."
+    bio: "Professor of Management Mineral and Energy Economy Research Institute Polish Academy of Sciences and  AGH University of Krakow, Poland Prof. Joanna Kulczycka is the Head and Founder of the Division of Strategic Research and the Department of Circular Economy at the Mineral and Energy Economy Research Institute of the Polish Academy of Sciences (MEERI PAS), and a Professor at the Academy of Krakow, Faculty of Management, where she delivers lectures on economics, circular economy, eco-innovation in industry, and corporate social responsibility (CSR). She also serves as Director of the IATI Bureau—the largest virtual research institute in Poland—and as President of the Waste Management and Recycling Cluster, a Key National Cluster in Poland. She is the author of over 250 publications, including the first Polish-language book on Life Cycle Assessment (LCA), the first Polish Minerals Yearbook, and more than 120 peer-reviewed scientific articles addressing raw materials, the circular economy, energy and waste management, eco-efficiency of industrial processes, corporate social responsibility (CSR), and just transition. She is a member of the UNEP International Resource Panel (IRP) and a co-author of two flagship reports: Global Resources Outlook 2024 and Global Environment Outlook 7. She has been actively involved in numerous national and European research and innovation projects. She also served as the organizer and Chair of the Steering Committee of EUIndTech2025 – Industrial Technologies and Materials for a Sustainable Europe, the EU flagship event held under the Polish Presidency of the Council of the European Union.",
   }),
   person({
     name: "Adam Guibourgé-Czetwertyński",
     role: "Former Deputy Minister at the Polish Ministry of Climate and Environment",
     photoSlug: "adam_guibourge-czetwertynski",
-    bio: "Former Secretary of State (Deputy Minister) at the Polish Ministry of Climate and Environment,former Government Plenipotentiary for Strategic Energy Infrastructure.  He currently works at Transport & Environment (T&E), providing evidence-based analysis and policy recommendations to Polish decision-makers on the transition to clean transport. Previously, he served as Head of the Environment Section at Poland’s Permanent Representation to the EU and as a Deputy Minister in the Polish government. He was also a member of Poland’s UNFCCC Presidency negotiating team at COP19 in Warsaw and Poland’s chief negotiator at COP24 in Katowice."
+    bio: "Former Secretary of State (Deputy Minister) at the Polish Ministry of Climate and Environment,former Government Plenipotentiary for Strategic Energy Infrastructure.  He currently works at Transport & Environment (T&E), providing evidence-based analysis and policy recommendations to Polish decision-makers on the transition to clean transport. Previously, he served as Head of the Environment Section at Poland’s Permanent Representation to the EU and as a Deputy Minister in the Polish government. He was also a member of Poland’s UNFCCC Presidency negotiating team at COP19 in Warsaw and Poland’s chief negotiator at COP24 in Katowice.",
   }),
   person({
     name: "Žygimantas Vaičiūnas",
     role: "Former Minister of Energy of Lithuania; former Energy Attaché to the European Union",
+    photoSlug: "zygimantas_vaiciunas",
+    bio: "An energy policy expert and former Lithuanian Minister of Energy, with more than 20 years of experience shaping national and European energy policy, advancing strategic energy infrastructure, and strengthening energy security. As Lithuania’s Minister of Energy across three governments, he led and contributed to key initiatives at the intersection of energy security, the energy transition, and European energy policy. He has also served as Acting Prime Minister, Acting Minister of Economy and Innovation, and Acting Minister of Environment. His career spans senior positions in the Lithuanian government, the Permanent Representation of Lithuania to the European Union, and the European Solar Manufacturing Council in Brussels, where he focused on European industrial policy for solar PV manufacturing. He has been closely involved in major strategic energy initiatives, including the synchronisation of the Baltic States’ electricity grids with Continental Europe, the development of renewable energy, and the deployment of battery energy storage systems. Žygimantas holds a Master’s degree in Political Science and European Studies and a Bachelor’s degree in Political Science from Vilnius University.",
   }),
   person({
     name: "Sameer Chauhan",

@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import esiWhite from "../../assets/esi-white.png";
+import ESI_Logo_fin_white_v3 from "../../assets/ESI_Logo_fin_white_v3.png";
 
 /** Placeholder subscribe endpoint — swap for the real ESP embed URL once chosen. */
 const NEWSLETTER_ENDPOINT = "https://newsletter.esi-eu.com/subscribe";
@@ -21,7 +21,7 @@ const links: [string, string][] = [
   <div class="footer-lead">
     <Image
       class="footer-logo"
-      src={esiWhite}
+      src={ESI_Logo_fin_white_v3}
       alt="The European Strategy Institute"
     />
     <p>The European Strategy Institute AISBL</p>
@@ -29,9 +29,32 @@ const links: [string, string][] = [
       An independent Brussels-based think tank connecting Central and Eastern
       European business with European policymaking.
     </p>
-    <p>numer przedsiębiorstwa/KBO (po rejestracji) adres siedziby w Belgii</p>
-    <p>e-mail kontaktowy</p>
-    <p>Privacy Policy Cookie Policy Terms of Use</p>
+    <dl class="footer-details">
+      <div>
+        <dt>Email</dt>
+        <dd>
+          <a href="mailto:partnerships@esi-eu.com">partnerships@esi-eu.com</a>
+        </dd>
+      </div>
+      <div>
+        <dt>
+          numer przedsiębiorstwa/KBO (po rejestracji) adres siedziby w Belgii
+        </dt>
+        <dd>TBD</dd>
+      </div>
+      <div>
+        <dt>Representatives</dt>
+        <dd>
+          Agnieszka Sitek-Kobosko
+          <br />
+          Daria Smolarek
+        </dd>
+      </div>
+      <div>
+        <dt>Policies</dt>
+        <dd>Privacy Policy | Cookie Policy | Terms of Use</dd>
+      </div>
+    </dl>
   </div>
   <nav class="footer-nav" aria-label="Footer navigation">
     {links.map(([label, href]) => (
@@ -40,6 +63,8 @@ const links: [string, string][] = [
   </nav>
   <div class="footer-contact">
     <p>Brussels · Warsaw</p>
+    <br />
+    <h3>Subscribe to our newsletter</h3>
     <form class="footer-newsletter" method="post" action={NEWSLETTER_ENDPOINT}>
       <div class="footer-newsletter-row">
         <input
@@ -59,9 +84,6 @@ const links: [string, string][] = [
         </span>
       </label>
     </form>
-    <a href="/contact" class="footer-contact-link">
-      Contact us
-    </a>
   </div>
   <div class="footer-base">
     <span>© 2026 The European Strategy Institute</span>

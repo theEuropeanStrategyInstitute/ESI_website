@@ -1,10 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import InnerLayout from "../layouts/InnerLayout.astro";
+//import Eyebrow from "../components/helpers/Eyebrow.astro";
+import Arrow from "../components/helpers/Arrow.astro";
 import {
   executiveTeam,
   founders,
   board,
+  sectors,
   type Person,
 } from "../data/esi-content";
 
@@ -17,31 +20,58 @@ const cardGroups: Array<{
   heading: string;
   intro: string;
   people: Person[];
+  dark?: boolean;
 }> = [
   {
     id: "founders",
     heading: "Founders",
-    intro: "The people who founded ESI and lead its day-to-day work.",
+    intro:
+      "The founding members of ESI, responsible for its establishment and continued governance.",
     people: founders,
   },
   {
     id: "board",
-    heading: "Board",
-    intro: "Specialists who joined ESI's board.",
+    heading: "Executive Board",
+    intro:
+      "Responsible for ESI's long-term strategy and governance, ensuring the Institute operates with independence and integrity.",
     people: board,
+    dark: true,
   },
 ];
 ---
 
 <InnerLayout
   eyebrow="About us"
-  title="Ideas, people, purpose — this is The European Strategy Institute"
+  title="Ideas, people, purpose - this is The European Strategy Institute"
   intro="The team behind ESI, the mission that drives us, and the sectors where we make a difference."
   pageTitle={pageTitle}
   description={description}
 >
   <section class="content-section split-copy">
-    <p class="section-number">01 / Who We Are</p>
+    <p class="section-number">01 / Why ESI?</p>
+    <div>
+      <h2>The missing voice at the table</h2>
+      <p>
+        For more than two decades, Central and Eastern Europe has been one of
+        Europe's strongest engines of economic growth, innovation and industrial
+        development. Yet the region remains significantly under-represented in
+        Brussels, where European policies and regulations are shaped.
+        <br />
+        <br />
+        We provide a trusted platform where business, government, academia and
+        experts can engage in strategic dialogue, develop evidence-based
+        solutions and contribute to shaping Europe's future economic and
+        regulatory agenda.
+      </p>
+      <br />
+      <p>
+        <strong>ESI was established to help close this gap.</strong>
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section split-copy section-dark">
+    <p class="section-number">02 / Who We Are</p>
     <div>
       <h2>A European Platform for Dialogue &amp; Action</h2>
       <p>Independent. Brussels-based. Designed for long-term impact.</p>
@@ -56,7 +86,14 @@ const cardGroups: Array<{
   </section>
 
   {cardGroups.map((group) => (
-    <section class="content-section expert-section" id={group.id}>
+    <section
+      class:list={[
+        "content-section",
+        "expert-section",
+        { "section-dark": group.dark },
+      ]}
+      id={group.id}
+    >
       <div class="expert-heading">
         <p class="eyebrow">{group.heading}</p>
         <p>{group.intro}</p>
@@ -117,7 +154,10 @@ const cardGroups: Array<{
   <section class="content-section expert-section" id="excutiveTeam">
     <div class="expert-heading">
       <p class="eyebrow">Executive team</p>
-      <p>The people who lead ESI's day-to-day work.</p>
+      <p>
+        Makes ESI's mission happen through daily engagement across Central and
+        Eastern Europe.
+      </p>
     </div>
     <div class="expert-founder-grid">
       {executiveTeam.map((person, index) => {
@@ -170,8 +210,8 @@ const cardGroups: Array<{
     </div>
   </section>
 
-  <section class="content-section split-copy">
-    <p class="section-number">02 / Our values</p>
+  <section class="content-section split-copy section-dark">
+    <p class="section-number">03 / Our values</p>
     <div>
       <h2>Independence, Ethics &amp; Diversity</h2>
       <p>
@@ -187,35 +227,52 @@ const cardGroups: Array<{
         attention to strengthening Central and Eastern Europe's presence in
         European decision-making.
       </p>
-      <strong>Independence &amp; Transparency</strong>
-      <p>
-        ESI retains full independence over its research, analysis, conclusions
-        and recommendations. Members, partners and funders may contribute
-        expertise and participate in dialogue, but they do not determine ESI's
-        research outcomes or editorial content. We are transparent about our
-        partnerships and significant sources of funding and responsibly manage
-        potential conflicts of interest.
-      </p>
-      <strong>Diversity &amp; Open Dialogue</strong>
-      <p>
-        We value diversity of expertise, experience, geography, background and
-        perspective. ESI promotes equal opportunity and an inclusive environment
-        based on evidence, constructive dialogue, mutual respect and
-        intellectual integrity.
-      </p>
-      <strong>Responsible Partnerships</strong>
-      <p>
-        We work with businesses, institutions and organisations that contribute
-        knowledge, experience and resources to European dialogue. Financial
-        support or partnership does not confer influence over ESI's conclusions,
-        recommendations or publications. Our principle is simple: funding
-        enables the conversation — it does not determine its outcome.
-      </p>
+      <div class="values-list">
+        <div class="values-item">
+          <p>
+            <strong>Independence &amp; Transparency</strong>
+            <br />
+            ESI retains full independence over its research, analysis,
+            conclusions and recommendations. Members, partners and funders may
+            contribute expertise and participate in dialogue, but they do not
+            determine ESI's research outcomes or editorial content. We are
+            transparent about our partnerships and significant sources of
+            funding and responsibly manage potential conflicts of interest.
+          </p>
+        </div>
+        <div class="values-item">
+          <p>
+            <strong>Diversity &amp; Open Dialogue</strong>
+            <br />
+            We value diversity of expertise, experience, geography, background
+            and perspective. ESI promotes equal opportunity and an inclusive
+            environment based on evidence, constructive dialogue, mutual respect
+            and intellectual integrity.
+          </p>
+        </div>
+        <div class="values-item">
+          <p>
+            <strong>Responsible Partnerships</strong>
+            <br />
+            We work with businesses, institutions and organisations that
+            contribute knowledge, experience and resources to European dialogue.
+            Financial support or partnership does not confer influence over
+            ESI's conclusions, recommendations or publications. Our principle is
+            simple: funding enables the conversation — it does not determine its
+            outcome.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="content-section split-copy">
-    <p class="section-number">03 / Areas of Focus</p>
+    <div class="split-copy-left">
+      <p class="section-number">04 / Areas of Focus</p>
+      <h2>
+        From analysis to action - for a stronger Central and Eastern Europe.
+      </h2>
+    </div>
     <div>
       <p>
         The European Strategy Institute concentrates on sectors and strategic
@@ -228,38 +285,15 @@ const cardGroups: Array<{
         Europe's future, with particular attention to the strategic interests
         and capabilities of Central and Eastern Europe.
       </p>
-      <ul>
-        <li>
-          <strong>Addressing Europe's Strategic Challenges</strong> —
-          ESI focuses on policy areas that will determine Europe's future competitiveness, security and prosperity. 
-        </li>
-        <li>
-          <strong>Competitiveness & Industrial Policy</strong> —
-          Supporting a stronger, more innovative and globally competitive European economy.
-        </li>
-        <li>
-          <strong>Energy, Industry &amp; Industrial Transformation</strong> —
-          Energy systems, energy-intensive industries, advanced manufacturing,
-          chemicals, construction and industrial competitiveness.
-        </li>
-        <li>
-          <strong>Defence, Security &amp; Strategic Resilience</strong> —
-          Defence industries, security policy, dual-use technologies and
-          Europe's resilience in an increasingly complex geopolitical
-          environment.
-        </li>
-        <li>
-          <strong>Critical Resources &amp; Supply Chains</strong> — Critical raw
-          materials, strategic value chains, resource security and the
-          foundations of Europe's industrial sovereignty.
-        </li>
-        <li>
-          <strong>Space, Nuclear &amp; Emerging Technologies</strong> — Space
-          and New Space industries, civil nuclear and SMR technologies, as well
-          as emerging technologies critical to Europe's future competitiveness
-          and strategic autonomy.
-        </li>
-      </ul>
+      <div class="sector-list">
+        {sectors.map((sector, index) => (
+          <a href="/projects#sectors">
+            <span class="index">0{index + 1}</span>
+            <strong>{sector.title}</strong>
+            <Arrow />
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
