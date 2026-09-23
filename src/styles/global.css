@@ -3303,6 +3303,9 @@ body {
   color: #625d74;
   font-size: 14px;
 }
+.tool-grid article:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
 .sectors-section {
   background: #f3f5f8;
 }
