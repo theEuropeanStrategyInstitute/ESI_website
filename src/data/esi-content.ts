@@ -230,6 +230,8 @@ export const council: Person[] = [
   person({
     name: "Elżbieta Bieńkowska",
     role: "Former European Commissioner for the Internal Market and Industry; former Minister of Regional Development",
+    photoSlug: "elzbieta_bienkowska",
+    bio: "Former European Commissioner and Deputy Prime Minister of Poland, with extensive experience in European policy, regional development, industry and public administration. A graduate of the Jagiellonian University, Poland’s National School of Public Administration (KSAP) and postgraduate studies at the SGH Warsaw School of Economics, she was also a scholarship recipient of the British Foreign and Commonwealth Office and the German Marshall Fund. From 2014 to 2019, Elżbieta Bieńkowska served as European Commissioner for Internal Market, Industry, Entrepreneurship and SMEs. Previously, she was Poland’s Deputy Prime Minister and Minister of Infrastructure and Development (2013–2014) and Minister of Regional Development (2007–2013), playing a key role in regional policy and the management of European funds. Her career in public administration spans several decades, including senior positions responsible for regional development and European funds in the Silesian Voivodeship. Currently, Bieńkowska serves as Chair of the Board of the Centre for European Policy Studies (CEPS) in Brussels, Senior Advisor at Rasmussen Global, Chair of the University Council of the University of Silesia, and a member of the Supervisory Board of Ukrainian Railways. Her position as Chair of the CEPS Board is also confirmed in CEPS's latest annual reporting."
   }),
   person({
     name: "Dominika Bettman",
@@ -252,6 +254,8 @@ export const council: Person[] = [
   person({
     name: "Prof. Piotr Wachowiak",
     role: "Rector of SGH Warsaw School of Economics; Chairman of KRUE",
+    photoSlug: "piotr_wachowiak",
+    bio: "Professor Piotr Wachowiak n- Ph.D., D.Sc. - Rector of the SGH Warsaw School of Economics  Deputy Chairman of the Committee of Organization and Management Sciences at the Polish Academy of Sciences (PAN), Chairman of the Conference of Rectors of Economic Universities and the Conference of Rectors of Warsaw Universities. Specializes in human resource management in organizations and corporate social responsibility. Author or co-author of publications on negotiations, conflict resolution, human resources management, intellectual capital measurement and knowledge management in enterprises."
   }),
   person({
     name: "Andrij Deszczyca",
