@@ -76,27 +76,33 @@ export const influenceTools = [
 export const sectors = [
   {
     title: "Addressing Europe's Strategic Challenges",
-    topics: "ESI focuses on policy areas that will determine Europe's future competitiveness, security and prosperity.",
+    topics:
+      "ESI focuses on policy areas that will determine Europe's future competitiveness, security and prosperity.",
   },
   {
     title: "Competitiveness & Industrial Policy",
-    topics: "Supporting a stronger, more innovative and globally competitive European economy.",
+    topics:
+      "Supporting a stronger, more innovative and globally competitive European economy.",
   },
   {
     title: "Energy, Industry & Industrial Transformation",
-    topics:"Energy systems, energy-intensive industries, advanced manufacturing, chemicals, construction and industrial competitiveness.",
+    topics:
+      "Energy systems, energy-intensive industries, advanced manufacturing, chemicals, construction and industrial competitiveness.",
   },
   {
     title: "Defence, Security & Strategic Resilience",
-    topics: "Defence industries, security policy, dual-use technologies and Europe's resilience in an increasingly complex geopolitical environment.",
+    topics:
+      "Defence industries, security policy, dual-use technologies and Europe's resilience in an increasingly complex geopolitical environment.",
   },
   {
     title: "Critical Resources & Supply Chains",
-    topics: "Critical raw materials, strategic value chains, resource security and the foundations of Europe's industrial sovereignty.",
+    topics:
+      "Critical raw materials, strategic value chains, resource security and the foundations of Europe's industrial sovereignty.",
   },
   {
     title: "Space, Nuclear & Emerging Technologies",
-    topics: "Space and New Space industries, civil nuclear and SMR technologies, as well as emerging technologies critical to Europe's future competitiveness and strategic autonomy.",
+    topics:
+      "Space and New Space industries, civil nuclear and SMR technologies, as well as emerging technologies critical to Europe's future competitiveness and strategic autonomy.",
   },
 ];
 
@@ -113,6 +119,76 @@ export const programmes = [
     body: "A forum examining the geopolitical, industrial and societal forces redefining Europe's place in the world.",
     note: "Detailed programme information to be confirmed.",
   },
+];
+
+export const memberBenefits = [
+  {
+    title: "Influence what matters",
+    description:
+      "Help shape the conversations and priorities that will define Europe's future.",
+    points: [
+      "Contribute to ESI's strategic agenda and policy discussions",
+      "Participate in thematic programmes and expert working groups",
+      "Share perspectives that inform decision-makers and stakeholders across Europe",
+    ],
+  },
+  {
+    title: "Expand your network",
+    description:
+      "Build relationships with leaders from business, academia, public institutions and civil society.",
+    points: [
+      "Access invitation-only roundtables and strategic dialogues",
+      "Connect with European and international stakeholders",
+      "Engage with ESI's network of experts and thought leaders",
+    ],
+  },
+  {
+    title: "Stay ahead of change",
+    description:
+      "Gain insight into developments that matter to your organisation and sector.",
+    points: [
+      "Receive strategic briefings on key European trends",
+      "Anticipate regulatory and policy developments",
+      "Access expert analysis and forward-looking perspectives",
+    ],
+  },
+  {
+    title: "Raise your profile",
+    description:
+      "Be recognised as part of a community contributing to Europe's future.",
+    points: [
+      "Visibility across ESI channels and publications",
+      "Opportunities to participate in flagship events and public discussions",
+      "Recognition as an active contributor to ESI initiatives",
+    ],
+  },
+  {
+    title: "Create impact",
+    description:
+      "Move beyond dialogue and help develop practical solutions to Europe's most pressing challenges.",
+    points: [
+      "Collaborate on research, policy and thought leadership initiatives",
+      "Contribute to cross-sector partnerships and coalitions",
+      "Support ideas that strengthen Europe's long-term prosperity and security",
+    ],
+  },
+];
+
+export const publicationCategories = [
+  "Strategic Reports",
+  "Policy Briefs",
+  "Expert Commentary",
+  "Research Papers",
+  "Event Insights",
+];
+
+export const eventFormats = [
+  "Executive Roundtables",
+  "Policy Dialogues",
+  "Strategic Forums",
+  "Closed-Door Expert Discussions",
+  "Purences",
+  "Bilateral Stakeholder Meetings",
 ];
 
 export const founders: Person[] = [
@@ -137,6 +213,16 @@ export const executiveTeam: Person[] = [
     role: "Communication & Program Director",
     email: "daria.smolarek@esi-eu.com",
     photoSlug: "daria_smolarek",
+  }),
+  person({
+    name: "TBD",
+    role: "Executive team",
+    email: "TBD@esi-eu.com",
+  }),
+  person({
+    name: "TBD",
+    role: "Executive team",
+    email: "TBD@esi-eu.com",
   }),
 ];
 

@@ -1,6 +1,12 @@
 ---
 import InnerLayout from "../layouts/InnerLayout.astro";
-import { influenceTools, sectors, programmes } from "../data/esi-content";
+import {
+  influenceTools,
+  sectors,
+  publicationCategories,
+  eventFormats,
+} from "../data/esi-content";
+// import programmes from "../data/esi-programmes";
 
 const pageTitle = "Programmes & Insights | The European Strategy Institute";
 const description =
@@ -8,7 +14,7 @@ const description =
 ---
 
 <InnerLayout
-  eyebrow="Programmes & insights"
+  eyebrow="PUBLICATIONS & EVENTS"
   title="Strategic influence. <br /> <em>Grounded in local business.</em>"
   intro="ESI connects leaders from business, finance and public institutions across Central and Eastern Europe with policymakers in Brussels."
   pageTitle={pageTitle}
@@ -60,7 +66,7 @@ const description =
     </div>
   </section>
 
-  <section class="content-section programmes-section">
+  <!-- <section class="content-section programmes-section">
     <div class="content-heading">
       <p class="section-number">03 / Flagship programmes</p>
       <h2>Two forums for Europe's defining questions.</h2>
@@ -74,6 +80,51 @@ const description =
           <small>{programme.note}</small>
         </article>
       ))}
+    </div>
+  </section> -->
+
+  <section class="content-section pub-events-section">
+    <div class="content-heading">
+      <p class="section-number">03 / Publications & Events</p>
+      <h2>Where ideas meet dialogue.</h2>
+    </div>
+    <div class="pub-events-grid">
+      <article class="pub-events-block">
+        <h3>Publications</h3>
+        <p class="pub-events-tagline">Ideas That Inform Decisions</p>
+        <p>
+          ESI publishes strategic reports, policy briefs, expert commentaries
+          and analytical papers addressing the key issues shaping Europe's
+          future. Our publications are designed to support decision-makers,
+          business leaders and institutions with rigorous analysis and
+          actionable insights.
+        </p>
+        <ul class="plain-list">
+          {publicationCategories.map((category) => (
+            <li>{category}</li>
+          ))}
+        </ul>
+      </article>
+      <article class="pub-events-block">
+        <h3>Events</h3>
+        <p class="pub-events-tagline">
+          Where Europe's Conversations Take Place
+        </p>
+        <p>
+          ESI convenes policymakers, business leaders, academics and experts
+          through a programme of strategic dialogues and high-level events. Our
+          formats include:
+        </p>
+        <ul class="plain-list">
+          {eventFormats.map((format) => (
+            <li>{format}</li>
+          ))}
+        </ul>
+        <p class="pub-events-note">
+          By bringing together diverse perspectives, ESI creates the conditions
+          for meaningful debate and collaborative solutions.
+        </p>
+      </article>
     </div>
   </section>
 

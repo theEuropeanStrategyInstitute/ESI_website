@@ -63,7 +63,7 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
         <a href="/about-us">About us</a>
         <a href="/mission">Mission</a>
         <a href="/projects">Our work</a>
-        <a href="/our-experts">Our Experts</a>
+        <a href="/council-experts">Council & Experts</a>
         <a href="/partnership">Partner with us</a>
         <a href="/member" className="nav-contact">
           Become a member <Arrow />
@@ -77,7 +77,7 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
           <a href="/about-us">About us</a>
           <a href="/mission">Mission</a>
           <a href="/projects">Our work</a>
-          <a href="/our-experts">Our Experts</a>
+          <a href="/council-experts">Council & Experts</a>
           <a href="/partnership">Partner with us</a>
           <a href="/member" className="nav-contact">
             Become a member <Arrow />

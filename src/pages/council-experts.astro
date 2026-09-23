@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import InnerLayout from "../layouts/InnerLayout.astro";
-import {council, experts, type Person } from "../data/esi-content";
+import { council, experts, type Person } from "../data/esi-content";
 
-const pageTitle = "Our Experts | The European Strategy Institute";
+const pageTitle = "Council & Experts | The European Strategy Institute";
 const description =
   "The Executive team, strategic council, and experts behind ESI's work in Brussels.";
 
@@ -11,26 +11,58 @@ const cardGroups: Array<{
   id: string;
   heading: string;
   intro: string;
+  summary?: {
+    lead: string;
+    points: string[];
+    closing: string;
+  };
   people: Person[];
 }> = [
   {
     id: "council",
     heading: "Strategic Council",
     intro:
-      "an independent advisory body bringing together distinguished leaders from European institutions, business, academia, international organisations and public policy. Its purpose is to contribute strategic insight, support high-level dialogue and provide guidance on the Institute’s long-term priorities.",
+      "The Strategic Council is an independent advisory body bringing together distinguished leaders from European institutions, business, academia, international organisations and public policy. Its purpose is to contribute strategic insight, support high-level dialogue and provide guidance on the Institute's long-term priorities.",
+    summary: {
+      lead: "Collectively, Council members bring:",
+      points: [
+        "Experience at the highest levels of public and private leadership",
+        "Deep understanding of European and international affairs",
+        "Institutional and policy expertise",
+        "Business and economic leadership",
+        "Geopolitical and strategic insight",
+        "Extensive cross-sector and international networks",
+      ],
+      closing:
+        "Together, these perspectives provide ESI with a unique source of strategic insight, helping the Institute look beyond immediate policy developments and anticipate the forces shaping Europe's long-term economic and geopolitical position.",
+    },
     people: council,
   },
   {
     id: "experts",
-    heading: "Experts",
-    intro: "Specialists supporting ESI's programmes and analysis.",
+    heading: "Expert Network",
+    intro:
+      "ESI works with a diverse network of experts, researchers, practitioners and former policymakers who bring first-hand experience from European institutions, industry, academia and public service.",
+    summary: {
+      lead: "Our expert community combines:",
+      points: [
+        "Public policy expertise",
+        "Regulatory knowledge",
+        "Industry experience",
+        "Strategic communications",
+        "International affairs",
+        "Economic and geopolitical analysis",
+      ],
+      closing:
+        "This interdisciplinary approach allows ESI to produce practical insights and recommendations that connect strategy with implementation.",
+    },
     people: experts,
   },
 ];
 ---
 
 <InnerLayout
-  eyebrow="Our Experts"
+  eyebrow="Council & Experts"
   title="The people behind<br /><em>ESI's strategy.</em>"
   intro="Executive team, strategic council, and experts bringing experience from business, European institutions, academia and technology."
   pageTitle={pageTitle}
@@ -98,6 +130,17 @@ const cardGroups: Array<{
         <p class="eyebrow">{group.heading}</p>
         <p>{group.intro}</p>
       </div>
+      {group.summary && (
+        <div class="expert-summary">
+          <p class="expert-summary-lead">{group.summary.lead}</p>
+          <ul class="expert-summary-list">
+            {group.summary.points.map((point) => (
+              <li>{point}</li>
+            ))}
+          </ul>
+          <p class="expert-summary-closing">{group.summary.closing}</p>
+        </div>
+      )}
       <div class="expert-grid">
         {group.people.map((person, index) => {
           const dialogId = `${group.id}-dialog-${index}`;

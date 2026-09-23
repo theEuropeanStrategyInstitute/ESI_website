@@ -2,9 +2,8 @@
 import InnerLayout from "../layouts/InnerLayout.astro";
 import Eyebrow from "../components/helpers/Eyebrow.astro";
 // import { strategicObjectives } from "../data/esi-content";
-import { Image } from "astro:assets";
-import europeMap from "../assets/europe-cee.svg?raw";
-import missionPhoto from "../assets/frederic-koberl-x_0hW-KaCgI-unsplash.jpg";
+// import { Image } from "astro:assets";
+//import missionPhoto from "../assets/frederic-koberl-x_0hW-KaCgI-unsplash.jpg";
 
 const pageTitle = "Mission | The European Strategy Institute";
 const description =
@@ -13,7 +12,7 @@ const description =
 const strategicGoals: string[] = [
   "Giving Central & Eastern Europe's business community a permanent and professional voice in Brussels",
   "Transforming CEE companies from regulation-takers into regulation co-authors",
-  "Providing a trusted platform through which businesses from CEE can contribute to European policy discussions and forming of the EU regulations in strategic sectors.",
+  "Providing a trusted platform through which businesses from CEE can contribute to European policy discussions and the shaping of EU regulations in strategic sectors.",
 ];
 
 const representation = [
@@ -25,14 +24,98 @@ const representation = [
 ];
 ---
 
+<!-- We need a stronger, more competitive and resilient Europe where every region contributes to shaping the continent’s future, and where CEE are recognised as a driver of innovation, economic growth and strategic leadership. -->
 <InnerLayout
   eyebrow="Our mission"
-  title=""
-  intro="We need a stronger, more competitive and resilient Europe where every region contributes to shaping the continent’s future, and where CEE are recognised as a driver of innovation, economic growth and strategic leadership."
+  title="European in ambition. Brussels in presence. Central and Eastern European in perspective."
+  intro=""
   pageTitle={pageTitle}
   description={description}
 >
-  <section class="content-section reveal-section">
+  <section class="content-section mission-statement">
+    <div class="mission-statement-list">
+      <div class="mission-statement-row">
+        <p>
+          Positioned at the centre of EU decision-making, the Institute will
+          serve as a platform where policymakers, business leaders and experts
+          come together.
+          <br />
+          Together, they shape ideas that matter for the region's
+          competitiveness, security and long-term prosperity.
+        </p>
+      </div>
+      <div class="mission-statement-row">
+        <p>
+          Our ambition is not only to discuss policy, but to ensure that
+          European policy responds to real economic needs.
+          <br />
+          This includes companies, sectors and regions that currently have none
+          or very limited access to institutional support and decision-making
+          processes.
+        </p>
+      </div>
+      <div class="mission-statement-row">
+        <p>
+          To strengthen the quality of European decision-making by connecting
+          expertise, business and public institutions. This ensures that the
+          experience and perspective of Central and Eastern Europe contribute
+          meaningfully to Europe's future.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section vision-section">
+    <div class="vision-heading">
+      <Eyebrow>Our vision</Eyebrow>
+      <p class="vision-intro">
+        We need a stronger, more competitive and resilient Europe where every
+        region contributes to shaping the continent's future, and where CEE is
+        recognised as a driver of innovation, economic growth and strategic
+        leadership.
+      </p>
+    </div>
+    <div class="vision-belief">
+      <p class="vision-belief-label">We believe that:</p>
+      <div class="vision-belief-list">
+        <div class="vision-belief-row">
+          <span class="vision-bullet" aria-hidden="true"></span>
+          <p>Better policy begins with informed dialogue.</p>
+        </div>
+        <div class="vision-belief-row">
+          <span class="vision-bullet" aria-hidden="true"></span>
+          <p>Economic competitiveness and security are inseparable.</p>
+        </div>
+        <div class="vision-belief-row">
+          <span class="vision-bullet" aria-hidden="true"></span>
+          <p>European growth requires strong industrial foundations.</p>
+        </div>
+        <div class="vision-belief-row">
+          <span class="vision-bullet" aria-hidden="true"></span>
+          <p>
+            Strategic resilience depends on cooperation between institutions,
+            business and society.
+          </p>
+        </div>
+        <div class="vision-belief-row">
+          <span class="vision-bullet" aria-hidden="true"></span>
+          <p>
+            Central and Eastern Europe brings valuable experience, expertise and
+            perspectives that enrich European decision-making.
+          </p>
+        </div>
+        <div class="vision-belief-row">
+          <span class="vision-bullet" aria-hidden="true"></span>
+          <p>
+            Effective policy is built through collaboration, trust and
+            evidence-based analysis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="content-section reveal-section">
     <div class="reveal-track">
       <div class="reveal-sticky">
         <div class="reveal-text reveal-text-first">
@@ -57,18 +140,17 @@ const representation = [
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="content-section sector-preview objectives-preview-dark">
-    <div class="sector-heading">
+    <div class="sector-heading sector-heading--objectives">
       <Eyebrow>Strategic objectives</Eyebrow>
-      <h2>What ESI is built to achieve.</h2>
-      <div class="objective-map" set:html={europeMap} />
+      <h2>Objectives that define our work</h2>
     </div>
     <div class="objective-preview-list">
-      {strategicGoals.map((goal, index) => (
+      {strategicGoals.map((goal) => (
         <div class="objective-row">
-          <span class="index">0{index + 1}</span>
+          <span class="objective-bullet" aria-hidden="true"></span>
           <p>{goal}</p>
         </div>
       ))}
@@ -275,6 +357,88 @@ const representation = [
     line-height: 1.2;
     max-width: 850px;
     color: white;
+  }
+
+  :global(.website .sector-heading--objectives .eyebrow) {
+    font-size: 16px;
+    padding-bottom: 15px;
+  }
+  @media (max-width: 540px) {
+    :global(.website .sector-heading--objectives .eyebrow) {
+      font-size: 16px;
+    }
+  }
+
+  .mission-statement-list {
+    border-top: 1px solid #c5c1d2;
+  }
+  .mission-statement-row {
+    padding: clamp(28px, 4vw, 40px) 0;
+    border-bottom: 1px solid #c5c1d2;
+  }
+  .mission-statement-row p {
+    max-width: 700px;
+    font-size: clamp(16px, 1.1vw, 18px);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .vision-section {
+    display: grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    gap: clamp(50px, 8vw, 120px);
+  }
+  .vision-intro {
+    max-width: 480px;
+    margin-top: 20px;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2.6vw, 32px);
+    line-height: 1.35;
+  }
+  .vision-belief-label {
+    font-size: 15px;
+    font-weight: 500;
+    color: #696479;
+  }
+  .vision-belief-list {
+    margin-top: 20px;
+    border-top: 1px solid #c5c1d2;
+  }
+  @media (max-width: 900px) {
+    .vision-section {
+      grid-template-columns: 1fr;
+    }
+  }
+  .vision-belief-row {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 20px;
+    align-items: center;
+    min-height: 76px;
+    border-bottom: 1px solid #c5c1d2;
+  }
+  .vision-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--navy);
+  }
+  .vision-belief-row p {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .objective-preview-list .objective-row {
+    grid-template-columns: 20px 1fr;
+  }
+  .objective-bullet {
+    width: 8px;
+    height: 8px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: white;
   }
 
   .reveal-section {

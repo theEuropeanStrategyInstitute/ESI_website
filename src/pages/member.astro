@@ -1,7 +1,7 @@
 ---
 import InnerLayout from "../layouts/InnerLayout.astro";
 import { EnquiryForm } from "../components/EnquiryForm";
-import { strategicObjectives } from "../data/esi-content";
+import { memberBenefits } from "../data/esi-content";
 
 const pageTitle = "Membership | The European Strategy Institute";
 const description =
@@ -15,28 +15,67 @@ const description =
   pageTitle={pageTitle}
   description={description}
 >
-  <section class="content-section membership-case">
-    <div>
-      <p class="section-number">01 / Why ESI</p>
-      <h2>Let's co-create a better future for Europe.</h2>
-      <blockquote>
-        The question is not whether Europe will change. The question is who will
-        play a decisive role in shaping that change.
-      </blockquote>
+  <section class="content-section pub-events-section member-benefits-section">
+    <div class="content-heading">
+      <p class="section-number">01 / Why join</p>
+      <h2>Join a community shaping Europe's future.</h2>
+      <p class="member-benefits-intro">
+        Our members, alongside the Strategic Council, will help in shaping ESI's
+        programs, initiatives and policy dialogues, ensuring that the expertise,
+        innovation and business experience of CEE are reflected in Europe's most
+        important conversations. As a member, you become part of a trusted
+        platform where ideas, expertise and leadership translate into meaningful
+        impact.
+      </p>
     </div>
-    <ol class="objective-list compact">
-      {strategicObjectives.map((objective, index) => (
-        <li>
-          <span>{String(index + 1).padStart(2, "0")}</span>
-          <p>{objective}</p>
-        </li>
+    <div class="pub-events-grid member-benefits-grid">
+      {memberBenefits.map((benefit) => (
+        <article class="pub-events-block">
+          <h3>{benefit.title}</h3>
+          <p>{benefit.description}</p>
+          <ul class="plain-list">
+            {benefit.points.map((point) => (
+              <li>{point}</li>
+            ))}
+          </ul>
+        </article>
       ))}
-    </ol>
+    </div>
+    <p class="member-benefits-closing">
+      <strong>Become part of The European Strategy Institute.</strong> Together,
+      we build bridges between ideas and action, connect expertise with
+      decision-makers, and contribute to a stronger, more competitive Europe.
+      <br />
+      <em>Join ESI. Shape the future.</em>
+    </p>
+  </section>
+
+  <section class="content-section split-copy section-dark">
+    <p class="section-number">02 / Why ESI?</p>
+    <div>
+      <h2>The missing voice at the table</h2>
+      <p>
+        For more than two decades, Central and Eastern Europe has been one of
+        Europe's strongest engines of economic growth, innovation and industrial
+        development. Yet the region remains significantly under-represented in
+        Brussels, where European policies and regulations are shaped.
+        <br />
+        <br />
+        We provide a trusted platform where business, government, academia and
+        experts can engage in strategic dialogue, develop evidence-based
+        solutions and contribute to shaping Europe's future economic and
+        regulatory agenda.
+      </p>
+      <br />
+      <p>
+        <strong>ESI was established to help close this gap.</strong>
+      </p>
+    </div>
   </section>
 
   <section class="content-section form-section">
     <div class="form-intro">
-      <p class="section-number">02 / Expression of interest</p>
+      <p class="section-number">03 / Expression of interest</p>
       <h2>Start the membership conversation.</h2>
       <p>
         Share a few details about you and your organisation. The ESI team will
