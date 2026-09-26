@@ -3033,6 +3033,9 @@ body {
 .section-dark .expert-heading p:last-child {
   color: white;
 }
+.section-dark .council-label {
+  color: white;
+}
 .values-list {
   margin-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
