@@ -37,5 +37,7 @@ next-env.d.ts
 /.astro/
 /outputs/
 /work/
+/docs/
 
 *.tsbuildinfo
+

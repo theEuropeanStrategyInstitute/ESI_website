@@ -127,18 +127,20 @@ const cardGroups: Array<{
   {cardGroups.map((group) => (
     <section class="content-section expert-section" id={group.id}>
       <div class="expert-heading">
-        <p class="eyebrow">{group.heading}</p>
+        <p class="council-label">{group.heading}</p>
         <p>{group.intro}</p>
       </div>
       {group.summary && (
         <div class="expert-summary">
-          <p class="expert-summary-lead">{group.summary.lead}</p>
-          <ul class="expert-summary-list">
-            {group.summary.points.map((point) => (
-              <li>{point}</li>
-            ))}
-          </ul>
-          <p class="expert-summary-closing">{group.summary.closing}</p>
+          <div class="expert-summary-points">
+            <p class="expert-summary-lead eyebrow">{group.summary.lead}</p>
+            <ul class="expert-summary-list">
+              {group.summary.points.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+          </div>
+          <h3 class="expert-summary-closing">{group.summary.closing}</h3>
         </div>
       )}
       <div class="expert-grid">

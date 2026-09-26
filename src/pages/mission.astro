@@ -27,23 +27,23 @@ const representation = [
 <!-- We need a stronger, more competitive and resilient Europe where every region contributes to shaping the continent’s future, and where CEE are recognised as a driver of innovation, economic growth and strategic leadership. -->
 <InnerLayout
   eyebrow="Our mission"
-  title="European in ambition. Brussels in presence. Central and Eastern European in perspective."
+  title="European in ambition. <br /> Brussels in presence. <br /> Central and Eastern European in perspective."
   intro=""
   pageTitle={pageTitle}
   description={description}
 >
   <section class="content-section mission-statement">
+    <div>
+      <p class="mission-statement-lead">
+        Positioned at the centre of EU decision-making, the Institute will serve
+        as a platform where policymakers, business leaders and experts come
+        together.
+        <br />
+        Together, they shape ideas that matter for the region's competitiveness,
+        security and long-term prosperity.
+      </p>
+    </div>
     <div class="mission-statement-list">
-      <div class="mission-statement-row">
-        <p>
-          Positioned at the centre of EU decision-making, the Institute will
-          serve as a platform where policymakers, business leaders and experts
-          come together.
-          <br />
-          Together, they shape ideas that matter for the region's
-          competitiveness, security and long-term prosperity.
-        </p>
-      </div>
       <div class="mission-statement-row">
         <p>
           Our ambition is not only to discuss policy, but to ensure that
@@ -369,6 +369,11 @@ const representation = [
     }
   }
 
+  .mission-statement {
+    display: grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    gap: clamp(50px, 8vw, 120px);
+  }
   .mission-statement-list {
     border-top: 1px solid #c5c1d2;
   }
@@ -381,6 +386,11 @@ const representation = [
     font-size: clamp(16px, 1.1vw, 18px);
     font-weight: 400;
     line-height: 1.6;
+  }
+  @media (max-width: 900px) {
+    .mission-statement {
+      grid-template-columns: 1fr;
+    }
   }
 
   .vision-section {

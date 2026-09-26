@@ -9,9 +9,21 @@ interface Props {
   intro: string;
   pageTitle?: string;
   description?: string;
+  ctaLead?: string;
+  ctaText?: string;
+  ctaHref?: string;
 }
 
-const { eyebrow, title, intro, pageTitle, description } = Astro.props;
+const {
+  eyebrow,
+  title,
+  intro,
+  pageTitle,
+  description,
+  ctaLead,
+  ctaText,
+  ctaHref,
+} = Astro.props;
 
 const finalPageTitle =
   pageTitle ||
@@ -30,6 +42,14 @@ const finalDescription = description || intro;
         <p class="eyebrow">{eyebrow}</p>
         <h1 set:html={title} />
         <p class="page-intro">{intro}</p>
+        {ctaText && ctaHref && (
+          <div class="page-hero-cta-row">
+            {ctaLead && <p class="page-hero-cta-lead">{ctaLead}</p>}
+            <a class="cta page-hero-cta" href={ctaHref}>
+              {ctaText} <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        )}
       </header>
       <slot />
     </main>

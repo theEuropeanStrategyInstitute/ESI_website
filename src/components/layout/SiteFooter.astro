@@ -18,17 +18,21 @@ const links: [string, string][] = [
 ---
 
 <footer class="global-footer">
-  <div class="footer-lead">
+  <div class="footer-top">
     <Image
       class="footer-logo"
       src={ESI_Logo_fin_white_v3}
       alt="The European Strategy Institute"
     />
-    <p>The European Strategy Institute ASBL</p>
-    <p>
-      An independent Brussels-based think tank connecting Central and Eastern
-      European business with European policymaking.
-    </p>
+    <div class="footer-intro">
+      <p>The European Strategy Institute ASBL</p>
+      <p>
+        An independent Brussels-based think tank connecting Central and Eastern
+        European business with European policymaking.
+      </p>
+    </div>
+  </div>
+  <div class="footer-lead">
     <dl class="footer-details">
       <div>
         <dt>Email</dt>
@@ -37,9 +41,11 @@ const links: [string, string][] = [
         </dd>
       </div>
       <div>
-        <dt>
-          numer przedsiębiorstwa/KBO (po rejestracji) adres siedziby w Belgii
-        </dt>
+        <dt>Numer przedsiębiorstwa/KBO (po rejestracji)</dt>
+        <dd>TBD</dd>
+      </div>
+      <div>
+        <dt>Adres siedziby w Belgii</dt>
         <dd>TBD</dd>
       </div>
       <div>
