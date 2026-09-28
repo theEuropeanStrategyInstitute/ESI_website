@@ -42,7 +42,6 @@ const description =
     <div class="tool-grid">
       {influenceTools.map((tool) => (
         <article>
-          <span>{tool.number}</span>
           <h3>{tool.title}</h3>
           <p>{tool.body}</p>
         </article>
@@ -83,48 +82,44 @@ const description =
     </div>
   </section> -->
 
-  <section class="content-section pub-events-section">
+  <section class="content-section publications-section section-dark">
     <div class="content-heading">
-      <p class="section-number">03 / Publications & Events</p>
-      <h2>Where ideas meet dialogue.</h2>
+      <p class="section-number">03 / Publications</p>
+      <h2>Ideas that inform decisions.</h2>
+      <p>
+        ESI publishes strategic reports, policy briefs, expert commentaries and
+        analytical papers addressing the key issues shaping Europe's future. Our
+        publications are designed to support decision-makers, business leaders
+        and institutions with rigorous analysis and actionable insights.
+      </p>
     </div>
-    <div class="pub-events-grid">
-      <article class="pub-events-block">
-        <h3>Publications</h3>
-        <p class="pub-events-tagline">Ideas That Inform Decisions</p>
-        <p>
-          ESI publishes strategic reports, policy briefs, expert commentaries
-          and analytical papers addressing the key issues shaping Europe's
-          future. Our publications are designed to support decision-makers,
-          business leaders and institutions with rigorous analysis and
-          actionable insights.
-        </p>
-        <ul class="plain-list">
-          {publicationCategories.map((category) => (
-            <li>{category}</li>
-          ))}
-        </ul>
-      </article>
-      <article class="pub-events-block">
-        <h3>Events</h3>
-        <p class="pub-events-tagline">
-          Where Europe's Conversations Take Place
-        </p>
-        <p>
-          ESI convenes policymakers, business leaders, academics and experts
-          through a programme of strategic dialogues and high-level events. Our
-          formats include:
-        </p>
-        <ul class="plain-list">
-          {eventFormats.map((format) => (
-            <li>{format}</li>
-          ))}
-        </ul>
-        <p class="pub-events-note">
-          By bringing together diverse perspectives, ESI creates the conditions
-          for meaningful debate and collaborative solutions.
-        </p>
-      </article>
+    <ul class="plain-list">
+      {publicationCategories.map((category) => (
+        <li>{category}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="content-section events-section">
+    <div class="content-heading">
+      <p class="section-number">04 / Events</p>
+      <h2>Where Europe's conversations take place.</h2>
+      <p>
+        ESI convenes policymakers, business leaders, academics and experts
+        through a programme of strategic dialogues and high-level events. Our
+        formats include:
+      </p>
+    </div>
+    <div>
+      <ul class="plain-list">
+        {eventFormats.map((format) => (
+          <li>{format}</li>
+        ))}
+      </ul>
+      <!-- <p class="events-note">
+        By bringing together diverse perspectives, ESI creates the conditions
+        for meaningful debate and collaborative solutions.
+      </p> -->
     </div>
   </section>
 

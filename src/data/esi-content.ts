@@ -187,7 +187,7 @@ export const eventFormats = [
   "Policy Dialogues",
   "Strategic Forums",
   "Closed-Door Expert Discussions",
-  "Purences",
+  "Public Conferences",
   "Bilateral Stakeholder Meetings",
 ];
 
@@ -207,6 +207,7 @@ export const executiveTeam: Person[] = [
     name: "Agnieszka Sitek-Kobosko",
     role: "Co-Founder & CEO",
     email: "agnieszka.sitek@esi-eu.com",
+    photoSlug: "agnieszka_sitek-kobosko",
   }),
   person({
     name: "Daria Smolarek",

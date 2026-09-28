@@ -186,19 +186,21 @@ const representation = [
   <section class="content-section evidence-section">
     <div class="evidence-heading">
       <p class="eyebrow">Brussels representation</p>
-      <h2>A visible imbalance.</h2>
       <p>
         Organisations reported as maintaining a Brussels presence in the working
         research supplied to ESI.
       </p>
     </div>
     <div class="evidence-split">
-      <h3 class="evidence-note">
-        If Central and Eastern Europe is to play a greater role in shaping
-        Europe's future, stronger and more sustained investment is needed in
-        organisations that build visibility, influence and strategic engagement
-        in Brussels, such as The European Strategy Institute.
-      </h3>
+      <div class="evidence-note-col">
+        <h2 class="evidence-imbalance">A visible imbalance.</h2>
+        <h3 class="evidence-note">
+          If Central and Eastern Europe is to play a greater role in shaping
+          Europe's future, stronger and more sustained investment is needed in
+          organisations that build visibility, influence and strategic
+          engagement in Brussels, such as The European Strategy Institute.
+        </h3>
+      </div>
       <div class="evidence-grid-col">
         <div class="evidence-grid">
           {representation.map(([value, label], index) => (
@@ -360,13 +362,14 @@ const representation = [
   }
 
   :global(.website .sector-heading--objectives .eyebrow) {
-    font-size: 16px;
+    font-family: var(--serif);
+    font-size: clamp(30px, 3vw, 44px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    color: inherit;
     padding-bottom: 15px;
-  }
-  @media (max-width: 540px) {
-    :global(.website .sector-heading--objectives .eyebrow) {
-      font-size: 16px;
-    }
   }
 
   .mission-statement {
@@ -438,6 +441,7 @@ const representation = [
     font-family: var(--serif);
     font-size: 24px;
     font-weight: 500;
+    line-height: normal;
   }
 
   .objective-preview-list .objective-row {
