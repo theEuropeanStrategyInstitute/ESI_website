@@ -123,54 +123,52 @@ export const programmes = [
 
 export const memberBenefits = [
   {
-    title: "Influence what matters",
-    description:
-      "Help shape the conversations and priorities that will define Europe's future.",
+    number: "01",
+    eyebrow: "Engage",
+    title: "Stay informed. Be connected.",
     points: [
-      "Contribute to ESI's strategic agenda and policy discussions",
-      "Participate in thematic programmes and expert working groups",
-      "Share perspectives that inform decision-makers and stakeholders across Europe",
+      "Access to high-quality insights and analysis",
+      "Invitations to public events and briefings",
+      "Join a growing community of forward-looking businesses",
+      "Stay up to date on key EU policy developments",
     ],
+    stage: "Intelligence",
   },
   {
-    title: "Expand your network",
-    description:
-      "Build relationships with leaders from business, academia, public institutions and civil society.",
+    number: "02",
+    eyebrow: "Participate",
+    title: "Contribute. Share perspectives.",
     points: [
-      "Access invitation-only roundtables and strategic dialogues",
-      "Connect with European and international stakeholders",
-      "Engage with ESI's network of experts and thought leaders",
+      "Take part in sectoral discussions and working groups",
+      "Access tailored briefings and closed-door meetings",
+      "Share your expertise and business perspective",
+      "Build valuable connections with policymakers and peers",
     ],
+    stage: "Dialogue",
   },
   {
-    title: "Stay ahead of change",
-    description:
-      "Gain insight into developments that matter to your organisation and sector.",
+    number: "03",
+    eyebrow: "Shape",
+    title: "Co-create solutions. Drive change.",
     points: [
-      "Receive strategic briefings on key European trends",
-      "Anticipate regulatory and policy developments",
-      "Access expert analysis and forward-looking perspectives",
+      "Contribute to policy positions and recommendations",
+      "Work with ESI experts and peers on key regulatory topics",
+      "Help shape cross-border industry coalitions",
+      "Increase your visibility in the European policy debate",
     ],
+    stage: "Co-creation",
   },
   {
-    title: "Raise your profile",
-    description:
-      "Be recognised as part of a community contributing to Europe's future.",
+    number: "04",
+    eyebrow: "Lead",
+    title: "Set the agenda. Create lasting impact.",
     points: [
-      "Visibility across ESI channels and publications",
-      "Opportunities to participate in flagship events and public discussions",
-      "Recognition as an active contributor to ESI initiatives",
+      "Play a leading role in ESI's strategic priorities",
+      "Co-initiate major projects and policy initiatives",
+      "Engage directly with European institutions at the highest level",
+      "Position your organisation as a key partner in shaping a stronger, more competitive Europe.",
     ],
-  },
-  {
-    title: "Create impact",
-    description:
-      "Move beyond dialogue and help develop practical solutions to Europe's most pressing challenges.",
-    points: [
-      "Collaborate on research, policy and thought leadership initiatives",
-      "Contribute to cross-sector partnerships and coalitions",
-      "Support ideas that strengthen Europe's long-term prosperity and security",
-    ],
+    stage: "Strategic leadership",
   },
 ];
 
@@ -232,7 +230,7 @@ export const council: Person[] = [
     name: "Elżbieta Bieńkowska",
     role: "Former European Commissioner for the Internal Market and Industry; former Minister of Regional Development",
     photoSlug: "elzbieta_bienkowska",
-    bio: "Former European Commissioner and Deputy Prime Minister of Poland, with extensive experience in European policy, regional development, industry and public administration. A graduate of the Jagiellonian University, Poland’s National School of Public Administration (KSAP) and postgraduate studies at the SGH Warsaw School of Economics, she was also a scholarship recipient of the British Foreign and Commonwealth Office and the German Marshall Fund. From 2014 to 2019, Elżbieta Bieńkowska served as European Commissioner for Internal Market, Industry, Entrepreneurship and SMEs. Previously, she was Poland’s Deputy Prime Minister and Minister of Infrastructure and Development (2013–2014) and Minister of Regional Development (2007–2013), playing a key role in regional policy and the management of European funds. Her career in public administration spans several decades, including senior positions responsible for regional development and European funds in the Silesian Voivodeship. Currently, Bieńkowska serves as Chair of the Board of the Centre for European Policy Studies (CEPS) in Brussels, Senior Advisor at Rasmussen Global, Chair of the University Council of the University of Silesia, and a member of the Supervisory Board of Ukrainian Railways. Her position as Chair of the CEPS Board is also confirmed in CEPS's latest annual reporting."
+    bio: "Former European Commissioner and Deputy Prime Minister of Poland, with extensive experience in European policy, regional development, industry and public administration. A graduate of the Jagiellonian University, Poland’s National School of Public Administration (KSAP) and postgraduate studies at the SGH Warsaw School of Economics, she was also a scholarship recipient of the British Foreign and Commonwealth Office and the German Marshall Fund. From 2014 to 2019, Elżbieta Bieńkowska served as European Commissioner for Internal Market, Industry, Entrepreneurship and SMEs. Previously, she was Poland’s Deputy Prime Minister and Minister of Infrastructure and Development (2013–2014) and Minister of Regional Development (2007–2013), playing a key role in regional policy and the management of European funds. Her career in public administration spans several decades, including senior positions responsible for regional development and European funds in the Silesian Voivodeship. Currently, Bieńkowska serves as Chair of the Board of the Centre for European Policy Studies (CEPS) in Brussels, Senior Advisor at Rasmussen Global, Chair of the University Council of the University of Silesia, and a member of the Supervisory Board of Ukrainian Railways. Her position as Chair of the CEPS Board is also confirmed in CEPS's latest annual reporting.",
   }),
   person({
     name: "Dominika Bettman",
@@ -256,7 +254,7 @@ export const council: Person[] = [
     name: "Prof. Piotr Wachowiak",
     role: "Rector of SGH Warsaw School of Economics; Chairman of KRUE",
     photoSlug: "piotr_wachowiak",
-    bio: "Professor Piotr Wachowiak n- Ph.D., D.Sc. - Rector of the SGH Warsaw School of Economics  Deputy Chairman of the Committee of Organization and Management Sciences at the Polish Academy of Sciences (PAN), Chairman of the Conference of Rectors of Economic Universities and the Conference of Rectors of Warsaw Universities. Specializes in human resource management in organizations and corporate social responsibility. Author or co-author of publications on negotiations, conflict resolution, human resources management, intellectual capital measurement and knowledge management in enterprises."
+    bio: "Professor Piotr Wachowiak n- Ph.D., D.Sc. - Rector of the SGH Warsaw School of Economics  Deputy Chairman of the Committee of Organization and Management Sciences at the Polish Academy of Sciences (PAN), Chairman of the Conference of Rectors of Economic Universities and the Conference of Rectors of Warsaw Universities. Specializes in human resource management in organizations and corporate social responsibility. Author or co-author of publications on negotiations, conflict resolution, human resources management, intellectual capital measurement and knowledge management in enterprises.",
   }),
   person({
     name: "Andrij Deszczyca",

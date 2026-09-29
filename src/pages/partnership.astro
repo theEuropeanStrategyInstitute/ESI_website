@@ -1,6 +1,7 @@
 ---
 import InnerLayout from "../layouts/InnerLayout.astro";
 import { EnquiryForm } from "../components/EnquiryForm";
+import partnershipHero from "../assets/partnership_hero.png";
 
 const pageTitle = "Partnerships | The European Strategy Institute";
 const description =
@@ -10,12 +11,13 @@ const description =
 <InnerLayout
   eyebrow="Partnerships"
   title="Building Partnerships for European Impact"
-  intro="ESI works with companies, institutions, universities, associations, foundations and public-sector organisations that share a commitment to strengthening Europe's future."
+  intro="ESI works with companies, institutions, universities, associations, foundations and public-sector organisations that share <br />a commitment to strengthening Europe's future."
   pageTitle={pageTitle}
   description={description}
   ctaLead="Want to be part of the ESI community?"
   ctaText="Become a Member"
   ctaHref="/member"
+  heroImage={partnershipHero}
 >
   <section
     class="content-section partnership-principles"

@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import SiteFooter from "../components/layout/SiteFooter.astro";
 import { SiteHeader } from "../components/layout/SiteHeader";
 import BaseLayout from "./BaseLayout.astro";
@@ -12,6 +13,7 @@ interface Props {
   ctaLead?: string;
   ctaText?: string;
   ctaHref?: string;
+  heroImage?: ImageMetadata;
 }
 
 const {
@@ -23,12 +25,13 @@ const {
   ctaLead,
   ctaText,
   ctaHref,
+  heroImage,
 } = Astro.props;
 
+const stripHtml = (value: string): string => value.replace(/<[^>]*>/g, "");
 const finalPageTitle =
-  pageTitle ||
-  `${title.replace(/<[^>]*>/g, "")} — The European Strategy Institute`;
-const finalDescription = description || intro;
+  pageTitle || `${stripHtml(title)} — The European Strategy Institute`;
+const finalDescription = stripHtml(description || intro);
 ---
 
 <BaseLayout title={finalPageTitle} description={finalDescription}>
@@ -38,10 +41,23 @@ const finalDescription = description || intro;
     </a>
     <SiteHeader solid client:load />
     <main id="main-content">
-      <header class="page-hero">
+      <header
+        class="page-hero"
+        class:list={{ "page-hero-with-image": heroImage }}
+      >
+        {heroImage && (
+          <div class="page-hero-bg" aria-hidden="true">
+            <Image
+              src={heroImage}
+              alt=""
+              widths={[800, 1600, 2400]}
+              sizes="100vw"
+            />
+          </div>
+        )}
         <p class="eyebrow">{eyebrow}</p>
         <h1 set:html={title} />
-        <p class="page-intro">{intro}</p>
+        <p class="page-intro" set:html={intro} />
         {ctaText && ctaHref && (
           <div class="page-hero-cta-row">
             {ctaLead && <p class="page-hero-cta-lead">{ctaLead}</p>}

@@ -1,6 +1,7 @@
 ---
 import InnerLayout from "../layouts/InnerLayout.astro";
 import Eyebrow from "../components/helpers/Eyebrow.astro";
+import missionHero from "../assets/mission_hero.png";
 // import { strategicObjectives } from "../data/esi-content";
 // import { Image } from "astro:assets";
 //import missionPhoto from "../assets/frederic-koberl-x_0hW-KaCgI-unsplash.jpg";
@@ -31,6 +32,7 @@ const representation = [
   intro=""
   pageTitle={pageTitle}
   description={description}
+  heroImage={missionHero}
 >
   <section class="content-section mission-statement">
     <div>
@@ -145,7 +147,7 @@ const representation = [
   <section class="content-section sector-preview objectives-preview-dark">
     <div class="sector-heading sector-heading--objectives">
       <Eyebrow>Strategic objectives</Eyebrow>
-      <h2>Objectives that define our work</h2>
+      <h2>The priorities that guide our mission</h2>
     </div>
     <div class="objective-preview-list">
       {strategicGoals.map((goal) => (
