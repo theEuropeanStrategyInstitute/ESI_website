@@ -211,7 +211,7 @@ export const executiveTeam: Person[] = [
   }),
   person({
     name: "Daria Smolarek",
-    role: "Communication & Program Director",
+    role: "Communication & Programme Director",
     email: "daria.smolarek@esi-eu.com",
     photoSlug: "daria_smolarek",
   }),

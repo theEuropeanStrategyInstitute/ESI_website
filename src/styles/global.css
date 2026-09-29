@@ -3052,6 +3052,9 @@ body {
 .content-section {
   padding: clamp(54px, 6vw, 89px) var(--space);
 }
+.partnership-principles .council-label {
+  padding-bottom: 50px;
+}
 .content-section + .content-section {
   border-top: 1px solid var(--line);
 }
