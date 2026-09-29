@@ -257,8 +257,10 @@ export const council: Person[] = [
     bio: "Professor Piotr Wachowiak n- Ph.D., D.Sc. - Rector of the SGH Warsaw School of Economics  Deputy Chairman of the Committee of Organization and Management Sciences at the Polish Academy of Sciences (PAN), Chairman of the Conference of Rectors of Economic Universities and the Conference of Rectors of Warsaw Universities. Specializes in human resource management in organizations and corporate social responsibility. Author or co-author of publications on negotiations, conflict resolution, human resources management, intellectual capital measurement and knowledge management in enterprises.",
   }),
   person({
-    name: "Andrij Deszczyca",
+    name: "Andrij Deshchytsia",
     role: "Former Acting Minister of Foreign Affairs of Ukraine; Ambassador of Ukraine to Poland, 2014–2022",
+    bio: "Born in Sokal, Ukraine, Andrii Deshchytsia holds an MA in History and a PhD in Political Science. He studied at Ivan Franko National University of Lviv and the University of Alberta in Canada. He speaks English, Polish and Russian. A career diplomat holding the rank of Ambassador Extraordinary and Plenipotentiary, Deshchytsia served as Minister for Foreign Affairs of Ukraine in 2014 and as Ambassador of Ukraine to Poland from 2014 to 2022. His previous roles include Special Representative of the OSCE Chairperson-in-Office for Conflict Resolution, Ambassador of Ukraine to Finland and Iceland, and Spokesperson for the Ministry of Foreign Affairs of Ukraine. Earlier in his career, he held diplomatic posts at Ukrainian embassies in Poland and Finland and served as Senior Coordinator of the Polish-American-Ukrainian Cooperation Initiative (PAUCI) in Kyiv. He currently serves as Honorary Consul of Iceland in Lviv and is the Founder and CEO of AAD Consult Ltd.",
+    photoSlug: "andrij_deszczyca",
   }),
   person({
     name: "Jacek Siewiera",
