@@ -2479,6 +2479,7 @@ body {
   color: var(--navy);
 }
 .sector-preview.objectives-preview-dark {
+  align-items: center;
   background: var(--navy);
   color: white;
 }
@@ -3285,8 +3286,11 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 58px;
+}
+.evidence-note-col {
+  padding-top: 28px;
 }
 .evidence-grid {
   display: grid;

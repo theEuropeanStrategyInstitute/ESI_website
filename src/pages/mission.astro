@@ -37,29 +37,33 @@ const representation = [
   <section class="content-section mission-statement">
     <div>
       <p class="mission-statement-lead">
-        Positioned at the centre of EU decision-making, the Institute will serve
-        as a platform where policymakers, business leaders and experts come
-        together.
-        <br />
-        Together, they shape ideas that matter for the region's competitiveness,
-        security and long-term prosperity.
+        Building CEE influence in the heart of Europe.
       </p>
     </div>
     <div class="mission-statement-list">
       <div class="mission-statement-row">
+        <span class="mission-statement-bullet" aria-hidden="true"></span>
         <p>
-          Our ambition is not only to discuss policy, but to ensure that
-          European policy responds to real economic needs.
-          <br />
-          This includes companies, sectors and regions that currently have none
-          or very limited access to institutional support and decision-making
-          processes.
+          Positioned at the centre of EU decision-making, the Institute serves
+          as a platform where policymakers, business leaders and experts come
+          together to shape ideas that matter for the region's competitiveness,
+          security and long-term prosperity.
         </p>
       </div>
       <div class="mission-statement-row">
+        <span class="mission-statement-bullet" aria-hidden="true"></span>
+        <p>
+          Our ambition is not only to discuss policy, but to ensure that
+          European policy responds to real economic needs - including those
+          companies, sectors and regions that currently have none or very
+          limited access to institutional support and decision-making processes.
+        </p>
+      </div>
+      <div class="mission-statement-row">
+        <span class="mission-statement-bullet" aria-hidden="true"></span>
         <p>
           To strengthen the quality of European decision-making by connecting
-          expertise, business and public institutions. This ensures that the
+          expertise, business and public institutions, while ensuring that the
           experience and perspective of Central and Eastern Europe contribute
           meaningfully to Europe's future.
         </p>
@@ -383,8 +387,19 @@ const representation = [
     border-top: 1px solid #c5c1d2;
   }
   .mission-statement-row {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 20px;
+    align-items: flex-start;
     padding: clamp(28px, 4vw, 40px) 0;
     border-bottom: 1px solid #c5c1d2;
+  }
+  .mission-statement-bullet {
+    width: 8px;
+    height: 8px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: var(--navy);
   }
   .mission-statement-row p {
     max-width: 700px;
