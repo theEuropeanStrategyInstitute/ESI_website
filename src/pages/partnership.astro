@@ -1,6 +1,7 @@
 ---
 import InnerLayout from "../layouts/InnerLayout.astro";
 import { EnquiryForm } from "../components/EnquiryForm";
+import { partnershipBenefits } from "../data/esi-content";
 import partnershipHero from "../assets/partnership_hero.png";
 
 const pageTitle = "Partnerships | The European Strategy Institute";
@@ -14,11 +15,37 @@ const description =
   intro="ESI works with companies, institutions, universities, associations, foundations and public-sector organisations that share <br />a commitment to strengthening Europe's future."
   pageTitle={pageTitle}
   description={description}
-  ctaLead="Want to be part of the ESI community?"
-  ctaText="Become a Member"
-  ctaHref="/member"
   heroImage={partnershipHero}
 >
+  <section class="content-section pub-events-section why-join-section partnership-benefits-section">
+    <div class="content-heading">
+      <p class="section-number">01 / How to partner</p>
+      <h2>Partnerships built around shared goals.</h2>
+      <p class="member-benefits-intro">
+        ESI partners with organisations that want to engage more deeply in the
+        issues shaping Europe's future. Together, we develop initiatives that
+        combine expertise, research, dialogue and cross-sector collaboration.
+      </p>
+    </div>
+    <h3 class="why-join-subheading">As an ESI Partner, you can:</h3>
+    <div class="pub-events-grid why-join-grid">
+      {partnershipBenefits.map((benefit) => (
+        <article class="pub-events-block why-join-card">
+          <div class="why-join-media">
+            <p class="why-join-number">{benefit.number}</p>
+            <h3>{benefit.title}</h3>
+          </div>
+          <p>{benefit.body}</p>
+        </article>
+      ))}
+    </div>
+    <div class="why-join-ribbon">
+      {partnershipBenefits.map((benefit) => (
+        <span class="why-join-stage">{benefit.stage}</span>
+      ))}
+    </div>
+  </section>
+
   <section
     class="content-section partnership-principles"
     aria-label="Our partnerships"
@@ -62,12 +89,86 @@ const description =
         You can also contact us directly at{" "}
         <a href="mailto:partnerships@esi-eu.com">partnerships@esi-eu.com</a>.
       </p>
+      <div class="form-intro-cta">
+        <p class="form-intro-cta-lead">Want to be part of the ESI community?</p>
+        <a class="cta form-intro-cta-button" href="/member">
+          Become a Member <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
     <EnquiryForm kind="partnership" client:load />
   </section>
 </InnerLayout>
 
 <style>
+  .partnership-benefits-section .why-join-card > p {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .partnership-benefits-section .pub-events-grid {
+    gap: 0;
+    background: none;
+    border-color: var(--line);
+  }
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2),
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4) {
+    background: #dfe9f2;
+  }
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-media,
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-media {
+    background: #dfe9f2;
+    border-bottom-color: rgba(15, 29, 64, 0.12);
+  }
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-media::after,
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-media::after {
+    display: none;
+  }
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-number,
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-number,
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-media
+    h3,
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-media
+    h3 {
+    color: var(--navy);
+  }
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    > p,
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    > p {
+    color: #51607a;
+  }
   .partnership-principles {
     background: var(--paper);
   }

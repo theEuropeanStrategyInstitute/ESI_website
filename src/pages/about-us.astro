@@ -33,7 +33,8 @@ const cardGroups: Array<{
   {
     id: "board",
     heading: "Executive Board",
-    intro: "Responsible for ESI's long-term strategy and governance, ensuring the Institute operates with independence and integrity.",
+    intro:
+      "Responsible for ESI's long-term strategy and governance, ensuring the Institute operates with independence and integrity.",
     people: board,
     dark: true,
   },
@@ -163,7 +164,7 @@ const cardGroups: Array<{
     </div>
     <div class="expert-founder-grid">
       {executiveTeam.map((person, index) => {
-        const dialogId = `founders-dialog-${index}`;
+        const dialogId = `executive-team-dialog-${index}`;
         return (
           <article class="expert-founder-card">
             <div class="expert-founder-info">

@@ -5,6 +5,20 @@ const peoplePhotos = import.meta.glob<{ default: ImageMetadata }>(
   { eager: true },
 );
 
+const partnerLogoFiles = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/logos/*.svg",
+  { eager: true },
+);
+
+/** Look up a partner mark by its exact filename in `src/assets/logos/`. */
+function partnerLogo(filename: string): ImageMetadata {
+  const match = Object.entries(partnerLogoFiles).find(([path]) =>
+    path.endsWith(`/${filename}`),
+  );
+  if (!match) throw new Error(`Missing partner logo: ${filename}`);
+  return match[1].default;
+}
+
 /** Look up a portrait by `firstname_surname` filename (no extension). */
 function personPhoto(slug: string): ImageMetadata | undefined {
   const match = Object.entries(peoplePhotos).find(([path]) => {
@@ -172,6 +186,33 @@ export const memberBenefits = [
   },
 ];
 
+export const partnershipBenefits = [
+  {
+    number: "01",
+    title: "Co-create programmes and special initiatives.",
+    body: "Develop dedicated projects around strategic issues relevant to your organisation, sector and Europe.",
+    stage: "Programme development",
+  },
+  {
+    number: "02",
+    title: "Partner on research and thought leadership.",
+    body: "Work with ESI experts and external specialists on reports, analysis, briefings and other knowledge-driven projects.",
+    stage: "Research & insights",
+  },
+  {
+    number: "03",
+    title: "Bring the right people together.",
+    body: "Co-create roundtables, expert discussions, conferences and other formats connecting business, academia, public institutions and European stakeholders.",
+    stage: "Dialogue & networking",
+  },
+  {
+    number: "04",
+    title: "Build visibility around shared priorities.",
+    body: "Be recognised as a partner of selected ESI programmes, events and publications, with visibility appropriate to the nature of the collaboration.",
+    stage: "Visibility & impact",
+  },
+];
+
 export const publicationCategories = [
   "Strategic Reports",
   "Policy Briefs",
@@ -206,12 +247,14 @@ export const executiveTeam: Person[] = [
     role: "Co-Founder & CEO",
     email: "agnieszka.sitek@esi-eu.com",
     photoSlug: "agnieszka_sitek-kobosko",
+    bio: "Founding President and CEO of The European Strategy Institute, an independent Brussels-based think tank dedicated to advancing strategic dialogue and developing forward-looking solutions for Europe's most pressing political, economic and societal challenges. Under her leadership, The European Strategy Institute brings together leaders from policy, business, academia and civil society to strengthen Europe's competitiveness, resilience and global influence. The Institute serves as a platform for expert analysis, cross-sector collaboration and high-level dialogue on the future of Europe. Agnieszka is a strategic communications and public affairs executive with more than 15 years of international experience spanning corporate communications, stakeholder engagement, reputation management and organisational transformation. Throughout her career, she has advised senior executives and leadership teams across Europe and Asia, helping organisations navigate change, build trust and communicate effectively in complex and rapidly evolving environments. Prior to establishing The European Strategy Institute, she held senior leadership roles within global organisations. At InPost Group, she led international brand communications and sponsorship integration across multiple European markets. At Citi, she served as Communications & Employee Engagement Manager and Chief of Staff for Global Consumer Technology, overseeing communication and engagement initiatives for a workforce of more than 5,000 professionals across EMEA and Asia. Earlier in her career, she held positions in marketing, corporate communications, retail development and brand strategy at Levi Strauss & Co., Momentum Worldwide, Brand Designers Planet, PepsiCo and Ogilvy, contributing to initiatives that strengthened organisational reputation, stakeholder engagement and business growth. Based in Brussels, at the heart of European decision-making, Agnieszka is committed to fostering trusted leadership, strategic foresight and meaningful dialogue that contributes to a stronger and more competitive Europe.",
   }),
   person({
     name: "Daria Smolarek",
     role: "Communication & Programme Director",
     email: "daria.smolarek@esi-eu.com",
     photoSlug: "daria_smolarek",
+    bio: "Communications and programme management professional with over 20 years of experience spanning media, public institutions, non-profit organisations and the creative sector. Prior to joining ESI, she worked at the Chancellery of the Sejm of the Republic of Poland, within the Office of the Marshal of the Sejm, where she was responsible for communications and public engagement activities for “Sejm Otwarty”, an initiative designed to strengthen connections between the Polish Parliament and citizens through social, cultural and educational programmes. She also developed and coordinated a range of projects aimed at increasing civic participation and public engagement. Earlier in her career, Daria spent more than twelve years at TVN, one of Poland's leading television broadcasters, contributing to a wide range of programmes and editorial projects. Her responsibilities included content development, production coordination and team management. She later joined Next Film, where she coordinated a team of project managers responsible for artist relations, communication strategies and budget oversight. Throughout her career, she has led multidisciplinary teams and delivered projects across the media, public and creative sectors, combining expertise in strategic communications, programme development and stakeholder engagement. At ESI, she leads the Institute's communications activities and supports the development and delivery of strategic programmes, partnerships and public engagement initiatives. She is currently pursuing a degree in Political Science with a specialisation in Communication and Public Relations at Vizja University in Warsaw.",
   }),
   person({
     name: "TBD",
@@ -286,10 +329,10 @@ export const council: Person[] = [
     photoSlug: "zygimantas_vaiciunas",
     bio: "An energy policy expert and former Lithuanian Minister of Energy, with more than 20 years of experience shaping national and European energy policy, advancing strategic energy infrastructure, and strengthening energy security. As Lithuania’s Minister of Energy across three governments, he led and contributed to key initiatives at the intersection of energy security, the energy transition, and European energy policy. He has also served as Acting Prime Minister, Acting Minister of Economy and Innovation, and Acting Minister of Environment. His career spans senior positions in the Lithuanian government, the Permanent Representation of Lithuania to the European Union, and the European Solar Manufacturing Council in Brussels, where he focused on European industrial policy for solar PV manufacturing. He has been closely involved in major strategic energy initiatives, including the synchronisation of the Baltic States’ electricity grids with Continental Europe, the development of renewable energy, and the deployment of battery energy storage systems. Žygimantas holds a Master’s degree in Political Science and European Studies and a Bachelor’s degree in Political Science from Vilnius University.",
   }),
-  person({
-    name: "Sameer Chauhan",
-    role: "Director of the United Nations International Computing Centre (UNICC), with over twenty years of experience across the public and private sectors, including senior roles at Deutsche Bank and Deloitte.",
-  }),
+  // person({
+  //   name: "Sameer Chauhan",
+  //   role: "Director of the United Nations International Computing Centre (UNICC), with over twenty years of experience across the public and private sectors, including senior roles at Deutsche Bank and Deloitte.",
+  // }),
 ];
 
 // Placeholder roster — replace with real names/roles/bios before launch.
@@ -330,4 +373,17 @@ export const board: Person[] = [
     name: "TBD",
     role: "Board member profile pending",
   }),
+];
+
+export type PartnerLogo = {
+  name: string;
+  logo: ImageMetadata;
+};
+
+export const partnerLogos: PartnerLogo[] = [
+  { name: "KGHM Polska Miedź", logo: partnerLogo("KGHM_Logo.svg") },
+  { name: "Veolia", logo: partnerLogo("Veolia_logo.svg") },
+  { name: "KGHM Polska Miedź", logo: partnerLogo("KGHM_Logo2.svg") },
+  { name: "Veolia", logo: partnerLogo("Veolia_logo2.svg") },
+  { name: "Veolia", logo: partnerLogo("Veolia_logo3.svg") },
 ];

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 type CouncilMember = {
   name: string;
   role: string;
+  bio?: string;
   photo?: {
     src: string;
     width: number;
@@ -10,14 +11,10 @@ type CouncilMember = {
   };
 };
 
-type QueuedMember = CouncilMember & { originalIndex: number };
-
 export function CouncilCarousel({ council }: { council: CouncilMember[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const pausedRef = useRef(false);
-  const [items, setItems] = useState<QueuedMember[]>(() =>
-    council.map((person, i) => ({ ...person, originalIndex: i })),
-  );
+  const [items, setItems] = useState<CouncilMember[]>(council);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -93,9 +90,6 @@ export function CouncilCarousel({ council }: { council: CouncilMember[] }) {
             tabIndex={0}
             key={person.name}
           >
-            <span className="index">
-              {String(person.originalIndex + 1).padStart(2, "0")}
-            </span>
             <div className="council-carousel-photo" aria-hidden="true">
               {person.photo && (
                 <img
@@ -113,6 +107,44 @@ export function CouncilCarousel({ council }: { council: CouncilMember[] }) {
                 <p>{person.role}</p>
               </div>
             </div>
+            <button
+              type="button"
+              className="expert-card-open"
+              aria-haspopup="dialog"
+              aria-label={`Read more about ${person.name}`}
+              onClick={(event) => {
+                event.currentTarget
+                  .closest("article")
+                  ?.querySelector<HTMLDialogElement>("dialog")
+                  ?.showModal();
+              }}
+            >
+              <span aria-hidden="true">+</span>
+            </button>
+            <dialog
+              className="expert-card-dialog"
+              onClick={(event) => {
+                if (event.target === event.currentTarget) {
+                  event.currentTarget.close();
+                }
+              }}
+            >
+              <button
+                type="button"
+                className="expert-card-close"
+                aria-label="Close"
+                onClick={(event) => {
+                  event.currentTarget.closest("dialog")?.close();
+                }}
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+              <h3>{person.name}</h3>
+              <p className="expert-card-role">{person.role}</p>
+              <p className="expert-card-bio">
+                {person.bio ?? "Bio coming soon."}
+              </p>
+            </dialog>
           </article>
         ))}
       </div>

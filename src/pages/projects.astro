@@ -1,12 +1,8 @@
 ---
 import InnerLayout from "../layouts/InnerLayout.astro";
-import {
-  influenceTools,
-  sectors,
-  publicationCategories,
-  eventFormats,
-} from "../data/esi-content";
+import { influenceTools, sectors } from "../data/esi-content";
 import publicationsEventsHero from "../assets/publicationsEvents_hero.png";
+import Arrow from "../components/helpers/Arrow.astro";
 // import programmes from "../data/esi-programmes";
 
 const pageTitle = "Programmes & Insights | The European Strategy Institute";
@@ -84,44 +80,53 @@ const description =
     </div>
   </section> -->
 
-  <section class="content-section publications-section section-dark">
-    <div class="content-heading">
-      <p class="section-number">03 / Publications</p>
-      <h2>What Europe needs to know.</h2>
-      <p>
+  <section class="content-section section-dark pe-split" id="publications">
+    <div class="pe-col pe-col-left pe-col-dark">
+      <span class="pe-watermark" aria-hidden="true">
+        03
+      </span>
+      <div class="pe-label">
+        <span class="pe-number">03</span>
+        <span class="pe-rule"></span>
+        <span class="pe-eyebrow">Publications</span>
+      </div>
+      <h2 class="pe-heading">What Europe needs to know.</h2>
+    </div>
+    <div class="pe-col pe-col-right pe-col-dark">
+      <p class="pe-copy">
         ESI publishes strategic reports, policy briefs, expert commentaries and
         analytical papers addressing the key issues shaping Europe's future. Our
         publications are designed to support decision-makers, business leaders
         and institutions with rigorous analysis and actionable insights.
       </p>
+      <a class="cta pe-cta" href="#">
+        Explore <Arrow />
+      </a>
     </div>
-    <ul class="plain-list">
-      {publicationCategories.map((category) => (
-        <li>{category}</li>
-      ))}
-    </ul>
   </section>
 
-  <section class="content-section events-section">
-    <div class="content-heading">
-      <p class="section-number">04 / Events</p>
-      <h2>Where Europe's conversations take place.</h2>
-      <p>
-        ESI convenes policymakers, business leaders, academics and experts
-        through a programme of strategic dialogues and high-level events. Our
-        formats include:
-      </p>
+  <section class="content-section pe-split" id="events">
+    <div class="pe-col pe-col-left pe-col-dark">
+      <span class="pe-watermark" aria-hidden="true">
+        04
+      </span>
+      <div class="pe-label">
+        <span class="pe-number">04</span>
+        <span class="pe-rule"></span>
+        <span class="pe-eyebrow">Events</span>
+      </div>
+      <h2 class="pe-heading">Where Europe's conversations take place.</h2>
     </div>
-    <div>
-      <ul class="plain-list">
-        {eventFormats.map((format) => (
-          <li>{format}</li>
-        ))}
-      </ul>
-      <!-- <p class="events-note">
-        By bringing together diverse perspectives, ESI creates the conditions
-        for meaningful debate and collaborative solutions.
-      </p> -->
+    <div class="pe-col pe-col-right pe-col-light">
+      <p class="pe-copy">
+        ESI brings together policymakers, business leaders, academics and
+        experts through executive roundtables, policy dialogues, strategic
+        forums, closed-door expert discussions, public conferences and bilateral
+        stakeholder meetings.
+      </p>
+      <a class="cta pe-cta" href="#">
+        Take a look <Arrow />
+      </a>
     </div>
   </section>
 

@@ -35,7 +35,7 @@ const representation = [
   heroImage={missionHero}
 >
   <section class="content-section mission-statement">
-    <div>
+    <div class="mission-statement-lead-wrap">
       <p class="mission-statement-lead">
         Building CEE influence in the heart of Europe.
       </p>
@@ -44,28 +44,38 @@ const representation = [
       <div class="mission-statement-row">
         <span class="mission-statement-bullet" aria-hidden="true"></span>
         <p>
-          Positioned at the centre of EU decision-making, the Institute serves
-          as a platform where policymakers, business leaders and experts come
-          together to shape ideas that matter for the region's competitiveness,
-          security and long-term prosperity.
+          Positioned at the centre of EU decision-making,{" "}
+          <strong>the Institute serves as a platform</strong> where
+          policymakers, business leaders and experts come together{" "}
+          <strong>
+            to shape ideas that matter for the region's competitiveness,
+            security and long-term prosperity.
+          </strong>
         </p>
       </div>
       <div class="mission-statement-row">
         <span class="mission-statement-bullet" aria-hidden="true"></span>
         <p>
-          Our ambition is not only to discuss policy, but to ensure that
-          European policy responds to real economic needs - including those
-          companies, sectors and regions that currently have none or very
-          limited access to institutional support and decision-making processes.
+          <strong>Our ambition</strong> is not only to discuss policy, but to
+          ensure that European policy responds to real economic needs -
+          including those
+          <strong>
+            companies, sectors and regions that currently have none or very
+            limited access to institutional support
+          </strong>{" "}
+          and decision-making processes.
         </p>
       </div>
       <div class="mission-statement-row">
         <span class="mission-statement-bullet" aria-hidden="true"></span>
         <p>
-          To strengthen the quality of European decision-making by connecting
-          expertise, business and public institutions, while ensuring that the
-          experience and perspective of Central and Eastern Europe contribute
-          meaningfully to Europe's future.
+          <strong>To strengthen the quality of European decision-making</strong>{" "}
+          by connecting expertise, business and public institutions, while
+          ensuring that{" "}
+          <strong>
+            the experience and perspective of Central and Eastern Europe
+            contribute meaningfully to Europe's future.
+          </strong>
         </p>
       </div>
     </div>
@@ -369,7 +379,7 @@ const representation = [
 
   :global(.website .sector-heading--objectives .eyebrow) {
     font-family: var(--serif);
-    font-size: clamp(30px, 3vw, 44px);
+    font-size: clamp(44px, 4.4vw, 60px);
     font-weight: 500;
     line-height: 1.05;
     letter-spacing: -0.02em;
@@ -378,10 +388,25 @@ const representation = [
     padding-bottom: 15px;
   }
 
+  .sector-heading--objectives h2 {
+    font-family: var(--serif);
+    font-size: 30px;
+  }
+
   .mission-statement {
     display: grid;
     grid-template-columns: 0.82fr 1.18fr;
     gap: clamp(50px, 8vw, 120px);
+  }
+  .mission-statement-lead-wrap {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .mission-statement-lead {
+    font-size: 60px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
   .mission-statement-list {
     border-top: 1px solid #c5c1d2;
@@ -455,10 +480,10 @@ const representation = [
     background: var(--navy);
   }
   .vision-belief-row p {
-    font-family: var(--serif);
-    font-size: 24px;
-    font-weight: 500;
-    line-height: normal;
+    font-family: var(--sans);
+    font-size: clamp(16px, 1.1vw, 18px);
+    font-weight: 400;
+    line-height: 1.4;
   }
 
   .objective-preview-list .objective-row {

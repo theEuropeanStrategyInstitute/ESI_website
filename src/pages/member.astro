@@ -15,9 +15,6 @@ const description =
   intro="Become part of a trusted network of business leaders, experts and decision-makers working to strengthen Central and Eastern Europe's voice in Europe's most important policy, economic and geopolitical discussions."
   pageTitle={pageTitle}
   description={description}
-  ctaLead="Looking for a one-off collaboration instead?"
-  ctaText="Partner with us"
-  ctaHref="/partnership"
   heroImage={membershipHero}
 >
   <section class="content-section pub-events-section member-benefits-section why-join-section">
@@ -52,9 +49,6 @@ const description =
         <span class="why-join-stage">{benefit.stage}</span>
       ))}
     </div>
-    <p class="why-join-cta">
-      Join ESI. Contribute. Connect. <br />Shape what comes next.
-    </p>
   </section>
 
   <section class="content-section split-copy section-dark">
@@ -69,15 +63,14 @@ const description =
       </p>
       <br />
       <p>
-        <strong>ESI was established to help close this gap.</strong>
-      </p>
-      <br />
-      <p>
         We provide a trusted platform where business, government, academia and
         experts can engage in strategic dialogue, develop evidence-based
         solutions and contribute to shaping Europe's future economic and
         regulatory agenda.
       </p>
+      <h3 class="why-join-cta">
+        Join ESI. Contribute. Connect. Shape what comes next.
+      </h3>
     </div>
   </section>
 
@@ -89,6 +82,14 @@ const description =
         Share a few details about you and your organisation. Our team will get
         in touch to discuss the next steps.
       </p>
+      <div class="form-intro-cta">
+        <p class="form-intro-cta-lead">
+          Looking for a one-off collaboration instead?
+        </p>
+        <a class="cta form-intro-cta-button" href="/partnership">
+          Partner with us <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
     <EnquiryForm kind="membership" client:load />
   </section>

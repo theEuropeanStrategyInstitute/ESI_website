@@ -1,0 +1,30 @@
+---
+import type { PartnerLogo } from "../data/esi-content";
+
+type Props = {
+  logos: PartnerLogo[];
+};
+
+const { logos } = Astro.props;
+// Doubled so a translateX(-50%) loop lands exactly on the next copy, with no seam.
+const track = [...logos, ...logos];
+---
+
+<div class="partner-logos" role="group" aria-label="Partner organisations">
+  <div class="partner-logos-track">
+    {track.map((partner, index) => {
+      const duplicate = index >= logos.length;
+      return (
+        <img
+          class="partner-logos-img"
+          src={partner.logo.src}
+          width={partner.logo.width}
+          height={partner.logo.height}
+          alt={duplicate ? "" : partner.name}
+          aria-hidden={duplicate ? "true" : undefined}
+          loading="lazy"
+        />
+      );
+    })}
+  </div>
+</div>

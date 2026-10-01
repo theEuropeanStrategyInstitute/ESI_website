@@ -7,11 +7,13 @@ import Eyebrow from "../components/helpers/Eyebrow.astro";
 import Arrow from "../components/helpers/Arrow.astro";
 import LinkButton from "../components/helpers/LinkButton.astro";
 import { CouncilCarousel } from "../components/CouncilCarousel";
+import PartnerLogos from "../components/PartnerLogos.astro";
 import {
   executiveTeam,
   council,
   influenceTools,
   sectors,
+  partnerLogos,
 } from "../data/esi-content";
 import bridgePhoto from "../assets/bridge.jpg";
 
@@ -266,7 +268,40 @@ const description =
           })}
         </div>
       </section>
+
+      <section class="section partner-strip" aria-labelledby="partners-heading">
+        <Eyebrow>Our partners</Eyebrow>
+        <h2 id="partners-heading" class="council-label">
+          Organisations shaping Europe's future alongside us.
+        </h2>
+        <PartnerLogos logos={partnerLogos} />
+      </section>
     </main>
     <SiteFooter />
   </div>
 </BaseLayout>
+
+<script>
+  document.addEventListener("click", (event) => {
+    const target = event.target as HTMLElement;
+
+    const opener = target.closest<HTMLElement>("[data-dialog-id]");
+    if (opener) {
+      const dialog = document.getElementById(opener.dataset.dialogId ?? "");
+      if (dialog instanceof HTMLDialogElement) dialog.showModal();
+      return;
+    }
+
+    const closer = target.closest<HTMLElement>("[data-close-dialog]");
+    if (closer) {
+      closer.closest("dialog")?.close();
+      return;
+    }
+
+    const dialog = target.closest("dialog");
+    if (dialog && event.target === dialog) {
+      // Click landed on the dialog's own padding area, i.e. the ::backdrop.
+      (dialog as HTMLDialogElement).close();
+    }
+  });
+</script>
