@@ -47,7 +47,7 @@ const description =
   </section>
 
   <section
-    class="content-section partnership-principles"
+    class="content-section partnership-principles section-dark"
     aria-label="Our partnerships"
   >
     <p class="council-label">Our partnerships are built on three principles</p>
@@ -55,15 +55,15 @@ const description =
       {[
         [
           "Independence",
-          "We maintain the highest standards of intellectual integrity and analytical independence.",
+          "We maintain the highest standards of intellectual integrity and analytical independence",
         ],
         [
           "Expertise",
-          "We connect partners with leading experts and strategic insights.",
+          "We connect partners with leading experts and strategic insights",
         ],
         [
           "Impact",
-          "We focus on creating tangible value through dialogue, engagement and informed decision-making.",
+          "We focus on creating tangible value through dialogue, engagement and informed decision-making",
         ],
       ].map(([title, body]) => (
         <article>
@@ -82,12 +82,12 @@ const description =
         You can also contact us directly at{" "}
         <a href="mailto:partnerships@esi-eu.com">partnerships@esi-eu.com</a>.
       </p>
-      <div class="form-intro-cta">
+      <!-- <div class="form-intro-cta">
         <p class="form-intro-cta-lead">Want to be part of the ESI community?</p>
         <a class="cta form-intro-cta-button" href="/member">
           Become a Member <span aria-hidden="true">→</span>
         </a>
-      </div>
+      </div> -->
     </div>
     <EnquiryForm kind="partnership" client:load />
   </section>
@@ -162,28 +162,25 @@ const description =
     > p {
     color: #51607a;
   }
-  .partnership-principles {
-    background: var(--paper);
-  }
   .partnership-principles :global(.eyebrow) {
     margin-bottom: clamp(28px, 4vw, 40px);
-    color: var(--muted-foreground);
+    color: #d8d4e8;
   }
   .partnership-principles .pillars article {
-    border-top-color: var(--line);
+    border-top-color: rgba(255, 255, 255, 0.2);
     transition:
       border-color 180ms ease,
       transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
   }
   .partnership-principles .pillars article:hover {
-    border-color: var(--navy);
+    border-color: white;
     transform: translateY(-3px);
   }
   .partnership-principles .pillars h3 {
-    color: var(--navy);
+    color: white;
   }
   .partnership-principles .pillars .index {
-    color: var(--muted-foreground);
+    color: #d8d4e8;
   }
   .partnership-tagline-section {
     display: flex;

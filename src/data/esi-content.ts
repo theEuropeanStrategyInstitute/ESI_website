@@ -180,7 +180,7 @@ export const memberBenefits = [
       "Play a leading role in ESI's strategic priorities",
       "Co-initiate major projects and policy initiatives",
       "Engage directly with European institutions at the highest level",
-      "Position your organisation as a key partner in shaping a stronger, more competitive Europe.",
+      "Position your organisation as a key partner in shaping a stronger, more competitive Europe",
     ],
     stage: "Strategic leadership",
   },

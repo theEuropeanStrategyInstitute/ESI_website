@@ -13,7 +13,7 @@ const description =
 const strategicGoals: string[] = [
   "Giving Central & Eastern Europe's business community a permanent and professional voice in Brussels",
   "Transforming CEE companies from regulation-takers into regulation co-authors",
-  "Providing a trusted platform through which businesses from CEE can contribute to European policy discussions and the shaping of EU regulations in strategic sectors.",
+  "Providing a trusted platform through which businesses from CEE can contribute to European policy discussions and the shaping of EU regulations in strategic sectors",
 ];
 
 const representation = [
@@ -35,6 +35,7 @@ const representation = [
   heroImage={missionHero}
 >
   <section class="content-section mission-statement">
+    <Eyebrow>Our mission</Eyebrow>
     <div class="mission-statement-lead-wrap">
       <p class="mission-statement-lead">
         Building CEE influence in the heart of Europe.
@@ -49,7 +50,7 @@ const representation = [
           policymakers, business leaders and experts come together{" "}
           <strong>
             to shape ideas that matter for the region's competitiveness,
-            security and long-term prosperity.
+            security and long-term prosperity
           </strong>
         </p>
       </div>
@@ -63,7 +64,7 @@ const representation = [
             companies, sectors and regions that currently have none or very
             limited access to institutional support
           </strong>{" "}
-          and decision-making processes.
+          and decision-making processes
         </p>
       </div>
       <div class="mission-statement-row">
@@ -74,7 +75,7 @@ const representation = [
           ensuring that{" "}
           <strong>
             the experience and perspective of Central and Eastern Europe
-            contribute meaningfully to Europe's future.
+            contribute meaningfully to Europe's future
           </strong>
         </p>
       </div>
@@ -96,35 +97,35 @@ const representation = [
       <div class="vision-belief-list">
         <div class="vision-belief-row">
           <span class="vision-bullet" aria-hidden="true"></span>
-          <p>Better policy begins with informed dialogue.</p>
+          <p>Better policy begins with informed dialogue</p>
         </div>
         <div class="vision-belief-row">
           <span class="vision-bullet" aria-hidden="true"></span>
-          <p>Economic competitiveness and security are inseparable.</p>
+          <p>Economic competitiveness and security are inseparable</p>
         </div>
         <div class="vision-belief-row">
           <span class="vision-bullet" aria-hidden="true"></span>
-          <p>European growth requires strong industrial foundations.</p>
+          <p>European growth requires strong industrial foundations</p>
         </div>
         <div class="vision-belief-row">
           <span class="vision-bullet" aria-hidden="true"></span>
           <p>
             Strategic resilience depends on cooperation between institutions,
-            business and society.
+            business and society
           </p>
         </div>
         <div class="vision-belief-row">
           <span class="vision-bullet" aria-hidden="true"></span>
           <p>
             Central and Eastern Europe brings valuable experience, expertise and
-            perspectives that enrich European decision-making.
+            perspectives that enrich European decision-making
           </p>
         </div>
         <div class="vision-belief-row">
           <span class="vision-bullet" aria-hidden="true"></span>
           <p>
             Effective policy is built through collaboration, trust and
-            evidence-based analysis.
+            evidence-based analysis
           </p>
         </div>
       </div>
@@ -361,8 +362,8 @@ const representation = [
   <section class="page-cta">
     <p class="eyebrow">Take part</p>
     <h2>A balanced European dialogue needs a credible CEE voice.</h2>
-    <a class="cta" href="/partnership">
-      Partner with ESI <span aria-hidden="true">→</span>
+    <a class="cta" href="/member">
+      Become a member <span aria-hidden="true">→</span>
     </a>
   </section>
 </InnerLayout>
@@ -396,7 +397,11 @@ const representation = [
   .mission-statement {
     display: grid;
     grid-template-columns: 0.82fr 1.18fr;
-    gap: clamp(50px, 8vw, 120px);
+    column-gap: clamp(50px, 8vw, 120px);
+    row-gap: 0;
+  }
+  .mission-statement > :global(.eyebrow) {
+    grid-column: 1 / -1;
   }
   .mission-statement-lead-wrap {
     display: flex;
@@ -445,16 +450,16 @@ const representation = [
   }
   .vision-intro {
     max-width: 480px;
-    margin-top: 20px;
+    margin-top: 100px;
     font-family: var(--serif);
     font-weight: 400;
     font-size: clamp(22px, 2.6vw, 32px);
     line-height: 1.35;
   }
   .vision-belief-label {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
-    color: #696479;
+    color: var(--navy);
   }
   .vision-belief-list {
     margin-top: 20px;
@@ -483,7 +488,7 @@ const representation = [
     font-family: var(--sans);
     font-size: clamp(16px, 1.1vw, 18px);
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.7;
   }
 
   .objective-preview-list .objective-row {

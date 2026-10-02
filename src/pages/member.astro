@@ -18,13 +18,15 @@ const description =
   heroImage={membershipHero}
 >
   <section class="content-section pub-events-section member-benefits-section why-join-section">
-    <div class="content-heading">
+    <div class="content-heading why-join-heading">
       <p class="section-number">01 / Why join</p>
-      <h2>A trusted network for Europe's decision-makers</h2>
-      <p class="member-benefits-intro">
-        Be a member of The European Strategy Institute where ideas, expertise
-        and leadership translate into meaningful impact.
-      </p>
+      <div class="why-join-heading-split">
+        <h2>A trusted network for Europe's decision-makers</h2>
+        <p class="member-benefits-intro">
+          Be a member of The European Strategy Institute where ideas, expertise
+          and leadership translate into meaningful impact.
+        </p>
+      </div>
     </div>
     <h3 class="why-join-subheading">Four ways to make a bigger impact</h3>
     <div class="pub-events-grid why-join-grid">
@@ -82,14 +84,14 @@ const description =
         Share a few details about you and your organisation. Our team will get
         in touch to discuss the next steps.
       </p>
-      <div class="form-intro-cta">
+      <!-- <div class="form-intro-cta">
         <p class="form-intro-cta-lead">
           Looking for a one-off collaboration instead?
         </p>
         <a class="cta form-intro-cta-button" href="/partnership">
           Partner with us <span aria-hidden="true">→</span>
         </a>
-      </div>
+      </div> -->
     </div>
     <EnquiryForm kind="membership" client:load />
   </section>

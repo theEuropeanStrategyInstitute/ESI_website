@@ -4,8 +4,23 @@ import esiWhite from "../../assets/esi-white.png";
 
 const Arrow = () => <span aria-hidden="true">→</span>;
 
+const navLinks: { href: string; label: string }[] = [
+  { href: "/about-us", label: "About us" },
+  { href: "/mission", label: "Mission" },
+  { href: "/projects", label: "Our work" },
+  { href: "/council-experts", label: "Council & Experts" },
+  { href: "/partnership", label: "Partner with us" },
+];
+
 export function SiteHeader({ solid = false }: { solid?: boolean }) {
   const [isPastHero, setIsPastHero] = useState(false);
+  const [currentPath, setCurrentPath] = useState("");
+
+  useEffect(() => {
+    setCurrentPath(window.location.pathname.replace(/\/+$/, "") || "/");
+  }, []);
+
+  const isActive = (href: string): boolean => currentPath === href;
 
   useEffect(() => {
     let frame = 0;
@@ -60,11 +75,15 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
         </span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="/about-us">About us</a>
-        <a href="/mission">Mission</a>
-        <a href="/projects">Our work</a>
-        <a href="/council-experts">Council & Experts</a>
-        <a href="/partnership">Partner with us</a>
+        {navLinks.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            aria-current={isActive(link.href) ? "page" : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
         <a href="/member" className="nav-contact">
           Become a member <Arrow />
         </a>
@@ -74,11 +93,15 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
           Menu <span aria-hidden="true">+</span>
         </summary>
         <nav aria-label="Mobile navigation">
-          <a href="/about-us">About us</a>
-          <a href="/mission">Mission</a>
-          <a href="/projects">Our work</a>
-          <a href="/council-experts">Council & Experts</a>
-          <a href="/partnership">Partner with us</a>
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              aria-current={isActive(link.href) ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          ))}
           <a href="/member" className="nav-contact">
             Become a member <Arrow />
           </a>
