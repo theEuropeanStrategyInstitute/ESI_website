@@ -47,7 +47,17 @@ const description =
     <div class="tool-grid">
       {influenceTools.map((tool) => (
         <article>
-          <h3>{tool.title}</h3>
+          <h3>
+            {tool.title === "Executive round tables" ? (
+              <>
+                Executive
+                <br />
+                round tables
+              </>
+            ) : (
+              tool.title
+            )}
+          </h3>
           <p>{tool.body}</p>
         </article>
       ))}
@@ -109,9 +119,11 @@ const description =
     <div class="pe-col pe-col-right pe-col-dark">
       <p class="pe-copy">
         ESI publishes strategic reports, policy briefs, expert commentaries and
-        analytical papers addressing the key issues shaping Europe's future. Our
-        publications are designed to support decision-makers, business leaders
-        and institutions with rigorous analysis and actionable insights.
+        analytical papers addressing the key issues shaping Europe's future.
+        <br />
+        <br /> Our publications are designed to support decision-makers,
+        business leaders and institutions with rigorous analysis and actionable
+        insights.
       </p>
       <a class="cta pe-cta" href="#">
         Explore <Arrow />
