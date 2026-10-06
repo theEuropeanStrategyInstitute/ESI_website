@@ -3013,7 +3013,7 @@ body {
   position: absolute;
   left: 0;
   right: 100%;
-  bottom: 0;
+  bottom: -10px;
   height: 1px;
   background: currentColor;
   transition: right 180ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -3049,8 +3049,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 60px;
+  height: 60px;
   border: 1px solid #6d6494;
   border-radius: 50%;
   color: #d9d5e8;
