@@ -3578,11 +3578,44 @@ body {
   margin-bottom: 18px;
 }
 .content-heading .pe-number,
-.content-heading .pe-eyebrow {
+.content-heading .pe-eyebrow,
+.form-intro .pe-number,
+.form-intro .pe-eyebrow,
+.split-copy:not(.section-dark) .pe-number,
+.split-copy:not(.section-dark) .pe-eyebrow {
   color: var(--navy);
 }
-.content-heading .pe-rule {
+.content-heading .pe-rule,
+.form-intro .pe-rule,
+.split-copy:not(.section-dark) .pe-rule {
   background: var(--navy);
+}
+.values-section .pe-label {
+  grid-area: label;
+}
+.split-copy,
+.why-join-section,
+.form-section {
+  position: relative;
+  overflow: hidden;
+}
+.split-copy:not(.section-dark) > .pe-watermark,
+.why-join-section > .pe-watermark,
+.form-section > .pe-watermark {
+  color: rgba(21, 9, 88, 0.045);
+}
+.split-copy > div,
+.values-section h2,
+.values-section .values-copy,
+.values-section .values-list,
+.why-join-section .content-heading,
+.why-join-section .why-join-subheading,
+.why-join-section .pub-events-grid,
+.why-join-section .why-join-ribbon,
+.form-section .form-intro,
+.form-section .enquiry-form {
+  position: relative;
+  z-index: 1;
 }
 .tools-section,
 .sectors-section {
