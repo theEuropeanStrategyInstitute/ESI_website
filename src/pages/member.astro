@@ -40,16 +40,26 @@ const description =
       {memberBenefits.map((benefit) => (
         <article class="pub-events-block why-join-card">
           <div class="why-join-media">
-            <p class="why-join-number">
-              {benefit.number} / {benefit.eyebrow}
-            </p>
-            <h3>{benefit.title}</h3>
+            <p class="why-join-number">{benefit.number}</p>
+            <span class="why-join-rule"></span>
+            <h3>{benefit.eyebrow}</h3>
+            <h4 set:html={benefit.title} />
           </div>
-          <ul class="plain-list">
-            {benefit.points.map((point) => (
-              <li>{point}</li>
-            ))}
-          </ul>
+          <div class="why-join-footer">
+            <img
+              class="why-join-icon"
+              src={benefit.icon.src}
+              alt=""
+              aria-hidden="true"
+              width="28"
+              height="28"
+            />
+            <ul class="plain-list">
+              {benefit.points.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+          </div>
         </article>
       ))}
     </div>
@@ -117,3 +127,109 @@ const description =
     <EnquiryForm kind="membership" client:load />
   </section>
 </InnerLayout>
+
+<style>
+  .member-benefits-section .pub-events-grid {
+    gap: 0;
+    background: none;
+    border-color: var(--line);
+  }
+  .member-benefits-section .pub-events-grid > .pub-events-block:nth-child(2),
+  .member-benefits-section .pub-events-grid > .pub-events-block:nth-child(4) {
+    background: #dfe9f2;
+  }
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-media,
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-media {
+    background: #dfe9f2;
+    border-bottom-color: rgba(15, 29, 64, 0.12);
+  }
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-media::after,
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-media::after {
+    display: none;
+  }
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-icon,
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-icon {
+    filter: none;
+  }
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-rule,
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-rule {
+    background: var(--navy);
+  }
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-number,
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-number,
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-media
+    h3,
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-media
+    h3,
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-media
+    h4,
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-media
+    h4 {
+    color: var(--navy);
+  }
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .plain-list,
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .plain-list {
+    border-top-color: rgba(15, 29, 64, 0.12);
+  }
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .plain-list
+    li,
+  .member-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .plain-list
+    li {
+    color: #51607a;
+    border-bottom-color: rgba(15, 29, 64, 0.12);
+  }
+</style>

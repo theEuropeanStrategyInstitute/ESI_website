@@ -19,6 +19,20 @@ function partnerLogo(filename: string): ImageMetadata {
   return match[1].default;
 }
 
+const benefitIconFiles = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/icons/*.{svg,png}",
+  { eager: true },
+);
+
+/** Look up a benefit icon by its exact filename in `src/assets/icons/`. */
+function benefitIcon(filename: string): ImageMetadata {
+  const match = Object.entries(benefitIconFiles).find(([path]) =>
+    path.endsWith(`/${filename}`),
+  );
+  if (!match) throw new Error(`Missing benefit icon: ${filename}`);
+  return match[1].default;
+}
+
 /** Look up a portrait by `firstname_surname` filename (no extension). */
 function personPhoto(slug: string): ImageMetadata | undefined {
   const match = Object.entries(peoplePhotos).find(([path]) => {
@@ -139,7 +153,8 @@ export const memberBenefits = [
   {
     number: "01",
     eyebrow: "Engage",
-    title: "Stay informed. Be connected.",
+    title: "Stay informed.<br/> Be connected.",
+    icon: benefitIcon("Groups--Streamline-Outlined-Streamline-Material.png"),
     points: [
       "Access to high-quality insights and analysis",
       "Invitations to public events and briefings",
@@ -151,7 +166,8 @@ export const memberBenefits = [
   {
     number: "02",
     eyebrow: "Participate",
-    title: "Contribute. Share perspectives.",
+    title: "Contribute. <br/> Share perspectives.",
+    icon: benefitIcon("Handshake--Streamline-Lucide.svg"),
     points: [
       "Take part in sectoral discussions and working groups",
       "Access tailored briefings and closed-door meetings",
@@ -163,7 +179,8 @@ export const memberBenefits = [
   {
     number: "03",
     eyebrow: "Shape",
-    title: "Co-create solutions. Drive change.",
+    title: "Co-create solutions.<br/> Drive change.",
+    icon: benefitIcon("Open-Settings-Gear--Streamline-Plump.png"),
     points: [
       "Contribute to policy positions and recommendations",
       "Work with ESI experts and peers on key regulatory topics",
@@ -175,7 +192,10 @@ export const memberBenefits = [
   {
     number: "04",
     eyebrow: "Lead",
-    title: "Set the agenda. Create lasting impact.",
+    title: "Set the agenda.<br/> Create lasting impact.",
+    icon: benefitIcon(
+      "Target-Arrow--Streamline-Rounded-Streamline-Material.png",
+    ),
     points: [
       "Play a leading role in ESI's strategic priorities",
       "Co-initiate major projects and policy initiatives",
@@ -190,24 +210,32 @@ export const partnershipBenefits = [
   {
     number: "01",
     title: "Co-create programmes and special initiatives.",
+    icon: benefitIcon(
+      "Lightbulb-Circle--Streamline-Outlined-Streamline-Material-Free.svg",
+    ),
     body: "Develop dedicated projects around strategic issues relevant to your organisation, sector and Europe.",
     stage: "Programme development",
   },
   {
     number: "02",
     title: "Partner on research and thought leadership.",
+    icon: benefitIcon("File-Text--Streamline-Feather.svg"),
     body: "Work with ESI experts and external specialists on reports, analysis, briefings and other knowledge-driven projects.",
     stage: "Research & insights",
   },
   {
     number: "03",
     title: "Bring the right people together.",
+    icon: benefitIcon("Groups--Streamline-Outlined-Streamline-Material.png"),
     body: "Co-create roundtables, expert discussions, conferences and other formats connecting business, academia, public institutions and European stakeholders.",
     stage: "Dialogue & networking",
   },
   {
     number: "04",
     title: "Build visibility around shared priorities.",
+    icon: benefitIcon(
+      "Bar-Chart-Increase--Streamline-Outlined-Streamline-Material.png",
+    ),
     body: "Be recognised as a partner of selected ESI programmes, events and publications, with visibility appropriate to the nature of the collaboration.",
     stage: "Visibility & impact",
   },

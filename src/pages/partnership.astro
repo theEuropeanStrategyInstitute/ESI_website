@@ -42,9 +42,20 @@ const description =
         <article class="pub-events-block why-join-card">
           <div class="why-join-media">
             <p class="why-join-number">{benefit.number}</p>
+            <span class="why-join-rule"></span>
             <h3>{benefit.title}</h3>
           </div>
-          <p>{benefit.body}</p>
+          <div class="why-join-footer">
+            <img
+              class="why-join-icon"
+              src={benefit.icon.src}
+              alt=""
+              aria-hidden="true"
+              width="28"
+              height="28"
+            />
+            <p>{benefit.body}</p>
+          </div>
         </article>
       ))}
     </div>
@@ -110,10 +121,6 @@ const description =
 </InnerLayout>
 
 <style>
-  .partnership-benefits-section .why-join-card > p {
-    margin-left: 24px;
-    margin-right: 24px;
-  }
   .partnership-benefits-section .pub-events-grid {
     gap: 0;
     background: none;
@@ -151,6 +158,26 @@ const description =
   .partnership-benefits-section
     .pub-events-grid
     > .pub-events-block:nth-child(2)
+    .why-join-icon,
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-icon {
+    filter: none;
+  }
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-rule,
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-rule {
+    background: var(--navy);
+  }
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
     .why-join-number,
   .partnership-benefits-section
     .pub-events-grid
@@ -171,10 +198,12 @@ const description =
   .partnership-benefits-section
     .pub-events-grid
     > .pub-events-block:nth-child(2)
+    .why-join-footer
     > p,
   .partnership-benefits-section
     .pub-events-grid
     > .pub-events-block:nth-child(4)
+    .why-join-footer
     > p {
     color: #51607a;
   }
