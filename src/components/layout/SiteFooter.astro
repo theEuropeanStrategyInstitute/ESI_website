@@ -34,11 +34,18 @@ const legalLinks: [string, string][] = [
 <footer class="global-footer">
   <div class="footer-hero">
     <div class="footer-locations-block">
-      <Image
-        class="footer-logo"
-        src={ESI_Logo_fin_white}
-        alt="The European Strategy Institute"
-      />
+      <div class="footer-logo-row">
+        <Image
+          class="footer-logo"
+          src={ESI_Logo_fin_white}
+          alt="The European Strategy Institute"
+        />
+        <p class="footer-tagline">
+          Empowering European business
+          <br />
+          Navigating for a better future.
+        </p>
+      </div>
       <p class="footer-locations">
         <span class="footer-locations-rule" aria-hidden="true"></span>
         Brussels &ndash; Warsaw
@@ -47,7 +54,7 @@ const legalLinks: [string, string][] = [
     </div>
     <div class="footer-newsletter-block">
       <p class="footer-newsletter-heading">
-        Receive our latest analysis, events and perspectives on Europe’s future.
+        Sign up for our NEWSLETTER and stay informed.
       </p>
       <form
         class="footer-newsletter"
@@ -79,11 +86,6 @@ const legalLinks: [string, string][] = [
 
   <div class="footer-columns">
     <div class="footer-brand">
-      <p class="footer-tagline">
-        Empowering European business
-        <br />
-        Navigating for a better future.
-      </p>
       <p class="footer-description">
         A Brussels-based independent think tank and strategic dialogue platform
         working at the intersection of business, policy and European

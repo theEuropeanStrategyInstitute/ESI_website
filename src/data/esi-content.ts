@@ -153,7 +153,7 @@ export const memberBenefits = [
   {
     number: "01",
     eyebrow: "Engage",
-    title: "Stay informed.<br/> Be connected.",
+    title: "Stay informed<br/> Be connected",
     icon: benefitIcon("Groups--Streamline-Outlined-Streamline-Material.png"),
     points: [
       "Access to high-quality insights and analysis",
@@ -166,7 +166,7 @@ export const memberBenefits = [
   {
     number: "02",
     eyebrow: "Participate",
-    title: "Contribute. <br/> Share perspectives.",
+    title: "Contribute <br/> Share perspectives",
     icon: benefitIcon("Handshake--Streamline-Lucide.svg"),
     points: [
       "Take part in sectoral discussions and working groups",
@@ -179,7 +179,7 @@ export const memberBenefits = [
   {
     number: "03",
     eyebrow: "Shape",
-    title: "Co-create solutions.<br/> Drive change.",
+    title: "Co-create solutions<br/> Drive change",
     icon: benefitIcon("Open-Settings-Gear--Streamline-Plump.png"),
     points: [
       "Contribute to policy positions and recommendations",
@@ -192,7 +192,7 @@ export const memberBenefits = [
   {
     number: "04",
     eyebrow: "Lead",
-    title: "Set the agenda.<br/> Create lasting impact.",
+    title: "Set the agenda<br/> Create lasting impact",
     icon: benefitIcon(
       "Target-Arrow--Streamline-Rounded-Streamline-Material.png",
     ),
@@ -209,34 +209,34 @@ export const memberBenefits = [
 export const partnershipBenefits = [
   {
     number: "01",
-    title: "Co-create programmes and special initiatives.",
+    title: "Co-create programmes and special initiatives",
     icon: benefitIcon(
       "Lightbulb-Circle--Streamline-Outlined-Streamline-Material-Free.svg",
     ),
-    body: "Develop dedicated projects around strategic issues relevant to your organisation, sector and Europe.",
+    body: "Develop dedicated projects around strategic issues relevant to your organisation, sector and Europe",
     stage: "Programme development",
   },
   {
     number: "02",
-    title: "Partner on research and thought leadership.",
+    title: "Partner on research and thought leadership",
     icon: benefitIcon("File-Text--Streamline-Feather.svg"),
-    body: "Work with ESI experts and external specialists on reports, analysis, briefings and other knowledge-driven projects.",
+    body: "Work with ESI experts and external specialists on reports, analysis, briefings and other knowledge-driven projects",
     stage: "Research & insights",
   },
   {
     number: "03",
-    title: "Bring the right people together.",
+    title: "Bring the right people together",
     icon: benefitIcon("Groups--Streamline-Outlined-Streamline-Material.png"),
-    body: "Co-create roundtables, expert discussions, conferences and other formats connecting business, academia, public institutions and European stakeholders.",
+    body: "Co-create roundtables, expert discussions, conferences and other formats connecting business, academia, public institutions and European stakeholders",
     stage: "Dialogue & networking",
   },
   {
     number: "04",
-    title: "Build visibility around shared priorities.",
+    title: "Build visibility around shared priorities",
     icon: benefitIcon(
       "Bar-Chart-Increase--Streamline-Outlined-Streamline-Material.png",
     ),
-    body: "Be recognised as a partner of selected ESI programmes, events and publications, with visibility appropriate to the nature of the collaboration.",
+    body: "Be recognised as a partner of selected ESI programmes, events and publications, with visibility appropriate to the nature of the collaboration",
     stage: "Visibility & impact",
   },
 ];

@@ -30,8 +30,12 @@ const description =
       <div class="why-join-heading-split">
         <h2>A trusted network for Europe's decision-makers</h2>
         <p class="member-benefits-intro">
-          Be a member of The European Strategy Institute where ideas, expertise
-          and leadership translate into meaningful impact.
+          ESI membership brings together businesses, experts and institutions
+          committed to building a stronger, more competitive Europe. By
+          fostering collaboration, sharing strategic insights and creating
+          opportunities for high-level dialogue, we help our members stay
+          informed, connect with the right people and contribute to
+          conversations that shape Europe's future.
         </p>
       </div>
     </div>
@@ -42,19 +46,23 @@ const description =
           <div class="why-join-media">
             <p class="why-join-number">{benefit.number}</p>
             <span class="why-join-rule"></span>
-            <h3>{benefit.eyebrow}</h3>
-            <h4 set:html={benefit.title} />
+            <div class="why-join-heading-text">
+              <div class="why-join-heading-copy">
+                <h3>{benefit.eyebrow}</h3>
+                <h4 set:html={benefit.title} />
+              </div>
+              <img
+                class="why-join-icon"
+                src={benefit.icon.src}
+                alt=""
+                aria-hidden="true"
+                width="34"
+                height="34"
+              />
+            </div>
           </div>
           <div class="why-join-footer">
-            <img
-              class="why-join-icon"
-              src={benefit.icon.src}
-              alt=""
-              aria-hidden="true"
-              width="28"
-              height="28"
-            />
-            <ul class="plain-list">
+            <ul class="plain-list benefit-points">
               {benefit.points.map((point) => (
                 <li>{point}</li>
               ))}
@@ -129,6 +137,26 @@ const description =
 </InnerLayout>
 
 <style>
+  .why-join-media h3 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+  .why-join-heading-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .why-join-heading-text .why-join-icon {
+    margin-top: 0;
+  }
+  .benefit-points {
+    list-style: disc;
+    padding-left: 18px;
+  }
+  .benefit-points li {
+    padding-left: 4px;
+  }
   .member-benefits-section .pub-events-grid {
     gap: 0;
     background: none;

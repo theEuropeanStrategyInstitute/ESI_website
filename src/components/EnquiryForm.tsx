@@ -89,7 +89,7 @@ export function EnquiryForm({
           </span>
         </label>
         <button className="form-submit" type="submit">
-          Send <span aria-hidden="true">→</span>
+          Let&apos;s Collaborate <span aria-hidden="true">→</span>
         </button>
       </form>
     );
@@ -145,7 +145,7 @@ export function EnquiryForm({
           type="submit"
           disabled={status === "submitting"}
         >
-          {status === "submitting" ? "Sending…" : "Send"}{" "}
+          {status === "submitting" ? "Sending…" : "Let's Collaborate"}{" "}
           <span aria-hidden="true">→</span>
         </button>
         {status === "error" && (
@@ -183,7 +183,7 @@ export function EnquiryForm({
         </span>
       </label>
       <button className="form-submit" type="submit">
-        Send <span aria-hidden="true">→</span>
+        Let's Collaborate <span aria-hidden="true">→</span>
       </button>
       <p className="form-note">
         This form opens a draft in your email application. The website does not
