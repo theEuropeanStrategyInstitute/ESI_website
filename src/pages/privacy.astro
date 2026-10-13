@@ -1,44 +1,190 @@
 ---
 import InnerLayout from "../layouts/InnerLayout.astro";
+import { policyIcons } from "../components/helpers/policyIcons";
 
-const pageTitle = "Privacy | The European Strategy Institute";
+const pageTitle = "Privacy Policy | The European Strategy Institute";
 const description =
-  "Privacy information for The European Strategy Institute website.";
+  "How The European Strategy Institute collects, uses and protects personal data, and your rights under the GDPR.";
+
+const dataUses = [
+  {
+    when: "Contact us",
+    use: "Respond to your enquiry",
+    basis: "Legitimate interest (pre-contractual steps)",
+  },
+  {
+    when: "Subscribe to our updates",
+    use: "Send you our newsletter and relevant communications",
+    basis: "Consent",
+  },
+  {
+    when: "Register for an event",
+    use: "Manage your participation and event communication",
+    basis: "Contract / Legitimate interest (depending on the event)",
+  },
+  {
+    when: "Get in touch about membership or partnership",
+    use: "Discuss potential cooperation",
+    basis: "Legitimate interest (pre-contractual steps)",
+  },
+  {
+    when: "Apply for a role",
+    use: "Manage recruitment process",
+    basis: "Legitimate interest (or consent, where required)",
+  },
+];
 ---
 
 <InnerLayout
   eyebrow="Privacy"
-  title="Clear handling.<br /><em>Responsible communication.</em>"
-  intro="This page describes how the current private website prototype handles information."
+  title="Privacy Policy"
+  intro="How we collect, use and protect your personal data."
   pageTitle={pageTitle}
   description={description}
 >
-  <section class="content-section policy-copy">
-    <p class="section-number">Draft notice</p>
-    <div>
-      <h2>No form data is stored by this website.</h2>
-      <p>
-        The enquiry and membership forms in this prototype prepare a message in
-        your own email application. Information entered into those forms is not
-        submitted to, or stored by, the website.
-      </p>
-      <h3>Direct email</h3>
-      <p>
-        If you choose to send the prepared email, the information is transmitted
-        through your email provider to ESI. It may then be used to respond to
-        your enquiry and manage the relationship you requested.
-      </p>
-      <h3>Before public launch</h3>
-      <p>
-        ESI's complete privacy notice—including the legal entity's contact
-        details, lawful bases, retention periods, data-subject rights,
-        processors, transfers, cookies and complaint route—must be approved and
-        published before this prototype becomes a public website.
-      </p>
-      <p class="draft-note">
-        This is implementation copy for a private prototype, not the
-        organisation's final legal privacy notice.
-      </p>
+  <section class="content-section policy-banner">
+    <div class="policy-banner-inner">
+      <div class="policy-banner-copy">
+        <p class="policy-banner-lead">
+          The European Strategy Institute (ESI) is committed to protecting your
+          personal data and respecting your privacy.
+        </p>
+        <p>
+          This Privacy Policy explains what data we collect, why we collect it,
+          how we use it and with whom we share it, and your rights under the
+          General Data Protection Regulation (GDPR).
+        </p>
+      </div>
+      <div class="policy-banner-meta">
+        <a
+          class="cta policy-banner-cta"
+          href="https://drive.google.com/file/d/1jevNW58ndUpFBdknE8_dPbFtfAsvPUwM/view?usp=drive_link"
+        >
+          Download full Privacy Policy (PDF)
+          <span
+            class="doc-icon"
+            aria-hidden="true"
+            set:html={policyIcons.download}
+          />
+        </a>
+        <p class="policy-banner-date">Last updated: 1 October 2026</p>
+      </div>
     </div>
+  </section>
+
+  <section class="content-section policy-section">
+    <h2>Who we are</h2>
+    <p>
+      The European Strategy Institute ASBL (ESI) is a Brussels-based think tank
+      and strategic dialogue platform. We act as a data controller for the
+      personal data processed through our website.
+    </p>
+    <ul class="policy-meta-row">
+      <li>Registered office: [address, Brussels, Belgium]</li>
+      <li>Enterprise Number (BCE/KBO): [XXX.XXX.XXX]</li>
+      <li>
+        <a href="mailto:privacy@esi-eu.com">privacy@esi-eu.com</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="content-section policy-section">
+    <h2>What data we collect</h2>
+    <p>
+      Depending on how you interact with our website, we may collect: your name,
+      email address, organisation, job title, and other information you provide
+      in forms (e.g. event registration, membership enquiries, career
+      applications), as well as certain technical data (e.g. IP address, browser
+      information via cookies).
+    </p>
+  </section>
+
+  <section class="content-section policy-section">
+    <h2>How and why we use your data</h2>
+    <p>
+      We use your personal data for the following purposes and on the following
+      legal bases:
+    </p>
+    <div class="policy-table-wrap">
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>When you&hellip;</th>
+            <th>We use your data to&hellip;</th>
+            <th>Legal basis</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dataUses.map((row) => (
+            <tr>
+              <td>{row.when}</td>
+              <td>{row.use}</td>
+              <td>{row.basis}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="content-section policy-section">
+    <h2>Who we share data with</h2>
+    <p>
+      We may share your data with trusted third parties who support our
+      activities, including: IT and website providers, newsletter and CRM
+      providers, event management platforms, venue and logistics partners,
+      professional advisors (e.g. legal, financial) and, where required, public
+      authorities. These parties process data only on our behalf and under
+      appropriate safeguards.
+    </p>
+  </section>
+
+  <section class="content-section policy-section">
+    <h2>How long we keep your data</h2>
+    <p>
+      We keep your personal data only for as long as necessary for each purpose.
+      Typical retention periods are: enquiries (up to 3 years), newsletter
+      (subscribed until you unsubscribe), event registrations (up to 3 years),
+      membership and partnership contacts (as long as relevant, typically up to
+      5 years), recruitment data (up to 2 years), and financial records (as
+      required by law).
+    </p>
+  </section>
+
+  <section class="content-section policy-section">
+    <h2>Your rights</h2>
+    <p>
+      You have the right to access your personal data, request its correction or
+      erasure, restrict processing, object to processing and, where applicable,
+      request data portability. You can also withdraw your consent at any time.
+      To exercise your rights, please contact us at
+      <a href="mailto:privacy@esi-eu.com">privacy@esi-eu.com</a>.
+    </p>
+  </section>
+
+  <section class="content-section policy-section">
+    <h2>Contact &amp; complaints</h2>
+    <p>
+      If you have any questions about this Privacy Policy or how we process your
+      data, please contact us at{" "}
+      <a href="mailto:privacy@esi-eu.com">privacy@esi-eu.com</a>. .
+    </p>
+    <p>
+      You also have the right to lodge a complaint with the Belgian Data
+      Protection Authority:{" "}
+      <a
+        href="https://www.gegevensbeschermingsautoriteit.be/"
+        target="_blank"
+        rel="noopener"
+      >
+        Gegevensbeschermingsautoriteit (GBA)
+      </a>
+      .
+    </p>
+    <p class="policy-draft-note">
+      The registered office, enterprise number and downloadable PDF above are
+      placeholders. Final legal details and the published policy document must
+      be confirmed before this prototype goes live.
+    </p>
   </section>
 </InnerLayout>

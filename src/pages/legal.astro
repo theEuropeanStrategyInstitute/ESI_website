@@ -1,90 +1,262 @@
 ---
 import InnerLayout from "../layouts/InnerLayout.astro";
+import { policyIcons } from "../components/helpers/policyIcons";
 
 const pageTitle = "Legal & Governance | The European Strategy Institute";
 const description =
-  "Legal entity and governance information for The European Strategy Institute.";
+  "ESI's legal form, governance structure and key legal and governance documents.";
+
+const governanceRoles = [
+  {
+    role: "Founders",
+    description:
+      "ESI was founded by [Founder One] and [Founder Two], who established the organisation together with the adoption of the statutes.",
+    status: "Unpaid role",
+  },
+  {
+    role: "Statutory Members (General Assembly)",
+    description:
+      "The General Assembly is the highest decision-making body of ESI, composed of statutory members (minimum 2 members).",
+    status:
+      "Unpaid membership (max. annual membership fee EUR 1,000, set by the General Assembly)",
+  },
+  {
+    role: "Board of Directors",
+    description:
+      "The Board of Directors manages ESI's activities and ensures strategic oversight, in line with the statutes. The Board consists of 3 members (e.g. President + 2 Directors).",
+    status: "Unpaid mandate",
+  },
+  {
+    role: "Executive Director",
+    description:
+      "The Executive Director is responsible for the day-to-day management and operational leadership of ESI, in accordance with the strategy set by the Board.",
+    status: "Paid role (under an employment or management agreement)",
+  },
+];
+
+const keyDocuments = [
+  {
+    icon: "fileText",
+    title: "Statutes",
+    description:
+      "The founding document of ESI, defining our purpose, structure and governance.",
+    actionLabel: "Download PDF",
+    size: "1.2 MB",
+    href: "https://drive.google.com/file/d/1HTCbYB5oXtHF40fe7yUoyBqpJN9HJGQ0/view?usp=drive_link",
+    external: false,
+  },
+  {
+    icon: "fileText",
+    title: "Legal Notice",
+    description:
+      "Information about the legal entity, registered address and contact details.",
+    actionLabel: "Download PDF",
+    size: "0.3 MB",
+    href: "https://drive.google.com/file/d/1HTCbYB5oXtHF40fe7yUoyBqpJN9HJGQ0/view?usp=drive_link",
+    external: false,
+  },
+  {
+    icon: "lock",
+    title: "Privacy Policy",
+    description: "How we collect, use and protect your personal data.",
+    actionLabel: "Read Privacy Policy",
+    size: undefined,
+    href: "/privacy",
+    external: false,
+  },
+  {
+    icon: "sliders",
+    title: "Cookie Policy",
+    description:
+      "Information about the use of cookies and similar technologies on our website.",
+    actionLabel: "Download PDF",
+    size: "0.4 MB",
+    href: "https://drive.google.com/file/d/1HTCbYB5oXtHF40fe7yUoyBqpJN9HJGQ0/view?usp=drive_link",
+    external: false,
+  },
+  {
+    icon: "users",
+    title: "Conflict of Interest Policy",
+    description:
+      "Our approach to identifying, preventing and managing conflicts of interest.",
+    actionLabel: "Download PDF",
+    size: "0.4 MB",
+    href: "https://drive.google.com/file/d/1HTCbYB5oXtHF40fe7yUoyBqpJN9HJGQ0/view?usp=drive_link",
+    external: false,
+  },
+  {
+    icon: "dollarSign",
+    title: "Funding Sources",
+    description:
+      "Overview of our funding sources and approach to transparency.",
+    actionLabel: "Download PDF",
+    size: "0.2 MB",
+    href: "https://drive.google.com/file/d/1HTCbYB5oXtHF40fe7yUoyBqpJN9HJGQ0/view?usp=drive_link",
+    external: false,
+  },
+  {
+    icon: "shield",
+    title: "Code of Ethics",
+    description: "Our principles and standards for ethical conduct.",
+    actionLabel: "Download PDF",
+    size: "0.3 MB",
+    href: "https://drive.google.com/file/d/1HTCbYB5oXtHF40fe7yUoyBqpJN9HJGQ0/view?usp=drive_link",
+    external: false,
+  },
+  {
+    icon: "externalLink",
+    title: "EU Transparency Register",
+    description: "Our registration in the EU Transparency Register.",
+    actionLabel: "Go to EU register",
+    size: undefined,
+    href: "https://transparency-register.europa.eu/index_en",
+    external: true,
+  },
+];
 ---
 
 <InnerLayout
   eyebrow="Legal"
-  title="Legal entity.<br /><em>Governance structure.</em>"
-  intro="Everything you need to know about ESI's legal structure, governance and commitment to responsible, independent operation."
+  title="Legal &amp; Governance"
+  intro="Our legal form, governance structure and key documents."
   pageTitle={pageTitle}
   description={description}
 >
-  <section class="content-section policy-copy">
-    <p class="section-number">ASBL status + BCE/KBO number</p>
-    <div>
-      <h2>Numbers and statuses details to be added.</h2>
-      <p class="draft-note">
-        Numbers and statuses details will be published here.
-      </p>
-    </div>
-  </section>
-  <section class="content-section policy-copy">
-    <p class="section-number">Articles of Association / Statutes (downloadable as PDF)</p>
-    <div>
-      <h2>Statuses details to be added.</h2>
-      <p class="draft-note">
-        Statuses details will be published here.
-      </p>
-    </div>
-  </section>
-  <section class="content-section policy-copy">
-    <p class="section-number">Legal notice</p>
-    <div>
-      <h2>Legal notice details to be added.</h2>
-      <p class="draft-note">
-        Information about legal notice will be published here.
-      </p>
-    </div>
-  </section>
-  <section class="content-section policy-copy">
-    <p class="section-number">Privacy Policy (GDPR)</p>
-    <div>
-      <h2>Privacy policy details to be added.</h2>
-      <p class="draft-note">
-        Privacy policy details will be
-        published here.
-      </p>
-    </div>
-  </section>
-  <section class="content-section policy-copy">
-    <p class="section-number">Cookie Policy</p>
-    <div>
-      <h2>Cookie policy details to be added.</h2>
-      <p class="draft-note">
-        Cookie policy details will be published here.
-      </p>
-    </div>
-  </section>
-  <section class="content-section policy-copy">
-    <p class="section-number">Conflict of interest policy</p>
-    <div>
-      <h2>Conflict of interest details to be added.</h2>
-      <p class="draft-note">
-        Conflict of interest details will be published here.
-      </p>
-    </div>
-  </section>
-  <section class="content-section policy-copy">
-    <p class="section-number">Funding sources information (coming soon)</p>
-    <div>
-      <h2>Funding sources information details to be added.</h2>
-      <p class="draft-note">
-        Funding sources information details will be published here.
-      </p>
-    </div>
-  </section>
-  <section class="content-section policy-copy">
-    <p class="section-number">Link to EU Transparency Register entry (once available)</p>
-    <div>
-      <h2>EU Transparency Register information details to be added.</h2>
-      <p class="draft-note">
-        Link will be published here.
-      </p>
+  <section class="content-section policy-banner">
+    <div class="policy-banner-inner">
+      <div class="policy-banner-copy">
+        <p class="policy-banner-lead">
+          The European Strategy Institute (ESI) is an international, independent
+          think tank registered in Belgium as a non-profit association (ASBL).
+        </p>
+        <p>
+          We operate in accordance with Belgian law and our statutes, with a
+          transparent governance structure and clear internal policies.
+        </p>
+      </div>
+      <dl class="policy-meta-list">
+        <div>
+          <span
+            class="policy-icon"
+            aria-hidden="true"
+            set:html={policyIcons.mapPin}
+          />
+          <div>
+            <dt>Registered office</dt>
+            <dd>[Address, Brussels, Belgium]</dd>
+          </div>
+        </div>
+        <div>
+          <span
+            class="policy-icon"
+            aria-hidden="true"
+            set:html={policyIcons.fileText}
+          />
+          <div>
+            <dt>Enterprise Number (BCE/KBO)</dt>
+            <dd>[XXX.XXX.XXX]</dd>
+          </div>
+        </div>
+        <div>
+          <span
+            class="policy-icon"
+            aria-hidden="true"
+            set:html={policyIcons.mail}
+          />
+          <div>
+            <dt>Email</dt>
+            <dd>
+              <a href="mailto:info@esi-eu.com">info@esi-eu.com</a>
+            </dd>
+          </div>
+        </div>
+      </dl>
     </div>
   </section>
 
+  <section class="content-section policy-section">
+    <h2>Our legal form</h2>
+    <p>
+      ESI is established as an Association Sans But Lucratif (ASBL) under
+      Belgian law. As a non-profit organisation, our activities are dedicated to
+      the public interest and do not aim to generate profit distribution for our
+      members, founders or directors.
+    </p>
+  </section>
+
+  <section class="content-section policy-section">
+    <h2>Governance structure</h2>
+    <p>
+      ESI is governed by a General Assembly and a Board of Directors, and
+      managed by an Executive Director. The governance roles (Founders,
+      Statutory Members and Board members) are not remunerated.
+    </p>
+    <div class="policy-table-wrap">
+      <table class="policy-table policy-table-governance">
+        <tbody>
+          {governanceRoles.map((row) => (
+            <tr>
+              <td>{row.role}</td>
+              <td>{row.description}</td>
+              <td>{row.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="content-section policy-section">
+    <h2>Key documents</h2>
+    <p>Below you can download the key legal and governance documents of ESI.</p>
+    <ul class="doc-list">
+      {keyDocuments.map((doc) => (
+        <li class="doc-list-item">
+          <span
+            class="doc-icon"
+            aria-hidden="true"
+            set:html={policyIcons[doc.icon]}
+          />
+          <div>
+            <p class="doc-title">{doc.title}</p>
+            <p class="doc-desc">{doc.description}</p>
+          </div>
+          <a
+            class="doc-action"
+            href={doc.href}
+            target={doc.external ? "_blank" : undefined}
+            rel={doc.external ? "noopener" : undefined}
+          >
+            <span
+              set:html={policyIcons[doc.external ? "externalLink" : "download"]}
+            />
+            {doc.actionLabel}
+            {doc.size && <span class="doc-size">({doc.size})</span>}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="policy-draft-note">
+      Document contents and file sizes above are placeholders. The final
+      statutes, legal notice and policy documents must be approved and uploaded
+      before this prototype goes live.
+    </p>
+  </section>
+
+  <section class="content-section policy-closing">
+    <div class="policy-closing-inner">
+      <span
+        class="doc-icon"
+        aria-hidden="true"
+        set:html={policyIcons.messageCircle}
+      />
+      <div>
+        <h2>Questions about our legal status, governance or documents?</h2>
+        <p>
+          If you have any questions, please contact us at
+          <a href="mailto:info@esi-eu.com">info@esi-eu.com</a>.
+        </p>
+      </div>
+    </div>
+  </section>
 </InnerLayout>
