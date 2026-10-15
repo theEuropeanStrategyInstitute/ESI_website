@@ -3,12 +3,6 @@ import { useState, type FormEvent } from "react";
 type FormKind = "partnership" | "contact" | "membership";
 type SubmitStatus = "idle" | "submitting" | "success" | "error";
 
-const subjects: Record<FormKind, string> = {
-  partnership: "Partnership enquiry",
-  contact: "Website enquiry",
-  membership: "ESI membership application",
-};
-
 export function EnquiryForm({
   kind,
   compact = false,
@@ -18,24 +12,47 @@ export function EnquiryForm({
 }) {
   const [status, setStatus] = useState<SubmitStatus>("idle");
 
-  function prepareEmail(event: FormEvent<HTMLFormElement>) {
+  async function sendToResend(
+    data: FormData,
+    formKind: FormKind,
+  ): Promise<boolean> {
+    const payload = new FormData();
+    for (const [key, value] of data.entries()) {
+      payload.append(key, value);
+    }
+    payload.set("formKind", formKind);
+
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        body: payload,
+      });
+      if (!response.ok) return false;
+      const result = (await response.json()) as { ok?: boolean };
+      return result.ok === true;
+    } catch {
+      return false;
+    }
+  }
+
+  async function submitEnquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const entries = [...data.entries()]
-      .filter(([key]) => key !== "privacy")
-      .map(([key, value]) => `${key}: ${String(value)}`)
-      .join("\n");
+    const form = event.currentTarget;
+    const data = new FormData(form);
 
-    const subject =
-      kind === "contact"
-        ? `Contact: ${String(data.get("Name") ?? "")}`
-        : subjects[kind];
+    // Honeypot: bots tend to fill every field, real users never see this one.
+    if (data.get("_gotcha")) {
+      return;
+    }
 
-    window.location.href =
-      "mailto:partnerships@esi-eu.com?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(entries);
+    setStatus("submitting");
+    const ok = await sendToResend(data, kind);
+    if (ok) {
+      form.reset();
+      setStatus("success");
+    } else {
+      setStatus("error");
+    }
   }
 
   async function submitMembership(event: FormEvent<HTMLFormElement>) {
@@ -48,32 +65,47 @@ export function EnquiryForm({
       return;
     }
 
+    setStatus("submitting");
+
     const endpoint = import.meta.env.PUBLIC_MEMBERSHIP_FORM_URL;
-    if (!endpoint) {
-      setStatus("error");
-      return;
+    const [sheetResult, emailOk] = await Promise.allSettled([
+      endpoint
+        ? fetch(endpoint, { method: "POST", body: data }).then(
+            async (response) => {
+              const result = (await response.json()) as { result?: string };
+              return result.result === "success";
+            },
+          )
+        : Promise.resolve(false),
+      sendToResend(data, "membership"),
+    ]);
+
+    const sheetOk = sheetResult.status === "fulfilled" && sheetResult.value;
+    if (emailOk.status !== "fulfilled" || !emailOk.value) {
+      console.warn("Membership email notification via Resend failed.");
     }
 
-    setStatus("submitting");
-    try {
-      const response = await fetch(endpoint, { method: "POST", body: data });
-      const result = (await response.json()) as { result?: string };
-      if (result.result !== "success") {
-        throw new Error("Unexpected response from form endpoint");
-      }
+    if (sheetOk) {
       form.reset();
       setStatus("success");
-    } catch {
+    } else {
       setStatus("error");
     }
   }
 
+  const onSubmit = kind === "membership" ? submitMembership : submitEnquiry;
+
   if (compact) {
+    if (status === "success") {
+      return (
+        <div className="enquiry-form-success">
+          <p>Thank you — we have received your message and will be in touch.</p>
+        </div>
+      );
+    }
+
     return (
-      <form
-        className="enquiry-form enquiry-form-compact"
-        onSubmit={prepareEmail}
-      >
+      <form className="enquiry-form enquiry-form-compact" onSubmit={onSubmit}>
         <div className="compact-row">
           <Field label="Name" name="Name" required />
           <Field label="Email address" name="Email" type="email" required />
@@ -82,15 +114,36 @@ export function EnquiryForm({
           <span>Message</span>
           <textarea name="Message" rows={1} required />
         </label>
+        <input
+          className="hp-field"
+          type="text"
+          name="_gotcha"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+        />
         <label className="privacy-check">
           <input name="privacy" type="checkbox" required />
           <span>
             I have read and accept the <a href="/privacy">Privacy notice</a>.
           </span>
         </label>
-        <button className="form-submit" type="submit">
-          Let&apos;s Collaborate <span aria-hidden="true">→</span>
+        <button
+          className="form-submit"
+          type="submit"
+          disabled={status === "submitting"}
+        >
+          {status === "submitting" ? "Sending…" : "Let's Collaborate"}{" "}
+          <span aria-hidden="true">→</span>
         </button>
+        {status === "error" && (
+          <p className="form-error">
+            Something went wrong sending your message. Please try again, or
+            email us directly at{" "}
+            <a href="mailto:partnerships@esi-eu.com">partnerships@esi-eu.com</a>
+            .
+          </p>
+        )}
       </form>
     );
   }
@@ -164,8 +217,19 @@ export function EnquiryForm({
     );
   }
 
+  if (status === "success") {
+    return (
+      <div className="enquiry-form-success">
+        <p>
+          Thank you for reaching out. We have received your message and the team
+          will follow up directly.
+        </p>
+      </div>
+    );
+  }
+
   return (
-    <form className="enquiry-form" onSubmit={prepareEmail}>
+    <form className="enquiry-form" onSubmit={submitEnquiry}>
       <div className="form-grid">
         <Field label="Name" name="Name" required />
         <Field label="Email address" name="Email" type="email" required />
@@ -176,17 +240,37 @@ export function EnquiryForm({
         <span>Message</span>
         <textarea name="Message" rows={6} required />
       </label>
+      <input
+        className="hp-field"
+        type="text"
+        name="_gotcha"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
       <label className="privacy-check">
         <input name="privacy" type="checkbox" required />
         <span>
           I have read and accept the <a href="/privacy">Privacy notice</a>.
         </span>
       </label>
-      <button className="form-submit" type="submit">
-        Let's Collaborate <span aria-hidden="true">→</span>
+      <button
+        className="form-submit"
+        type="submit"
+        disabled={status === "submitting"}
+      >
+        {status === "submitting" ? "Sending…" : "Let's Collaborate"}{" "}
+        <span aria-hidden="true">→</span>
       </button>
+      {status === "error" && (
+        <p className="form-error">
+          Something went wrong sending your message. Please try again, or email
+          us directly at{" "}
+          <a href="mailto:partnerships@esi-eu.com">partnerships@esi-eu.com</a>.
+        </p>
+      )}
       <p className="form-note">
-        This form opens a draft in your email application. The website does not
+        Your details are sent securely to the ESI team. The website does not
         store the information you enter.
       </p>
     </form>
