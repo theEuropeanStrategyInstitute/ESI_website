@@ -14,12 +14,22 @@ const SUBJECTS: Record<FormKind, string> = {
   membership: "ESI membership application",
 };
 
-// Using Resend's sandbox sender until esi-eu.com is verified as a domain
-// (see context/foundation/dns_change.md). In sandbox mode Resend only
-// delivers to the account's own address, so DEFAULT_TO must stay the
-// Resend account email until that's done — then switch both back.
-const DEFAULT_FROM = "ESI Website <onboarding@resend.dev>";
-const DEFAULT_TO = "theeuropeanstrategyinstitute@gmail.com";
+// esi-eu.com is verified in Resend, so we send from our own domain and
+// deliver to every recipient below. RESEND_TO_EMAIL may override this with a
+// comma-separated list.
+const DEFAULT_FROM = "ESI Website <noreply@esi-eu.com>";
+const DEFAULT_TO: string[] = [
+  "partnership@esi-eu.com",
+  "theeuropeanstrategyinstitute@gmail.com",
+];
+
+function resolveRecipients(override?: string): string[] {
+  const list = (override ?? "")
+    .split(",")
+    .map((address) => address.trim())
+    .filter(Boolean);
+  return list.length > 0 ? list : DEFAULT_TO;
+}
 
 function isFormKind(value: FormDataEntryValue | null): value is FormKind {
   return (
@@ -91,7 +101,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
 
   const payload: Record<string, unknown> = {
     from: env.RESEND_FROM_EMAIL ?? DEFAULT_FROM,
-    to: [env.RESEND_TO_EMAIL ?? DEFAULT_TO],
+    to: resolveRecipients(env.RESEND_TO_EMAIL),
     subject,
     html: `<table cellpadding="0" cellspacing="0">${rows}</table>`,
   };
