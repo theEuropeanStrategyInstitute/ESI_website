@@ -19,7 +19,7 @@ const SUBJECTS: Record<FormKind, string> = {
 // comma-separated list.
 const DEFAULT_FROM = "ESI Website <noreply@esi-eu.com>";
 const DEFAULT_TO: string[] = [
-  "partnership@esi-eu.com",
+  "partnerships@esi-eu.com",
   "theeuropeanstrategyinstitute@gmail.com",
 ];
 
