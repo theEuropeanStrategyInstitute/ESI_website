@@ -260,12 +260,25 @@ export const eventFormats = [
 
 export const founders: Person[] = [
   person({
-    name: "TBD",
-    role: "Board member profile pending",
+    name: "Agnieszka Sitek-Kobosko",
+    role: "Co-Founder & CEO",
+    email: "agnieszka.sitek@esi-eu.com",
+    photoSlug: "agnieszka_sitek-kobosko",
+    bio: "Founding President and CEO of The European Strategy Institute, an independent Brussels-based think tank dedicated to advancing strategic dialogue and developing forward-looking solutions for Europe's most pressing political, economic and societal challenges. Under her leadership, The European Strategy Institute brings together leaders from policy, business, academia and civil society to strengthen Europe's competitiveness, resilience and global influence. The Institute serves as a platform for expert analysis, cross-sector collaboration and high-level dialogue on the future of Europe. Agnieszka is a strategic communications and public affairs executive with more than 15 years of international experience spanning corporate communications, stakeholder engagement, reputation management and organisational transformation. Throughout her career, she has advised senior executives and leadership teams across Europe and Asia, helping organisations navigate change, build trust and communicate effectively in complex and rapidly evolving environments. Prior to establishing The European Strategy Institute, she held senior leadership roles within global organisations. At InPost Group, she led international brand communications and sponsorship integration across multiple European markets. At Citi, she served as Communications & Employee Engagement Manager and Chief of Staff for Global Consumer Technology, overseeing communication and engagement initiatives for a workforce of more than 5,000 professionals across EMEA and Asia. Earlier in her career, she held positions in marketing, corporate communications, retail development and brand strategy at Levi Strauss & Co., Momentum Worldwide, Brand Designers Planet, PepsiCo and Ogilvy, contributing to initiatives that strengthened organisational reputation, stakeholder engagement and business growth. Based in Brussels, at the heart of European decision-making, Agnieszka is committed to fostering trusted leadership, strategic foresight and meaningful dialogue that contributes to a stronger and more competitive Europe.",
+  }),
+  person({
+    name: "Žygimantas Vaičiūnas",
+    role: "Former Minister of Energy of Lithuania; former Energy Attaché to the European Union",
+    photoSlug: "zygimantas_vaiciunas",
+    bio: "An energy policy expert and former Lithuanian Minister of Energy, with more than 20 years of experience shaping national and European energy policy, advancing strategic energy infrastructure, and strengthening energy security. As Lithuania’s Minister of Energy across three governments, he led and contributed to key initiatives at the intersection of energy security, the energy transition, and European energy policy. He has also served as Acting Prime Minister, Acting Minister of Economy and Innovation, and Acting Minister of Environment. His career spans senior positions in the Lithuanian government, the Permanent Representation of Lithuania to the European Union, and the European Solar Manufacturing Council in Brussels, where he focused on European industrial policy for solar PV manufacturing. He has been closely involved in major strategic energy initiatives, including the synchronisation of the Baltic States’ electricity grids with Continental Europe, the development of renewable energy, and the deployment of battery energy storage systems. Žygimantas holds a Master’s degree in Political Science and European Studies and a Bachelor’s degree in Political Science from Vilnius University.",
   }),
   person({
     name: "TBD",
-    role: "Board member profile pending",
+    role: "Founding member profile pending",
+  }),
+  person({
+    name: "Matteo Maggiore",
+    role: "Founding member profile pending",
   }),
 ];
 
@@ -386,16 +399,30 @@ export const experts: Person[] = [
 // Placeholder roster — replace with real names/roles/bios before launch.
 export const board: Person[] = [
   person({
-    name: "TBD",
-    role: "Board member profile pending",
+    name: "Agnieszka Sitek-Kobosko",
+    role: "Co-Founder & CEO",
+    email: "agnieszka.sitek@esi-eu.com",
+    photoSlug: "agnieszka_sitek-kobosko",
+    bio: "Founding President and CEO of The European Strategy Institute, an independent Brussels-based think tank dedicated to advancing strategic dialogue and developing forward-looking solutions for Europe's most pressing political, economic and societal challenges. Under her leadership, The European Strategy Institute brings together leaders from policy, business, academia and civil society to strengthen Europe's competitiveness, resilience and global influence. The Institute serves as a platform for expert analysis, cross-sector collaboration and high-level dialogue on the future of Europe. Agnieszka is a strategic communications and public affairs executive with more than 15 years of international experience spanning corporate communications, stakeholder engagement, reputation management and organisational transformation. Throughout her career, she has advised senior executives and leadership teams across Europe and Asia, helping organisations navigate change, build trust and communicate effectively in complex and rapidly evolving environments. Prior to establishing The European Strategy Institute, she held senior leadership roles within global organisations. At InPost Group, she led international brand communications and sponsorship integration across multiple European markets. At Citi, she served as Communications & Employee Engagement Manager and Chief of Staff for Global Consumer Technology, overseeing communication and engagement initiatives for a workforce of more than 5,000 professionals across EMEA and Asia. Earlier in her career, she held positions in marketing, corporate communications, retail development and brand strategy at Levi Strauss & Co., Momentum Worldwide, Brand Designers Planet, PepsiCo and Ogilvy, contributing to initiatives that strengthened organisational reputation, stakeholder engagement and business growth. Based in Brussels, at the heart of European decision-making, Agnieszka is committed to fostering trusted leadership, strategic foresight and meaningful dialogue that contributes to a stronger and more competitive Europe.",
   }),
   person({
-    name: "TBD",
-    role: "Board member profile pending",
+    name: "Dominika Bettman",
+    role: "Former President of Microsoft Poland; former head of the Siemens group in Poland",
+    photoSlug: "dominika_bettman",
+    bio: 'Manager with many years of experience; CFO and CEO of international technological corporations. Leader, mentor, and speaker. Author of the books "Technological Magnolias" and "When No One\'s Watching: Ethical Dilemmas in Business" (December 2025). Connects the worlds of technology and business with an ethical approach, arguing that progress only makes sense when it serves people and the environment. She promotes leadership based on values, empathy, and trust. Graduate of the Faculty of International Trade at the Warsaw School of Economics and the Advanced Management Program at IESE in Barcelona. Member of supervisory boards, academic committees, and the program boards of congresses and business initiatives.',
   }),
   person({
-    name: "TBD",
-    role: "Board member profile pending",
+    name: "Piotr Wielgomas",
+    role: "Founder and President of BIGRAM",
+    photoSlug: "piotr_wielgomas",
+    bio: "Born in Warsaw, he is married and has three adult children. He graduated from the Faculty of Law at the University of Warsaw and has participated in international business scholarship programmes in the United Kingdom, including at Nottingham Trent University, and in the United States. He is the founder and President of BIGRAM, a human resources consultancy that has been successfully operating on the Polish market for more than 30 years. The company specialises in executive recruitment and HR advisory services, including management audits, 360-degree assessments and outplacement. BIGRAM is also the exclusive Polish partner of two renowned global networks: IIC Partners Executive Search, where Piotr Wielgomas served for several years as a member of the Global Board, and Career Star Group. For many years, BIGRAM has also been running Enactus Poland, part of the international Enactus student entrepreneurship initiative, which operates across 40 countries and 1,700 universities worldwide. Piotr Wielgomas also has extensive corporate governance experience, having served for many years on the supervisory boards of a number of companies. Beyond his professional activities, he has served for many years as Vice President of the Association of Collectors of Historical Securities. He is also a co-creator of a unique project reconstructing pre-war Warsaw in the form of a detailed scale model, developed together with the renowned Polish actor and director Emilian Kamiński.",
+  }),
+  person({
+    name: "Daria Smolarek",
+    role: "Communication & Programme Director",
+    email: "daria.smolarek@esi-eu.com",
+    photoSlug: "daria_smolarek",
+    bio: "Communications and programme management professional with over 20 years of experience spanning media, public institutions, non-profit organisations and the creative sector. Prior to joining ESI, she worked at the Chancellery of the Sejm of the Republic of Poland, within the Office of the Marshal of the Sejm, where she was responsible for communications and public engagement activities for “Sejm Otwarty”, an initiative designed to strengthen connections between the Polish Parliament and citizens through social, cultural and educational programmes. She also developed and coordinated a range of projects aimed at increasing civic participation and public engagement. Earlier in her career, Daria spent more than twelve years at TVN, one of Poland's leading television broadcasters, contributing to a wide range of programmes and editorial projects. Her responsibilities included content development, production coordination and team management. She later joined Next Film, where she coordinated a team of project managers responsible for artist relations, communication strategies and budget oversight. Throughout her career, she has led multidisciplinary teams and delivered projects across the media, public and creative sectors, combining expertise in strategic communications, programme development and stakeholder engagement. At ESI, she leads the Institute's communications activities and supports the development and delivery of strategic programmes, partnerships and public engagement initiatives. She is currently pursuing a degree in Political Science with a specialisation in Communication and Public Relations at Vizja University in Warsaw.",
   }),
   person({
     name: "TBD",

@@ -3602,6 +3602,8 @@ body {
 }
 .values-section .pe-label {
   grid-area: label;
+  /* 60px grid gap − 40px → 20px between label and heading */
+  margin-bottom: -40px;
 }
 .split-copy,
 .why-join-section,
