@@ -23,11 +23,16 @@ const DEFAULT_TO: string[] = [
   "theeuropeanstrategyinstitute@gmail.com",
 ];
 
+const EMAIL_PATTERN = /^[^\s@<>"']+@[^\s@<>"']+\.[^\s@<>"']+$/;
+
+// Accepts commas, semicolons or whitespace as separators and ignores quotes,
+// so a hand-typed Cloudflare variable can't break delivery. Falls back to
+// DEFAULT_TO when nothing valid remains.
 function resolveRecipients(override?: string): string[] {
   const list = (override ?? "")
-    .split(",")
-    .map((address) => address.trim())
-    .filter(Boolean);
+    .split(/[\s,;]+/)
+    .map((address) => address.replace(/^["']+|["']+$/g, ""))
+    .filter((address) => EMAIL_PATTERN.test(address));
   return list.length > 0 ? list : DEFAULT_TO;
 }
 
