@@ -81,11 +81,13 @@ export function EnquiryForm({
     ]);
 
     const sheetOk = sheetResult.status === "fulfilled" && sheetResult.value;
-    if (emailOk.status !== "fulfilled" || !emailOk.value) {
+    const mailOk = emailOk.status === "fulfilled" && emailOk.value;
+    if (!mailOk) {
       console.warn("Membership email notification via Resend failed.");
     }
 
-    if (sheetOk) {
+    // The application is received if either channel delivered it.
+    if (sheetOk || mailOk) {
       form.reset();
       setStatus("success");
     } else {
