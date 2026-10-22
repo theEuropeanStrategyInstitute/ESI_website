@@ -103,14 +103,14 @@ export const influenceTools = [
 
 export const sectors = [
   {
-    title: "Addressing Europe's Strategic Challenges",
-    topics:
-      "ESI focuses on policy areas that will determine Europe's future competitiveness, security and prosperity.",
-  },
-  {
     title: "Competitiveness & Industrial Policy",
     topics:
       "Supporting a stronger, more innovative and globally competitive European economy.",
+  },
+  {
+    title: "Financial Infrastructure & Economic Security",
+    topics:
+      "Payments, capital markets, digital finance and resilience.",
   },
   {
     title: "Energy, Industry & Industrial Transformation",

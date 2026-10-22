@@ -40,26 +40,34 @@ const description =
     </div>
     <h3 class="why-join-subheading">As an ESI Partner, you can:</h3>
     <div class="pub-events-grid why-join-grid">
-      {partnershipBenefits.map((benefit) => (
-        <article class="pub-events-block why-join-card">
-          <div class="why-join-media">
-            <p class="why-join-number">{benefit.number}</p>
-            <span class="why-join-rule"></span>
-            <h3>{benefit.title}</h3>
-          </div>
-          <div class="why-join-footer">
-            <img
-              class="why-join-icon"
-              src={benefit.icon.src}
-              alt=""
-              aria-hidden="true"
-              width="28"
-              height="28"
-            />
-            <p>{benefit.body}</p>
-          </div>
-        </article>
-      ))}
+      {partnershipBenefits.map((benefit) => {
+        const [firstWord, ...rest] = benefit.title.split(" ");
+        return (
+          <article class="pub-events-block why-join-card">
+            <div class="why-join-media">
+              <p class="why-join-number">{benefit.number}</p>
+              <span class="why-join-rule"></span>
+              <div class="why-join-heading-text">
+                <div class="why-join-heading-copy">
+                  <h3>{firstWord}</h3>
+                  <h4>{rest.join(" ")}</h4>
+                </div>
+                <img
+                  class="why-join-icon"
+                  src={benefit.icon.src}
+                  alt=""
+                  aria-hidden="true"
+                  width="34"
+                  height="34"
+                />
+              </div>
+            </div>
+            <div class="why-join-footer">
+              <p>{benefit.body}</p>
+            </div>
+          </article>
+        );
+      })}
     </div>
     <div class="why-join-ribbon">
       {partnershipBenefits.map((benefit) => (
@@ -123,6 +131,20 @@ const description =
 </InnerLayout>
 
 <style>
+  .why-join-media h3 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+  .why-join-heading-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .why-join-heading-text .why-join-icon {
+    margin-top: 0;
+    margin-right: 10px;
+  }
   .partnership-benefits-section .pub-events-grid {
     gap: 0;
     background: none;
@@ -194,7 +216,17 @@ const description =
     .pub-events-grid
     > .pub-events-block:nth-child(4)
     .why-join-media
-    h3 {
+    h3,
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(2)
+    .why-join-media
+    h4,
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(4)
+    .why-join-media
+    h4 {
     color: var(--navy);
   }
   .partnership-benefits-section
@@ -207,7 +239,14 @@ const description =
     > .pub-events-block:nth-child(4)
     .why-join-footer
     > p {
-    color: #51607a;
+    color: var(--navy);
+  }
+  .partnership-benefits-section
+    .pub-events-grid
+    > .pub-events-block:nth-child(odd)
+    .why-join-footer
+    > p {
+    color: white;
   }
   .partnership-principles :global(.eyebrow) {
     margin-bottom: clamp(28px, 4vw, 40px);
