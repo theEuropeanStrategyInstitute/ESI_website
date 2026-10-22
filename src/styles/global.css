@@ -759,7 +759,7 @@ img {
   display: none;
 }
 .eyebrow {
-  font-size: 11px;
+  font-size: 18px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.16em;
@@ -1809,10 +1809,6 @@ img {
   }
 }
 @media (max-width: 540px) {
-  .eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.12em;
-  }
   .site-header {
     min-height: 100px;
   }
@@ -1848,20 +1844,11 @@ img {
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  .pillars article {
-    display: grid;
-    grid-template-columns: 30px 1fr;
-    gap: 4px 15px;
-  }
-  .pillars .index {
-    padding-top: 8px;
-  }
   .pillars h3 {
-    margin: 0 0 12px;
+    margin: 24px 0 12px;
     font-size: 24px;
   }
   .pillars p {
-    grid-column: 2;
     font-size: 14px;
   }
   .work-list summary .summary-row {
@@ -2112,9 +2099,6 @@ img {
   font-size: 12px;
 }
 @media (max-width: 540px) {
-  .website .eyebrow {
-    font-size: 11px;
-  }
   .website .cta {
     font-size: 13px;
   }
@@ -2593,6 +2577,13 @@ body {
   padding-top: 20px;
   border-top: 1px solid var(--line);
 }
+@media (max-width: 900px) {
+  .people-intro-row,
+  .council-heading {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
 .section h2.council-label,
 .council-label {
   font-family: var(--serif);
@@ -2921,6 +2912,9 @@ body {
 }
 .footer-newsletter-row button:hover span {
   transform: translateX(3px);
+}
+.footer-newsletter-row button .footer-newsletter-label {
+  display: none;
 }
 .footer-newsletter-consent {
   display: grid;
@@ -4633,6 +4627,14 @@ body {
   .contact-layout {
     grid-template-columns: 1fr;
   }
+  /* stacked: 60px grid gap − 30px → 30px between label and heading */
+  .split-copy > .pe-label {
+    margin-bottom: -30px;
+  }
+  /* 60px grid gap − 30px → 30px between heading and copy */
+  .split-copy-left > h2 {
+    margin-bottom: -30px;
+  }
   .doc-list-item {
     grid-template-columns: 36px 1fr;
   }
@@ -4750,14 +4752,27 @@ body {
   .footer-newsletter-row button {
     width: 100%;
     height: 48px;
+    gap: 12px;
     border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .footer-newsletter-row button .footer-newsletter-label {
+    display: inline;
+  }
+  .footer-newsletter-row button:hover .footer-newsletter-label {
+    transform: none;
   }
   .footer-columns {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
     row-gap: 40px;
   }
   .footer-brand {
-    grid-column: 1;
+    grid-column: 1 / -1;
+  }
+  .footer-description {
+    max-width: none;
   }
   .footer-col {
     padding-left: 0;
