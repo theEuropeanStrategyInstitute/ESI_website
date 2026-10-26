@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import esiNavy from "../../assets/esi-navy.png";
 import esiWhite from "../../assets/esi-white.png";
 
@@ -18,6 +18,28 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
 
   useEffect(() => {
     setCurrentPath(window.location.pathname.replace(/\/+$/, "") || "/");
+  }, []);
+
+  const menuRef = useRef<HTMLDetailsElement>(null);
+
+  useEffect(() => {
+    const closeOnOutside = (event: PointerEvent): void => {
+      const menu = menuRef.current;
+      if (menu?.open && !menu.contains(event.target as Node)) {
+        menu.open = false;
+      }
+    };
+    const closeOnEscape = (event: KeyboardEvent): void => {
+      if (event.key === "Escape" && menuRef.current?.open) {
+        menuRef.current.open = false;
+      }
+    };
+    document.addEventListener("pointerdown", closeOnOutside);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeOnOutside);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
   }, []);
 
   const isActive = (href: string): boolean => currentPath === href;
@@ -88,9 +110,9 @@ export function SiteHeader({ solid = false }: { solid?: boolean }) {
           Become a member <Arrow />
         </a>
       </nav>
-      <details className="mobile-menu">
+      <details className="mobile-menu" ref={menuRef}>
         <summary aria-label="Open navigation">
-          Menu <span aria-hidden="true">+</span>
+          Menu <span className="menu-icon" aria-hidden="true" />
         </summary>
         <nav aria-label="Mobile navigation">
           {navLinks.map((link) => (

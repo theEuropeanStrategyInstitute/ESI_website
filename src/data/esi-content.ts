@@ -49,6 +49,8 @@ type PersonInput = {
   email?: string;
   /** Matches a file in `./people/` as `firstname_surname.(png|jpg|webp)`. */
   photoSlug?: string;
+  /** Shrinks a tightly cropped portrait inside its card on small screens. */
+  photoZoomOut?: boolean;
 };
 
 export type Person = {
@@ -57,6 +59,7 @@ export type Person = {
   bio?: string;
   email?: string;
   photo?: ImageMetadata;
+  photoZoomOut?: boolean;
 };
 
 function person(input: PersonInput): Person {
@@ -350,12 +353,14 @@ export const council: Person[] = [
     name: "Jacek Siewiera",
     role: "Former Head of Poland’s National Security Bureau; Senior Fellow at the Atlantic Council",
     photoSlug: "jacek_siewiera",
+    photoZoomOut: true,
     bio: "Polish transatlantic security strategist, military physician, and founder of Hybrid Global Strategy, a company focused on civil protection, CBRN infrastructure, and defence technologies. From 2022 to 2025, he served as Secretary of State and Head of Poland’s National Security Bureau. A lieutenant colonel in the reserve and a holder of a habilitation (DSc) in medical sciences, he brings extensive experience at the intersection of medicine, defence policy, and hybrid threat response. After completing his government service in early 2025, he transitioned to international strategic roles. He is a Clarendon Scholar at the University of Oxford and a Senior Fellow at the Atlantic Council, where his work focuses on transatlantic security, resilience, and the evolving sub-defence sector. Founder of Hybrid Global Strategy (Hybrid GS), a holding company focused on urban life-protection infrastructure, CBRN preparedness, and technologies designed to counter hybrid threats, contributing to the development of advanced security and resilience solutions. In parallel, he serves as an Associate Professor at the Polish Naval Academy and remains a leading authority in international discussions on hybrid threats, national resilience, and the transformation of civil defence.",
   }),
   person({
     name: "Prof. Joanna Kulczycka",
     role: "Professor at AGH University of Krakow; Head of the Circular Economy Division at IGSMiE PAN",
     photoSlug: "joanna_kulczycka",
+    photoZoomOut: true,
     bio: "Professor of Management Mineral and Energy Economy Research Institute Polish Academy of Sciences and  AGH University of Krakow, Poland Prof. Joanna Kulczycka is the Head and Founder of the Division of Strategic Research and the Department of Circular Economy at the Mineral and Energy Economy Research Institute of the Polish Academy of Sciences (MEERI PAS), and a Professor at the Academy of Krakow, Faculty of Management, where she delivers lectures on economics, circular economy, eco-innovation in industry, and corporate social responsibility (CSR). She also serves as Director of the IATI Bureau—the largest virtual research institute in Poland—and as President of the Waste Management and Recycling Cluster, a Key National Cluster in Poland. She is the author of over 250 publications, including the first Polish-language book on Life Cycle Assessment (LCA), the first Polish Minerals Yearbook, and more than 120 peer-reviewed scientific articles addressing raw materials, the circular economy, energy and waste management, eco-efficiency of industrial processes, corporate social responsibility (CSR), and just transition. She is a member of the UNEP International Resource Panel (IRP) and a co-author of two flagship reports: Global Resources Outlook 2024 and Global Environment Outlook 7. She has been actively involved in numerous national and European research and innovation projects. She also served as the organizer and Chair of the Steering Committee of EUIndTech2025 – Industrial Technologies and Materials for a Sustainable Europe, the EU flagship event held under the Polish Presidency of the Council of the European Union.",
   }),
   person({

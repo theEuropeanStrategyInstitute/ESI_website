@@ -150,7 +150,20 @@ const cardGroups: Array<{
           const dialogId = `${group.id}-dialog-${index}`;
           return (
             <article class="expert-card" tabindex="0">
-              <div class="expert-card-photo" aria-hidden="true">
+              <div
+                class="expert-card-photo"
+                class:list={{ "photo-zoom-out": person.photoZoomOut }}
+                aria-hidden="true"
+              >
+                {person.photo && person.photoZoomOut && (
+                  <Image
+                    src={person.photo}
+                    alt=""
+                    widths={[302]}
+                    sizes="50vw"
+                    class="expert-photo-backdrop"
+                  />
+                )}
                 {person.photo && (
                   <Image
                     src={person.photo}

@@ -1645,6 +1645,23 @@ img {
   .mobile-menu summary::-webkit-details-marker {
     display: none;
   }
+  .mobile-menu summary::marker {
+    content: "";
+  }
+  .mobile-menu summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .mobile-menu .menu-icon {
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    box-shadow:
+      0 -6px 0 currentColor,
+      0 6px 0 currentColor;
+  }
   .mobile-menu[open] nav {
     display: flex;
     position: absolute;
@@ -1907,9 +1924,6 @@ img {
   }
   .bridge-hero h1 {
     font-size: 58px;
-  }
-  .bridge-hero h1 br {
-    display: none;
   }
   .bridge-hero p:not(.eyebrow) {
     font-size: 14px;
@@ -3173,7 +3187,7 @@ body {
   max-width: 780px;
   text-wrap: wrap;
   margin-top: 8px;
-  color: #d8d4e8;
+  color: white;
   font-size: 22px;
 }
 .content-section {
@@ -5079,3 +5093,144 @@ body {
 }
 
 /* kolor ciemny granatowy: var(--navy) */
+
+/* Mobile fixes ------------------------------------------------------------ */
+
+/* Home hero: smaller h1 so "Empowering European Business" / "Navigating…" break cleanly */
+@media (max-width: 540px) {
+  .bridge-hero h1 {
+    font-size: clamp(30px, 9vw, 40px);
+    line-height: 1.08;
+  }
+}
+
+/* About us hero: line break variants (desktop breaks after "this is") */
+.page-hero h1 .br-mobile {
+  display: none;
+}
+@media (max-width: 700px) {
+  .page-hero h1 .br-mobile {
+    display: inline;
+  }
+  .page-hero h1 .br-desktop {
+    display: none;
+  }
+  .page-hero h1 .title-fit {
+    font-size: 0.82em;
+  }
+}
+
+/* Mission: Brussels representation grid scales with the viewport */
+@media (max-width: 900px) {
+  .evidence-split > * {
+    min-width: 0;
+  }
+  .evidence-note-col {
+    padding-top: 0;
+  }
+  .evidence-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .evidence-grid article,
+  .evidence-grid article.highlight {
+    width: auto;
+    height: auto;
+    min-height: 160px;
+  }
+}
+@media (max-width: 540px) {
+  .evidence-note {
+    font-size: 26px;
+  }
+  .evidence-grid article {
+    min-height: 140px;
+    padding: 20px 16px;
+  }
+  .evidence-grid strong {
+    margin-top: 0;
+    font-size: 44px;
+  }
+  .evidence-grid span {
+    font-size: 15px;
+  }
+}
+
+/* Projects: publications / events columns size to their content when stacked */
+@media (max-width: 900px) {
+  .pe-split {
+    height: auto;
+  }
+  .pe-col,
+  .pe-col-left,
+  .pe-col-right {
+    justify-content: flex-start;
+    padding: 56px var(--space);
+  }
+  .pe-heading {
+    max-width: none;
+    font-size: clamp(40px, 10vw, 56px);
+  }
+  .pe-copy {
+    font-size: 17px;
+  }
+}
+
+/* Council: shrink tightly cropped portraits ~22% and fill the gap with a blurred copy */
+.expert-photo-backdrop {
+  display: none;
+}
+@media (max-width: 800px) {
+  .expert-card-photo.photo-zoom-out {
+    overflow: hidden;
+  }
+  .photo-zoom-out .expert-photo-backdrop {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(18px);
+    transform: scale(1.2);
+  }
+  .photo-zoom-out .expert-photo-img:not(.expert-photo-backdrop) {
+    position: relative;
+    object-position: center 30%;
+    transform: scale(0.78);
+    transform-origin: center 35%;
+    mask-image:
+      linear-gradient(to right, transparent, #000 12%, #000 88%, transparent),
+      linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+    mask-composite: intersect;
+    -webkit-mask-image:
+      linear-gradient(to right, transparent, #000 12%, #000 88%, transparent),
+      linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+    -webkit-mask-composite: source-in;
+  }
+}
+
+/* Partnership / membership: ribbon stages sit inside each benefit card on tablet/mobile */
+.why-join-card .why-join-stage-card {
+  display: none;
+}
+@media (max-width: 900px) {
+  .why-join-ribbon {
+    display: none;
+  }
+  .why-join-card .why-join-stage-card {
+    display: flex;
+    width: auto;
+    margin: 4px 0 -28px;
+    padding: 16px 20px;
+    clip-path: none;
+    color: white;
+    background: var(--navy);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .why-join-card:nth-child(even) .why-join-stage-card {
+    color: var(--navy);
+    background: #dfe9f2;
+    border-top-color: rgba(15, 29, 64, 0.12);
+  }
+}
