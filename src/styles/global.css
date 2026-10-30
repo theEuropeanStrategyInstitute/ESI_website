@@ -2930,6 +2930,50 @@ body {
 .footer-newsletter-row button .footer-newsletter-label {
   display: none;
 }
+.footer-newsletter-row .ml-field-group {
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+.footer-newsletter-row button.loading {
+  width: 54px;
+  align-items: center;
+  justify-content: center;
+}
+.footer-newsletter-row .ml-form-embedSubmitLoad {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid var(--navy);
+  border-color: var(--navy) var(--navy) var(--navy) transparent;
+  animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+}
+@keyframes ml-form-embedSubmitLoad {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.footer-newsletter .sr-only,
+.footer-newsletter-row .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+.footer-newsletter-success {
+  margin: 0;
+  color: #bdb7d2;
+  font-size: 14px;
+}
+.footer-newsletter .ml-error .footer-newsletter-row,
+.footer-newsletter .ml-error input {
+  border-color: #ff8a8a;
+}
+.footer-newsletter .ml-error .label-description {
+  color: #ff8a8a;
+}
 .footer-newsletter-consent {
   display: grid;
   grid-template-columns: 16px 1fr;

@@ -2,8 +2,11 @@
 import { Image } from "astro:assets";
 import ESI_Logo_fin_white from "../../assets/ESI_Logo_fin_white.png";
 
-/** Placeholder subscribe endpoint — swap for the real ESP embed URL once chosen. */
-const NEWSLETTER_ENDPOINT = "https://newsletter.esi-eu.com/subscribe";
+/** MailerLite embedded form (ID 47822263, account 2742698). */
+const NEWSLETTER_ENDPOINT =
+  "https://assets.mailerlite.com/jsonp/2742698/forms/202747197716956497/subscribe";
+const NEWSLETTER_TRACK_URL =
+  "https://assets.mailerlite.com/jsonp/2742698/forms/202747197716956497/takel";
 
 const exploreLinks: [string, string][] = [
   ["About us", "/about-us"],
@@ -53,37 +56,67 @@ const legalLinks: [string, string][] = [
       </p>
     </div>
     <div class="footer-newsletter-block">
-      <p class="footer-newsletter-heading">
-        Sign up for our NEWSLETTER and stay informed.
-      </p>
-      <form
-        class="footer-newsletter"
-        method="post"
-        action={NEWSLETTER_ENDPOINT}
-      >
-        <div class="footer-newsletter-row">
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="Your email address"
-            aria-label="Your email address"
-          />
-          <button type="submit" aria-label="Subscribe">
-            <span class="footer-newsletter-label" aria-hidden="true">
-              Subscribe
-            </span>
-            <span aria-hidden="true">→</span>
-          </button>
+      <div id="mlb2-47822263" class="ml-subscribe-form ml-subscribe-form-47822263">
+        <div class="row-form">
+          <p class="footer-newsletter-heading">
+            Sign up for our NEWSLETTER and stay informed.
+          </p>
+          <form
+            class="footer-newsletter ml-block-form"
+            method="post"
+            action={NEWSLETTER_ENDPOINT}
+            data-code=""
+            target="_blank"
+          >
+            <div class="footer-newsletter-row">
+              <div
+                class="ml-field-group ml-field-email ml-validate-email ml-validate-required"
+              >
+                <input
+                  type="email"
+                  name="fields[email]"
+                  required
+                  autocomplete="email"
+                  placeholder="Your email address"
+                  aria-label="Your email address"
+                />
+              </div>
+              <button type="submit" class="primary" aria-label="Subscribe">
+                <span class="footer-newsletter-label" aria-hidden="true">
+                  Subscribe
+                </span>
+                <span aria-hidden="true">→</span>
+              </button>
+              <button
+                type="button"
+                class="loading"
+                disabled
+                style="display: none;"
+              >
+                <span class="ml-form-embedSubmitLoad"></span>
+                <span class="sr-only">Loading...</span>
+              </button>
+            </div>
+            <div class="ml-form-checkboxRow ml-validate-required">
+              <label class="footer-newsletter-consent checkbox">
+                <input type="checkbox" name="consent" required />
+                <span class="label-description">
+                  I agree to receive updates from The European Strategy
+                  Institute. You can unsubscribe at any time.
+                </span>
+              </label>
+            </div>
+            <input type="hidden" name="ml-submit" value="1" />
+            <input type="hidden" name="anticsrf" value="true" />
+          </form>
         </div>
-        <label class="footer-newsletter-consent">
-          <input type="checkbox" name="consent" required />
-          <span>
-            I agree to receive updates from The European Strategy Institute. You
-            can unsubscribe at any time.
-          </span>
-        </label>
-      </form>
+        <div class="row-success" style="display: none;">
+          <p class="footer-newsletter-heading">Thank you!</p>
+          <p class="footer-newsletter-success">
+            You have successfully joined our subscriber list.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -205,3 +238,18 @@ const legalLinks: [string, string][] = [
     </div>
   </div>
 </footer>
+
+<script is:inline>
+  function ml_webform_success_47822263() {
+    var $ = window.ml_jQuery || window.jQuery;
+    $(".ml-subscribe-form-47822263 .row-success").show();
+    $(".ml-subscribe-form-47822263 .row-form").hide();
+  }
+</script>
+<script
+  is:inline
+  src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519"
+></script>
+<script is:inline define:vars={{ NEWSLETTER_TRACK_URL }}>
+  fetch(NEWSLETTER_TRACK_URL).catch(function () {});
+</script>
