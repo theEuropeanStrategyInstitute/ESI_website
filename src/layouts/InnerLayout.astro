@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import SiteFooter from "../components/layout/SiteFooter.astro";
 import { SiteHeader } from "../components/layout/SiteHeader";
 import PartnerLogos from "../components/PartnerLogos.astro";
-import Eyebrow from "../components/helpers/Eyebrow.astro";
 import BaseLayout from "./BaseLayout.astro";
 import { partnerLogos } from "../data/esi-content";
 
@@ -61,7 +60,6 @@ const finalDescription = stripHtml(description || intro);
       <slot />
       {showPartnerLogos && (
         <section class="section partner-strip" aria-label="Our partners">
-          <Eyebrow>Our partners</Eyebrow>
           <PartnerLogos logos={partnerLogos} />
         </section>
       )}

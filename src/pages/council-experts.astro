@@ -8,6 +8,11 @@ const pageTitle = "Council & Experts | The European Strategy Institute";
 const description =
   "The Executive team, strategic council, and experts behind ESI's work in Brussels.";
 
+const sortBySurname = (people: Person[]): Person[] =>
+  [...people].sort((a, b) =>
+    a.name.split(" ").pop()!.localeCompare(b.name.split(" ").pop()!, "pl"),
+  );
+
 const cardGroups: Array<{
   id: string;
   heading: string;
@@ -37,7 +42,7 @@ const cardGroups: Array<{
       closing:
         "Together, these perspectives provide ESI with a unique source of strategic insight, helping the Institute look beyond immediate policy developments and anticipate the forces shaping Europe's long-term economic and geopolitical position.",
     },
-    people: council,
+    people: sortBySurname(council),
   },
   {
     id: "experts",
@@ -65,7 +70,7 @@ const cardGroups: Array<{
 <InnerLayout
   eyebrow="Council & Experts"
   title="The people behind<br /><em>ESI's strategy.</em>"
-  intro="Strategic council, and experts bringing experience <br />from business, European institutions, academia and technology."
+  intro="Strategic council, and experts bringing experience <br class='desktop-br' />from business, European institutions, academia and technology."
   pageTitle={pageTitle}
   description={description}
   heroImage={councilExpertsHero}
@@ -155,15 +160,6 @@ const cardGroups: Array<{
                 class:list={{ "photo-zoom-out": person.photoZoomOut }}
                 aria-hidden="true"
               >
-                {person.photo && person.photoZoomOut && (
-                  <Image
-                    src={person.photo}
-                    alt=""
-                    widths={[302]}
-                    sizes="50vw"
-                    class="expert-photo-backdrop"
-                  />
-                )}
                 {person.photo && (
                   <Image
                     src={person.photo}

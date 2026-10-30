@@ -56,10 +56,16 @@ const legalLinks: [string, string][] = [
       </p>
     </div>
     <div class="footer-newsletter-block">
-      <div id="mlb2-47822263" class="ml-subscribe-form ml-subscribe-form-47822263">
+      <div
+        id="mlb2-47822263"
+        class="ml-subscribe-form ml-subscribe-form-47822263"
+      >
         <div class="row-form">
           <p class="footer-newsletter-heading">
-            Sign up for our NEWSLETTER and stay informed.
+            <span class="footer-newsletter-line">
+              Sign up for our NEWSLETTER
+            </span>
+            <span class="footer-newsletter-line">and stay informed.</span>
           </p>
           <form
             class="footer-newsletter ml-block-form"
@@ -69,9 +75,7 @@ const legalLinks: [string, string][] = [
             target="_blank"
           >
             <div class="footer-newsletter-row">
-              <div
-                class="ml-field-group ml-field-email ml-validate-email ml-validate-required"
-              >
+              <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
                 <input
                   type="email"
                   name="fields[email]"
@@ -155,7 +159,7 @@ const legalLinks: [string, string][] = [
     <div class="footer-col footer-contact-col">
       <h3 class="footer-col-heading">Contact us</h3>
       <address>
-        Rue d'Arlon 25, 
+        Rue d'Arlon 25,
         <br />
         1050 Brussels
         <br />
@@ -240,8 +244,10 @@ const legalLinks: [string, string][] = [
 </footer>
 
 <script is:inline>
+  // Called by name from the MailerLite webforms script, so it must stay global.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   function ml_webform_success_47822263() {
-    var $ = window.ml_jQuery || window.jQuery;
+    const $ = window.ml_jQuery || window.jQuery;
     $(".ml-subscribe-form-47822263 .row-success").show();
     $(".ml-subscribe-form-47822263 .row-form").hide();
   }

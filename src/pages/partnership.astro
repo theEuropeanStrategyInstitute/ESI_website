@@ -12,7 +12,7 @@ const description =
 <InnerLayout
   eyebrow="Partnerships"
   title="Building Partnerships <br />for European Impact"
-  intro="ESI works with companies, institutions, universities, associations, foundations and public-sector organisations that share <br />a commitment to strengthening Europe's future."
+  intro="ESI works with companies, institutions, universities, associations, foundations and public-sector organisations that share <br class='desktop-br' />a commitment to strengthening Europe's future."
   pageTitle={pageTitle}
   description={description}
   heroImage={partnershipHero}
@@ -139,6 +139,16 @@ const description =
   .why-join-media h3 {
     font-size: 36px;
     font-weight: 600;
+  }
+  @media (max-width: 900px) {
+    .why-join-media h3 {
+      font-size: 40px;
+    }
+  }
+  @media (max-width: 620px) {
+    .why-join-media h3 {
+      font-size: 45px;
+    }
   }
   .why-join-heading-text {
     display: flex;
