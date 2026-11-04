@@ -1,38 +1,11 @@
 ---
 import InnerLayout from "../layouts/InnerLayout.astro";
 import { policyIcons } from "../components/helpers/policyIcons";
+import legalGovHero from "../assets/LegalGov_hero.png";
 
 const pageTitle = "Legal & Governance | The European Strategy Institute";
 const description =
   "ESI's legal form, governance structure and key legal and governance documents.";
-
-const governanceRoles = [
-  {
-    role: "Founders",
-    description:
-      "ESI was founded by [Founder One] and [Founder Two], who established the organisation together with the adoption of the statutes.",
-    status: "Unpaid role",
-  },
-  {
-    role: "Statutory Members (General Assembly)",
-    description:
-      "The General Assembly is the highest decision-making body of ESI, composed of statutory members (minimum 2 members).",
-    status:
-      "Unpaid membership (max. annual membership fee EUR 1,000, set by the General Assembly)",
-  },
-  {
-    role: "Board of Directors",
-    description:
-      "The Board of Directors manages ESI's activities and ensures strategic oversight, in line with the statutes. The Board consists of 3 members (e.g. President + 2 Directors).",
-    status: "Unpaid mandate",
-  },
-  {
-    role: "Executive Director",
-    description:
-      "The Executive Director is responsible for the day-to-day management and operational leadership of ESI, in accordance with the strategy set by the Board.",
-    status: "Paid role (under an employment or management agreement)",
-  },
-];
 
 const keyDocuments = [
   {
@@ -60,7 +33,7 @@ const keyDocuments = [
     title: "Privacy Policy",
     description: "How we collect, use and protect your personal data.",
     actionLabel: "Read Privacy Policy",
-    size: undefined,
+    size: "0.5 MB",
     href: "/privacy",
     external: false,
   },
@@ -104,6 +77,15 @@ const keyDocuments = [
     external: false,
   },
   {
+    icon: "accessibility",
+    title: "Accessibility",
+    description: "Our commitment to an accessible and inclusive website.",
+    actionLabel: "Download PDF",
+    size: "0.2 MB",
+    href: "https://drive.google.com/file/d/1HTCbYB5oXtHF40fe7yUoyBqpJN9HJGQ0/view?usp=drive_link",
+    external: false,
+  },
+  {
     icon: "externalLink",
     title: "EU Transparency Register",
     description: "Our registration in the EU Transparency Register.",
@@ -121,17 +103,23 @@ const keyDocuments = [
   intro="Our legal form, governance structure and key documents."
   pageTitle={pageTitle}
   description={description}
+  heroImage={legalGovHero}
 >
   <section class="content-section policy-banner">
     <div class="policy-banner-inner">
       <div class="policy-banner-copy">
+        <h2>Our legal form</h2>
         <p class="policy-banner-lead">
           The European Strategy Institute (ESI) is an international, independent
-          think tank registered in Belgium as a non-profit association (ASBL).
+          think tank registered in Belgium as an Association Sans But Lucratif
+          (ASBL).
         </p>
         <p>
           We operate in accordance with Belgian law and our statutes, with a
-          transparent governance structure and clear internal policies.
+          transparent governance structure and clear internal policies. As a
+          non-profit organisation, our activities are dedicated to the public
+          interest and do not aim to generate profit distribution for our
+          members, founders or directors.
         </p>
       </div>
       <dl class="policy-meta-list">
@@ -175,35 +163,13 @@ const keyDocuments = [
   </section>
 
   <section class="content-section policy-section">
-    <h2>Our legal form</h2>
-    <p>
-      ESI is established as an Association Sans But Lucratif (ASBL) under
-      Belgian law. As a non-profit organisation, our activities are dedicated to
-      the public interest and do not aim to generate profit distribution for our
-      members, founders or directors.
-    </p>
-  </section>
-
-  <section class="content-section policy-section">
     <h2>Governance structure</h2>
     <p>
-      ESI is governed by a General Assembly and a Board of Directors, and
-      managed by an Executive Director. The governance roles (Founders,
-      Statutory Members and Board members) are not remunerated.
+      ESI is governed by a General Assembly and a Board of Directors, with
+      day-to-day operations managed by an Executive Director. The governance
+      structure, roles and responsibilities of each body are defined in our
+      statutes and aligned with Belgian law.
     </p>
-    <div class="policy-table-wrap">
-      <table class="policy-table policy-table-governance">
-        <tbody>
-          {governanceRoles.map((row) => (
-            <tr>
-              <td>{row.role}</td>
-              <td>{row.description}</td>
-              <td>{row.status}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
   </section>
 
   <section class="content-section policy-section">

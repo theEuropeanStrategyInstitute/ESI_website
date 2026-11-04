@@ -282,6 +282,7 @@ export const founders: Person[] = [
   person({
     name: "Matteo Maggiore",
     role: "Founding member profile pending",
+    bio: "Senior Adviser at the European Investment Bank (EIB) Group, where he previously served as Director of Communications from 2014 to 2025. With an extensive career in journalism, media and communications management, he has held senior positions across leading international organisations. Before joining the EIB Group, he served as Deputy Director of Communication and Public Affairs at the Organisation for Economic Co-operation and Development (OECD). Earlier in his career, he spent over two decades at the British Broadcasting Corporation (BBC), holding various roles spanning journalism, policy and strategy, with a focus on global communications, policy and media. His professional experience also includes working at the European Broadcasting Union in Geneva, serving as a senior consultant in media, telecommunications and technology in Brussels, and holding positions at the European Parliament and the European Commission. Matteo holds a master’s degree in international relations and is the author of both fiction and non-fiction works."
   }),
 ];
 
