@@ -172,7 +172,7 @@ export function EnquiryForm({
           <Field label="Country" name="Country" />
         </div>
         <label className="message-field">
-          <span>Message or notes</span>
+          <span>Message</span>
           <textarea name="Message" rows={6} required />
         </label>
         <input
@@ -229,7 +229,7 @@ export function EnquiryForm({
       <div className="form-grid">
         <Field label="Name" name="Name" required />
         <Field label="Email address" name="Email" type="email" required />
-        <Field label="Company or institution" name="Company or institution" />
+        <Field label="Company" name="Company" />
         <Field label="Phone number" name="Phone" type="tel" />
       </div>
       <label className="message-field">
