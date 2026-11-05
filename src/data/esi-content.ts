@@ -108,32 +108,32 @@ export const sectors = [
   {
     title: "Competitiveness & Industrial Policy",
     topics:
-      "Supporting a stronger, more innovative and globally competitive European economy.",
+      "Supporting a stronger, more innovative and globally competitive European economy: advanced manufacturing, pharmaceuticals, life sciences ",
   },
   {
     title: "Financial Infrastructure & Economic Security",
     topics:
-      "Payments, capital markets, digital finance and resilience.",
+      "Payments, capital markets, digital finance and resilience",
   },
   {
     title: "Energy, Industry & Industrial Transformation",
     topics:
-      "Energy systems, energy-intensive industries, advanced manufacturing, chemicals, construction and industrial competitiveness.",
+      "Energy systems, energy-intensive industries, advanced manufacturing, chemicals & pharmaceuticals, construction and industrial competitiveness",
   },
   {
     title: "Defence, Security & Strategic Resilience",
     topics:
-      "Defence industries, security policy, dual-use technologies and Europe's resilience in an increasingly complex geopolitical environment.",
+      "Defence industries, security policy, dual-use technologies, health security, Europe’s resilience in an increasingly complex geopolitical environment",
   },
   {
-    title: "Critical Resources & Supply Chains",
+    title: "Foundations of Europe's industrial sovereignty",
     topics:
-      "Critical raw materials, strategic value chains, resource security and the foundations of Europe's industrial sovereignty.",
+      "Critical raw materials, strategic value chains: critical medicines & active pharmaceutical ingredients (APIs), resource security",
   },
   {
-    title: "Space, Nuclear & Emerging Technologies",
+    title: "AI & Emerging technologies critical to Europe’s future competitiveness & strategic autonomy",
     topics:
-      "Space and New Space industries, civil nuclear and SMR technologies, as well as emerging technologies critical to Europe's future competitiveness and strategic autonomy.",
+      "Space & New Space industries, Civil Nuclear & SMR, biotechnology",
   },
 ];
 

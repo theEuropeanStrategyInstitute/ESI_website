@@ -17,6 +17,14 @@ const description =
   description={description}
   heroImage={partnershipHero}
 >
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position: absolute">
+    <filter id="esi-navy" color-interpolation-filters="sRGB">
+      <feColorMatrix
+        type="matrix"
+        values="0 0 0 0 0.082  0 0 0 0 0.035  0 0 0 0 0.345  0 0 0 1 0"
+      />
+    </filter>
+  </svg>
   <section class="content-section pub-events-section why-join-section partnership-benefits-section">
     <span class="pe-watermark" aria-hidden="true">
       01
@@ -209,7 +217,7 @@ const description =
     .pub-events-grid
     > .pub-events-block:nth-child(4)
     .why-join-icon {
-    filter: invert(4%) sepia(100%) saturate(5747%) hue-rotate(252deg); /* black → navy (#150958) */
+    filter: url(#esi-navy); /* any colour → navy (#150958); the CSS filter chain rendered purple in Safari */
   }
   .partnership-benefits-section
     .pub-events-grid
@@ -312,6 +320,23 @@ const description =
   }
   .partnership-principles .pillars .index {
     color: #d8d4e8;
+  }
+  /* Pillars stack into one column: mark each principle with a bullet */
+  @media (max-width: 540px) {
+    .partnership-principles .pillars h3 {
+      position: relative;
+      padding-left: 22px;
+    }
+    .partnership-principles .pillars h3::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
   }
   .partnership-tagline-section {
     display: flex;

@@ -17,6 +17,14 @@ const description =
   description={description}
   heroImage={membershipHero}
 >
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position: absolute">
+    <filter id="esi-navy" color-interpolation-filters="sRGB">
+      <feColorMatrix
+        type="matrix"
+        values="0 0 0 0 0.082  0 0 0 0 0.035  0 0 0 0 0.345  0 0 0 1 0"
+      />
+    </filter>
+  </svg>
   <section class="content-section pub-events-section member-benefits-section why-join-section">
     <span class="pe-watermark" aria-hidden="true">
       01
@@ -121,7 +129,7 @@ const description =
         <span class="pe-rule"></span>
         <span class="pe-eyebrow">Start a conversation</span>
       </div>
-      <h2>Explore becoming The European Strategy Institute's member.</h2>
+      <h2>Explore becoming The&nbsp;European Strategy Institute's member.</h2>
       <p>
         Share a few details about you and your organisation. Our team will get
         in touch to discuss the next steps.
@@ -171,6 +179,12 @@ const description =
   .benefit-points li {
     padding-left: 4px;
   }
+  @media (max-width: 620px) {
+    .benefit-points li {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
   .member-benefits-section .pub-events-grid {
     gap: 0;
     background: none;
@@ -209,7 +223,7 @@ const description =
     .pub-events-grid
     > .pub-events-block:nth-child(4)
     .why-join-icon {
-    filter: invert(4%) sepia(100%) saturate(5747%) hue-rotate(252deg); /* black → navy (#150958) */
+    filter: url(#esi-navy); /* any colour → navy (#150958); the CSS filter chain rendered purple in Safari */
   }
   .member-benefits-section
     .pub-events-grid

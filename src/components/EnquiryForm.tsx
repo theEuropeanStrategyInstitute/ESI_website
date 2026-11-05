@@ -165,16 +165,10 @@ export function EnquiryForm({
     return (
       <form className="enquiry-form" onSubmit={submitMembership}>
         <div className="form-grid">
-          <Field label="First name" name="First name" required />
-          <Field label="Last name" name="Last name" required />
+          <Field label="Name" name="Name" required />
           <Field label="Email address" name="Email" type="email" required />
-          <Field
-            label="Company or institution"
-            name="Company or institution"
-            required
-          />
+          <Field label="Company" name="Company" required />
           <Field label="Phone number" name="Phone" type="tel" />
-          <Field label="Website or LinkedIn" name="Website or LinkedIn" />
           <Field label="Country" name="Country" />
         </div>
         <label className="message-field">

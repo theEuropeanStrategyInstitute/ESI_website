@@ -5142,10 +5142,24 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 540px) {
+@media (max-width: 1000px) {
+  .expert-heading {
+    align-items: start;
+  }
+}
+@media (max-width: 640px) {
   .expert-grid,
   .expert-founder-grid {
     grid-template-columns: 1fr;
+  }
+  /* Keep portraits at their 4-column desktop proportions instead of stretching */
+  .expert-card,
+  .expert-founder-photo {
+    width: 100%;
+    max-width: 300px;
+    min-height: 0;
+    margin-inline: auto;
+    aspect-ratio: 6 / 7;
   }
   .expert-heading {
     grid-template-columns: 1fr;
@@ -5305,7 +5319,10 @@ body {
   .enquiry-form textarea {
     box-sizing: content-box;
     width: calc(100% - 4px);
-    height: 3em;
+    height: 1.5em;
+    line-height: 1.5;
+  }
+  .enquiry-form input {
     line-height: 1.5;
   }
 }
@@ -5374,4 +5391,28 @@ body {
   .footer-newsletter-line {
     display: block;
   }
+}
+
+/* Why-join cards: 2 columns from 1000px, no gap under the media block, bolder subheading */
+@media (max-width: 1000px) {
+  .why-join-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .why-join-media {
+    margin-bottom: 0;
+  }
+  .why-join-section .why-join-subheading {
+    padding-top: 15px;
+    font-weight: 600;
+  }
+}
+@media (max-width: 620px) {
+  .why-join-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Bar-chart icon sits optically low next to its heading */
+.why-join-icon[src*="Bar-Chart-Increase"] {
+  top: -5px;
 }

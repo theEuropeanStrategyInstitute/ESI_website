@@ -219,10 +219,18 @@ const keyDocuments = [
       <div>
         <h2>Questions about our legal status, governance or documents?</h2>
         <p>
-          If you have any questions, please contact us at
-          <a href="mailto:info@esi-eu.com">info@esi-eu.com</a>.
+          If you have any questions, please contact us at <a href="mailto:info@esi-eu.com">info@esi-eu.com</a>.
         </p>
       </div>
     </div>
   </section>
 </InnerLayout>
+
+<style is:global>
+  /* Mobile: crop the hero toward the right so two flags stay in frame */
+  @media (max-width: 700px) {
+    .page-hero-bg img {
+      object-position: 72% center;
+    }
+  }
+</style>
