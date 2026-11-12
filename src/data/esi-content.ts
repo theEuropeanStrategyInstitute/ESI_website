@@ -387,7 +387,8 @@ export const council: Person[] = [
 export const experts: Person[] = [
   person({
     name: "Alena Mastantuono",
-    role: "Alena Mastantuono is Vice-President of the European Economic and Social Committee (EESC) and Member of the Employers’ Group. She is an expert on the better regulation agenda, the internal market and energy issues. She works for the Czech Chamber of Commerce and serves as its delegate to Eurochambres. From 2011 to May 2021, she was Director of CEBRE – the Czech Business Representation to the EU in Brussels. From 2014 to May 2021, she also served as Head of the Brussels office of CzechTrade, where she supported Czech exporters in entering the Belgian market. Before joining CEBRE, she worked at the Czech Ministry of Finance on ECOFIN-related matters and, prior to that, in the private sector. She has also taught courses on EU policymaking at Czech higher education institutions.",
+    role: "Vice-President of the European Economic and Social Committee (EESC)",
+    bio: "Alena Mastantuono is Vice-President of the European Economic and Social Committee (EESC) and Member of the Employers’ Group. She is an expert on the better regulation agenda, the internal market and energy issues. She works for the Czech Chamber of Commerce and serves as its delegate to Eurochambres. From 2011 to May 2021, she was Director of CEBRE – the Czech Business Representation to the EU in Brussels. From 2014 to May 2021, she also served as Head of the Brussels office of CzechTrade, where she supported Czech exporters in entering the Belgian market. Before joining CEBRE, she worked at the Czech Ministry of Finance on ECOFIN-related matters and, prior to that, in the private sector. She has also taught courses on EU policymaking at Czech higher education institutions.",
     photoSlug: "alena_mastantuono",
   }),
   person({
