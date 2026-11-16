@@ -112,8 +112,7 @@ export const sectors = [
   },
   {
     title: "Financial Infrastructure & Economic Security",
-    topics:
-      "Payments, capital markets, digital finance and resilience",
+    topics: "Payments, capital markets, digital finance and resilience",
   },
   {
     title: "Energy, Industry & Industrial Transformation",
@@ -131,9 +130,9 @@ export const sectors = [
       "Critical raw materials, strategic value chains: critical medicines & active pharmaceutical ingredients (APIs), resource security",
   },
   {
-    title: "AI & Emerging technologies critical to Europe’s future competitiveness & strategic autonomy",
-    topics:
-      "Space & New Space industries, Civil Nuclear & SMR, biotechnology",
+    title:
+      "AI & Emerging technologies critical to Europe’s future competitiveness & strategic autonomy",
+    topics: "Space & New Space industries, Civil Nuclear & SMR, biotechnology",
   },
 ];
 
@@ -357,7 +356,7 @@ export const council: Person[] = [
     role: "Former Head of Poland’s National Security Bureau; Senior Fellow at the Atlantic Council",
     photoSlug: "jacek_siewiera",
     photoZoomOut: true,
-    bio: "Polish transatlantic security strategist, military physician, and founder of Hybrid Global Strategy, a company focused on civil protection, CBRN infrastructure, and defence technologies. From 2022 to 2025, he served as Secretary of State and Head of Poland’s National Security Bureau. A lieutenant colonel in the reserve and a holder of a habilitation (DSc) in medical sciences, he brings extensive experience at the intersection of medicine, defence policy, and hybrid threat response. After completing his government service in early 2025, he transitioned to international strategic roles. He is a Clarendon Scholar at the University of Oxford and a Senior Fellow at the Atlantic Council, where his work focuses on transatlantic security, resilience, and the evolving sub-defence sector. Founder of Hybrid Global Strategy (Hybrid GS), a holding company focused on urban life-protection infrastructure, CBRN preparedness, and technologies designed to counter hybrid threats, contributing to the development of advanced security and resilience solutions. In parallel, he serves as an Associate Professor at the Polish Naval Academy and remains a leading authority in international discussions on hybrid threats, national resilience, and the transformation of civil defence. Since November 2026, a member of the newly established PreparEU Advisory Group, appointed by the European Commission, alongside ten other high-level experts from across Europe. Since November 2026, a member of the newly established PreparEU Advisory Group, appointed by the European Commission, alongside ten other high-level experts from across Europe.",
+    bio: "Polish transatlantic security strategist, military physician, and founder of Hybrid Global Strategy, a company focused on civil protection, CBRN infrastructure, and defence technologies. From 2022 to 2025, he served as Secretary of State and Head of Poland’s National Security Bureau. A lieutenant colonel in the reserve and a holder of a habilitation (DSc) in medical sciences, he brings extensive experience at the intersection of medicine, defence policy, and hybrid threat response. After completing his government service in early 2025, he transitioned to international strategic roles. He is a Clarendon Scholar at the University of Oxford and a Senior Fellow at the Atlantic Council, where his work focuses on transatlantic security, resilience, and the evolving sub-defence sector. Founder of Hybrid Global Strategy (Hybrid GS), a holding company focused on urban life-protection infrastructure, CBRN preparedness, and technologies designed to counter hybrid threats, contributing to the development of advanced security and resilience solutions. In parallel, he serves as an Associate Professor at the Polish Naval Academy and remains a leading authority in international discussions on hybrid threats, national resilience, and the transformation of civil defence. Since November 2026, a member of the newly established PreparEU Advisory Group, appointed by the European Commission, alongside ten other high-level experts from across Europe.",
   }),
   person({
     name: "Žygimantas Vaičiūnas",
@@ -415,7 +414,7 @@ export const experts: Person[] = [
     role: "Former Head of Poland’s National Security Bureau; Senior Fellow at the Atlantic Council",
     photoSlug: "jacek_siewiera",
     photoZoomOut: true,
-    bio: "Polish transatlantic security strategist, military physician, and founder of Hybrid Global Strategy, a company focused on civil protection, CBRN infrastructure, and defence technologies. From 2022 to 2025, he served as Secretary of State and Head of Poland’s National Security Bureau. A lieutenant colonel in the reserve and a holder of a habilitation (DSc) in medical sciences, he brings extensive experience at the intersection of medicine, defence policy, and hybrid threat response. After completing his government service in early 2025, he transitioned to international strategic roles. He is a Clarendon Scholar at the University of Oxford and a Senior Fellow at the Atlantic Council, where his work focuses on transatlantic security, resilience, and the evolving sub-defence sector. Founder of Hybrid Global Strategy (Hybrid GS), a holding company focused on urban life-protection infrastructure, CBRN preparedness, and technologies designed to counter hybrid threats, contributing to the development of advanced security and resilience solutions. In parallel, he serves as an Associate Professor at the Polish Naval Academy and remains a leading authority in international discussions on hybrid threats, national resilience, and the transformation of civil defence. Since November 2026, a member of the newly established PreparEU Advisory Group, appointed by the European Commission, alongside ten other high-level experts from across Europe. Since November 2026, a member of the newly established PreparEU Advisory Group, appointed by the European Commission, alongside ten other high-level experts from across Europe.",
+    bio: "Polish transatlantic security strategist, military physician, and founder of Hybrid Global Strategy, a company focused on civil protection, CBRN infrastructure, and defence technologies. From 2022 to 2025, he served as Secretary of State and Head of Poland’s National Security Bureau. A lieutenant colonel in the reserve and a holder of a habilitation (DSc) in medical sciences, he brings extensive experience at the intersection of medicine, defence policy, and hybrid threat response. After completing his government service in early 2025, he transitioned to international strategic roles. He is a Clarendon Scholar at the University of Oxford and a Senior Fellow at the Atlantic Council, where his work focuses on transatlantic security, resilience, and the evolving sub-defence sector. Founder of Hybrid Global Strategy (Hybrid GS), a holding company focused on urban life-protection infrastructure, CBRN preparedness, and technologies designed to counter hybrid threats, contributing to the development of advanced security and resilience solutions. In parallel, he serves as an Associate Professor at the Polish Naval Academy and remains a leading authority in international discussions on hybrid threats, national resilience, and the transformation of civil defence. Since November 2026, a member of the newly established PreparEU Advisory Group, appointed by the European Commission, alongside ten other high-level experts from across Europe.",
   }),
   person({
     name: "TBD",
