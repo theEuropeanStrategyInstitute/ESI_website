@@ -106,6 +106,8 @@ const hasEntry = Boolean(title);
 
 <style>
   .entry-dialog {
+    /* Tailwind's preflight resets margin to 0, which would pin the modal to the top left. */
+    margin: auto;
     width: min(640px, calc(100vw - 32px));
     max-height: calc(100dvh - 32px);
     padding: 0;
