@@ -1,0 +1,92 @@
+---
+import { getCollection } from "astro:content";
+import InnerLayout from "../../layouts/InnerLayout.astro";
+import publicationsEventsHero from "../../assets/publicationsEvents_hero.png";
+
+const pageTitle = "Publications | The European Strategy Institute";
+const description =
+  "Reports, policy briefs and expert commentary from The European Strategy Institute.";
+
+const publications = (await getCollection("publications")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const formatDate = (date: Date): string =>
+  date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+---
+
+<InnerLayout
+  eyebrow="Publications"
+  title="Publications"
+  intro="Strategic reports, policy briefs and expert commentary on Europe's most pressing challenges."
+  pageTitle={pageTitle}
+  description={description}
+  heroImage={publicationsEventsHero}
+>
+  <section class="content-section">
+    {publications.length === 0 ? (
+      <p>No publications have been released yet. Please check back soon.</p>
+    ) : (
+      <ul class="entry-list">
+        {publications.map((publication) => (
+          <li class="entry">
+            {publication.data.image && (
+              <img class="entry-image" src={publication.data.image} alt="" />
+            )}
+            <div class="entry-body">
+              <p class="entry-meta">
+                {formatDate(publication.data.date)}
+                {publication.data.category && (
+                  <> · {publication.data.category}</>
+                )}
+              </p>
+              <h2>{publication.data.title}</h2>
+              {publication.data.summary && <p>{publication.data.summary}</p>}
+              {publication.data.pdf && (
+                <a class="cta" href={publication.data.pdf} target="_blank">
+                  Read publication (PDF)
+                </a>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</InnerLayout>
+
+<style>
+  .entry-list {
+    display: grid;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .entry {
+    display: grid;
+    gap: 24px;
+    align-items: start;
+  }
+  @media (min-width: 700px) {
+    .entry {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    }
+  }
+  .entry-image {
+    width: 100%;
+    height: auto;
+  }
+  .entry-meta {
+    margin: 0 0 8px;
+    color: var(--muted-foreground);
+  }
+  .entry h2 {
+    margin: 0 0 12px;
+  }
+</style>

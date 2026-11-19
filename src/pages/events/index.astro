@@ -1,0 +1,100 @@
+---
+import { getCollection } from "astro:content";
+import InnerLayout from "../../layouts/InnerLayout.astro";
+import publicationsEventsHero from "../../assets/publicationsEvents_hero.png";
+
+const pageTitle = "Events | The European Strategy Institute";
+const description =
+  "Upcoming and past events from The European Strategy Institute.";
+
+const events = (await getCollection("events")).sort(
+  (a, b) => a.data.date.getTime() - b.data.date.getTime(),
+);
+
+const formatDate = (date: Date): string =>
+  date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+---
+
+<InnerLayout
+  eyebrow="Events"
+  title="Events"
+  intro="Round tables, forums and briefings with leaders from business, policy and academia."
+  pageTitle={pageTitle}
+  description={description}
+  heroImage={publicationsEventsHero}
+>
+  <section class="content-section">
+    {events.length === 0 ? (
+      <p>No events have been announced yet. Please check back soon.</p>
+    ) : (
+      <ul class="entry-list">
+        {events.map((event) => (
+          <li class="entry">
+            {event.data.image && (
+              <img class="entry-image" src={event.data.image} alt="" />
+            )}
+            <div class="entry-body">
+              <p class="entry-meta">
+                {formatDate(event.data.date)}
+                {event.data.time && <> · {event.data.time}</>}
+                {event.data.format && <> · {event.data.format}</>}
+              </p>
+              <h2>{event.data.title}</h2>
+              {event.data.location && (
+                <p class="entry-location">{event.data.location}</p>
+              )}
+              {event.data.summary && <p>{event.data.summary}</p>}
+              {event.data.registrationUrl && (
+                <a
+                  class="cta"
+                  href={event.data.registrationUrl}
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Register
+                </a>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</InnerLayout>
+
+<style>
+  .entry-list {
+    display: grid;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .entry {
+    display: grid;
+    gap: 24px;
+    align-items: start;
+  }
+  @media (min-width: 700px) {
+    .entry {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    }
+  }
+  .entry-image {
+    width: 100%;
+    height: auto;
+  }
+  .entry-meta,
+  .entry-location {
+    margin: 0 0 8px;
+    color: var(--muted-foreground);
+  }
+  .entry h2 {
+    margin: 0 0 12px;
+  }
+</style>
