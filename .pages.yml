@@ -11,6 +11,10 @@ content:
     filename:
       template: "{year}-{month}-{day}-{primary}.md"
       field: date
+    view:
+      primary: title
+      sort: date
+      order: desc
     fields:
       - name: title
         label: Title
@@ -55,6 +59,10 @@ content:
     filename:
       template: "{year}-{month}-{day}-{primary}.md"
       field: date
+    view:
+      primary: title
+      sort: date
+      order: desc
     fields:
       - name: title
         label: Title

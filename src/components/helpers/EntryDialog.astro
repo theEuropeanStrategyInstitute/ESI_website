@@ -1,0 +1,172 @@
+---
+interface Link {
+  label: string;
+  href: string;
+  external?: boolean | undefined;
+}
+
+interface Props {
+  id: string;
+  eyebrow: string;
+  emptyMessage: string;
+  title?: string | undefined;
+  meta?: string | undefined;
+  location?: string | undefined;
+  summary?: string | undefined;
+  image?: string | undefined;
+  primaryLink?: Link | undefined;
+  allLink: Link;
+}
+
+const {
+  id,
+  eyebrow,
+  emptyMessage,
+  title,
+  meta,
+  location,
+  summary,
+  image,
+  primaryLink,
+  allLink,
+} = Astro.props;
+const hasEntry = Boolean(title);
+---
+
+<dialog
+  id={id}
+  class="entry-dialog"
+  data-entry-dialog
+  aria-labelledby={`${id}-eyebrow`}
+>
+  <div class="entry-dialog-panel">
+    <button
+      type="button"
+      class="entry-dialog-close"
+      data-dialog-close
+      aria-label="Close"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+    <p class="eyebrow" id={`${id}-eyebrow`}>
+      {eyebrow}
+    </p>
+    {hasEntry ? (
+      <>
+        {image && <img class="entry-dialog-image" src={image} alt="" />}
+        {meta && <p class="entry-dialog-meta">{meta}</p>}
+        <h2 class="entry-dialog-title">{title}</h2>
+        {location && <p class="entry-dialog-meta">{location}</p>}
+        {summary && <p>{summary}</p>}
+      </>
+    ) : (
+      <p>{emptyMessage}</p>
+    )}
+    <div class="entry-dialog-actions">
+      {hasEntry && primaryLink && (
+        <a
+          class="cta"
+          href={primaryLink.href}
+          target={primaryLink.external ? "_blank" : undefined}
+          rel={primaryLink.external ? "noopener" : undefined}
+        >
+          {primaryLink.label}
+        </a>
+      )}
+      <a class="entry-dialog-all" href={allLink.href}>
+        {allLink.label} →
+      </a>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  document
+    .querySelectorAll<HTMLDialogElement>("dialog[data-entry-dialog]")
+    .forEach((dialog) => {
+      dialog
+        .querySelector<HTMLButtonElement>("[data-dialog-close]")
+        ?.addEventListener("click", () => dialog.close());
+
+      // The panel fills the dialog, so a click on the dialog element itself is a backdrop click.
+      dialog.addEventListener("click", (event: MouseEvent) => {
+        if (event.target === dialog) dialog.close();
+      });
+    });
+
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-dialog-open]")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        const dialog = document.getElementById(button.dataset.dialogOpen ?? "");
+        if (dialog instanceof HTMLDialogElement) dialog.showModal();
+      });
+    });
+</script>
+
+<style>
+  .entry-dialog {
+    width: min(640px, calc(100vw - 32px));
+    max-height: calc(100dvh - 32px);
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    background: var(--background);
+    color: var(--foreground);
+    overflow: auto;
+  }
+  .entry-dialog::backdrop {
+    background: rgb(21 9 88 / 0.6);
+  }
+  .entry-dialog-panel {
+    position: relative;
+    display: grid;
+    gap: 16px;
+    padding: 40px 32px 32px;
+  }
+  .entry-dialog-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--foreground);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .entry-dialog-close:hover {
+    background: #f0f0f0;
+  }
+  .entry-dialog-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .entry-dialog-meta {
+    margin: 0;
+    color: var(--muted-foreground);
+  }
+  .entry-dialog-title {
+    margin: 0;
+  }
+  .entry-dialog p {
+    margin: 0;
+  }
+  .entry-dialog-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 24px;
+    margin-top: 8px;
+  }
+  .entry-dialog-all {
+    color: var(--navy);
+    font-size: 14px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

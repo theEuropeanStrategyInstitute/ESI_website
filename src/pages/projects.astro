@@ -1,13 +1,72 @@
 ---
+import { getCollection } from "astro:content";
 import InnerLayout from "../layouts/InnerLayout.astro";
 import { influenceTools, sectors } from "../data/esi-content";
 import publicationsEventsHero from "../assets/publicationsEvents_hero.png";
 import Arrow from "../components/helpers/Arrow.astro";
+import EntryDialog from "../components/helpers/EntryDialog.astro";
 // import programmes from "../data/esi-programmes";
 
 const pageTitle = "Programmes & Insights | The European Strategy Institute";
 const description =
   "ESI programmes, strategic influence tools and priority sectors.";
+
+const formatDate = (date: Date): string =>
+  date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+
+const now = new Date();
+const startOfToday = Date.UTC(
+  now.getUTCFullYear(),
+  now.getUTCMonth(),
+  now.getUTCDate(),
+);
+
+// Next scheduled event; if none is upcoming, the most recent past one.
+const events = (await getCollection("events")).sort(
+  (a, b) => a.data.date.getTime() - b.data.date.getTime(),
+);
+const latestEvent =
+  events.find((event) => event.data.date.getTime() >= startOfToday) ??
+  events.at(-1);
+const latestEventData = latestEvent?.data;
+const latestEventMeta =
+  latestEventData &&
+  [
+    formatDate(latestEventData.date),
+    latestEventData.time,
+    latestEventData.format,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+const latestEventRegister = latestEventData?.registrationUrl
+  ? ({
+      label: "Register",
+      href: latestEventData.registrationUrl,
+      external: true,
+    } as const)
+  : undefined;
+
+const latestPublication = (await getCollection("publications")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+)[0];
+const latestPublicationData = latestPublication?.data;
+const latestPublicationMeta =
+  latestPublicationData &&
+  [formatDate(latestPublicationData.date), latestPublicationData.category]
+    .filter(Boolean)
+    .join(" · ");
+const latestPublicationPdf = latestPublicationData?.pdf
+  ? ({
+      label: "Read publication (PDF)",
+      href: latestPublicationData.pdf,
+      external: true,
+    } as const)
+  : undefined;
 ---
 
 <InnerLayout
@@ -125,9 +184,14 @@ const description =
         business leaders and institutions with rigorous analysis and actionable
         insights.
       </p>
-      <a class="cta pe-cta" href="#">
+      <button
+        type="button"
+        class="cta pe-cta"
+        data-dialog-open="latest-publication-dialog"
+        aria-haspopup="dialog"
+      >
         Explore <Arrow />
-      </a>
+      </button>
     </div>
   </section>
 
@@ -150,11 +214,41 @@ const description =
         forums, closed-door expert discussions, public conferences and bilateral
         stakeholder meetings.
       </p>
-      <a class="cta pe-cta" href="#">
+      <button
+        type="button"
+        class="cta pe-cta"
+        data-dialog-open="latest-event-dialog"
+        aria-haspopup="dialog"
+      >
         Take a look <Arrow />
-      </a>
+      </button>
     </div>
   </section>
+
+  <EntryDialog
+    id="latest-publication-dialog"
+    eyebrow="Latest publication"
+    emptyMessage="No publications have been released yet. Please check back soon."
+    title={latestPublicationData?.title}
+    meta={latestPublicationMeta}
+    summary={latestPublicationData?.summary}
+    image={latestPublicationData?.image}
+    primaryLink={latestPublicationPdf}
+    allLink={{ label: "All publications", href: "/publications" }}
+  />
+
+  <EntryDialog
+    id="latest-event-dialog"
+    eyebrow="Latest event"
+    emptyMessage="No events have been announced yet. Please check back soon."
+    title={latestEventData?.title}
+    meta={latestEventMeta}
+    location={latestEventData?.location}
+    summary={latestEventData?.summary}
+    image={latestEventData?.image}
+    primaryLink={latestEventRegister}
+    allLink={{ label: "All events", href: "/events" }}
+  />
 
   <section class="page-cta">
     <p class="eyebrow">Work with us</p>
@@ -164,3 +258,12 @@ const description =
     </a>
   </section>
 </InnerLayout>
+
+<style>
+  button.pe-cta {
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: inherit;
+  }
+</style>
