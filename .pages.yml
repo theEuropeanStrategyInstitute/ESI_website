@@ -1,0 +1,85 @@
+media:
+  input: public/uploads
+  output: /uploads
+
+content:
+  - name: events
+    label: Events
+    type: collection
+    path: src/content/events
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: date
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: time
+        label: Time (e.g. 18:00 CET)
+        type: string
+      - name: location
+        label: Location
+        type: string
+      - name: format
+        label: Event format
+        type: select
+        options:
+          values:
+            - Executive Roundtables
+            - Policy Dialogues
+            - Strategic Forums
+            - Closed-Door Expert Discussions
+            - Public Conferences
+            - Bilateral Stakeholder Meetings
+      - name: summary
+        label: Short summary
+        type: text
+      - name: image
+        label: Image
+        type: image
+      - name: registrationUrl
+        label: Registration link (optional)
+        type: string
+
+  - name: publications
+    label: Publications
+    type: collection
+    path: src/content/publications
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: date
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Publication date
+        type: date
+        required: true
+      - name: category
+        label: Category
+        type: select
+        options:
+          values:
+            - Strategic Reports
+            - Policy Briefs
+            - Expert Commentary
+            - Research Papers
+            - Event Insights
+      - name: summary
+        label: Short summary
+        type: text
+      - name: image
+        label: Cover image
+        type: image
+      - name: pdf
+        label: PDF (upload)
+        type: file
