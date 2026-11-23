@@ -1106,14 +1106,13 @@ img {
 }
 .bridge-hero h1 {
   font-family: var(--serif);
-  font-size: clamp(64px, 7.3vw, 110px);
+  font-size: clamp(57px, 6.6vw, 99px);
   line-height: 1;
   margin: 28px 0 27px;
 }
 .bridge-hero p:not(.eyebrow) {
-  font-size: 16px;
+  font-size: 20px;
   color: #f0ecfa;
-  margin-bottom: 35px;
 }
 .bridge .cta {
   color: var(--navy);
@@ -1729,6 +1728,9 @@ img {
   .site-footer p {
     max-width: 240px;
   }
+  .footer-tagline {
+    font-size: 25px;
+  }
   .bridge-opening {
     min-height: 740px;
   }
@@ -1927,6 +1929,10 @@ img {
   }
   .bridge-hero p:not(.eyebrow) {
     font-size: 14px;
+  }
+  .bridge-hero-description {
+    font-size: 15px;
+    margin: 16px 0 24px;
   }
   .bridge-hero p br {
     display: none;
@@ -2175,6 +2181,13 @@ body {
   max-width: 1050px;
   text-shadow: 0 2px 34px rgba(5, 6, 28, 0.25);
 }
+.bridge-hero-description {
+  font-size: 16px;
+  color: #f0ecfa;
+  max-width: 640px;
+  margin: 20px 0 30px;
+  line-height: 1.6;
+}
 .bridge-hero .cta {
   box-shadow: 0 12px 32px rgba(4, 6, 25, 0.16);
 }
@@ -2404,9 +2417,6 @@ body {
   max-width: 1220px;
   font-size: clamp(58px, 6.6vw, 100px);
 }
-.bridge-hero .cta {
-  margin-top: 38px;
-}
 
 @media (max-width: 1100px) {
   .website .site-header > nav {
@@ -2465,6 +2475,12 @@ body {
   }
   .bridge-hero h1 {
     font-size: clamp(43px, 12vw, 56px);
+  }
+  .bridge-hero-first-line {
+    font-size: clamp(40px, 10vw, 45px);
+  }
+  .bridge-hero h1 em {
+    font-size: 0.8em;
   }
 }
 
@@ -2996,6 +3012,9 @@ body {
 }
 .footer-newsletter-line {
   display: block;
+}
+.footer-newsletter-line:first-child {
+  font-size: calc(1em + 6px);
 }
 
 /* Column row: brand / explore / resources / contact / follow ------------- */
