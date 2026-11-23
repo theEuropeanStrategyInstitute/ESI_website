@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import ESI_Logo_fin_white from "../../assets/ESI_Logo_fin_white.png";
+import emailIcon from "../../assets/icons/email.png";
+import placeholderIcon from "../../assets/icons/placeholder.png";
 
 /** MailerLite embedded form (ID 47822263, account 2742698). */
 const NEWSLETTER_ENDPOINT =
@@ -51,7 +53,7 @@ const legalLinks: [string, string][] = [
       </div>
       <p class="footer-locations">
         <span class="footer-locations-rule" aria-hidden="true"></span>
-        Brussels &ndash; Warsaw
+        CEE &ndash; Brussels
         <span class="footer-locations-rule" aria-hidden="true"></span>
       </p>
     </div>
@@ -63,9 +65,11 @@ const legalLinks: [string, string][] = [
         <div class="row-form">
           <p class="footer-newsletter-heading">
             <span class="footer-newsletter-line">
-              Sign up for our NEWSLETTER
+              Sign up for our Newsletter.
             </span>{" "}
-            <span class="footer-newsletter-line">and stay informed.</span>
+            <span class="footer-newsletter-line">
+              Stay informed. Stay connected.
+            </span>
           </p>
           <form
             class="footer-newsletter ml-block-form"
@@ -106,7 +110,9 @@ const legalLinks: [string, string][] = [
                 <input type="checkbox" name="consent" required />
                 <span class="label-description">
                   I agree to receive updates from The European Strategy
-                  Institute. You can unsubscribe at any time.
+                  Institute.
+                  <br />
+                  You can unsubscribe at any time.
                 </span>
               </label>
             </div>
@@ -127,9 +133,9 @@ const legalLinks: [string, string][] = [
   <div class="footer-columns">
     <div class="footer-brand">
       <p class="footer-description">
-        A Brussels-based independent think tank and strategic dialogue platform
-        working at the intersection of business, policy and European
-        institutions.
+        A Brussels-based independent think tank amplifying the voice of CEE
+        business in EU policymaking and advancing Europe’s competitiveness,
+        industrial sovereignty and strategic resilience.
       </p>
       <p class="footer-enterprise">Enterprise Number (BCE/KBO): 0XXX.XXX.XXX</p>
     </div>
@@ -158,16 +164,34 @@ const legalLinks: [string, string][] = [
 
     <div class="footer-col footer-contact-col">
       <h3 class="footer-col-heading">Contact us</h3>
-      <address>
-        Rue d'Arlon 25,
-        <br />
-        1050 Brussels
-        <br />
-        Belgium
-      </address>
-      <a class="footer-contact-email" href="mailto:info@esi-eu.com">
-        info@esi-eu.com
-      </a>
+      <div class="footer-contact-address">
+        <Image
+          class="footer-contact-icon"
+          src={placeholderIcon}
+          alt=""
+          width="20"
+          height="20"
+        />
+        <address>
+          Rue d'Arlon 25,
+          <br />
+          1050 Brussels
+          <br />
+          Belgium
+        </address>
+      </div>
+      <div class="footer-contact-email-wrapper">
+        <Image
+          class="footer-contact-icon"
+          src={emailIcon}
+          alt=""
+          width="20"
+          height="20"
+        />
+        <a class="footer-contact-email" href="mailto:info@esi-eu.com">
+          info@esi-eu.com
+        </a>
+      </div>
     </div>
 
     <div class="footer-col footer-follow-col">
