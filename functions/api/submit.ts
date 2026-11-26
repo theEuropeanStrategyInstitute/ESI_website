@@ -4,6 +4,10 @@ interface Env {
   RESEND_API_KEY: string;
   RESEND_FROM_EMAIL?: string;
   RESEND_TO_EMAIL?: string;
+  // Google Apps Script web-app URLs (docs/google-sheets-apps-script.gs).
+  MEMBERS_SHEET_URL?: string;
+  PARTNERS_SHEET_URL?: string;
+  SHEET_SECRET?: string;
 }
 
 type FormKind = "contact" | "partnership" | "membership";
@@ -56,6 +60,39 @@ function jsonResponse(body: Record<string, unknown>, status = 200): Response {
     status,
     headers: { "content-type": "application/json" },
   });
+}
+
+// Appends the submission to the matching Google Sheet via an Apps Script web
+// app. Contact enquiries are email-only.
+async function appendToSheet(
+  env: Env,
+  kind: FormKind,
+  fields: Record<string, string>,
+): Promise<boolean> {
+  const url =
+    kind === "membership"
+      ? env.MEMBERS_SHEET_URL
+      : kind === "partnership"
+        ? env.PARTNERS_SHEET_URL
+        : undefined;
+  if (!url || !env.SHEET_SECRET) return false;
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "content-type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({ secret: env.SHEET_SECRET, fields }),
+      redirect: "follow",
+    });
+    const result = (await response.json()) as { result?: string };
+    if (result.result !== "success") {
+      console.error("Sheet append rejected", JSON.stringify(result));
+    }
+    return result.result === "success";
+  } catch (error) {
+    console.error("Sheet append failed", error);
+    return false;
+  }
 }
 
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
@@ -114,6 +151,12 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     payload.reply_to = replyTo;
   }
 
+  const sheetPromise = appendToSheet(
+    env,
+    kind,
+    Object.fromEntries(fields.map(([key, value]) => [key, String(value)])),
+  );
+
   const resendResponse = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -123,9 +166,13 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
     body: JSON.stringify(payload),
   });
 
+  const sheetOk = await sheetPromise;
+
   if (!resendResponse.ok) {
     const errorBody = await resendResponse.text();
     console.error("Resend API error", resendResponse.status, errorBody);
+    // The application still counts as received if it reached the sheet.
+    if (sheetOk) return jsonResponse({ ok: true });
     return jsonResponse({ ok: false, error: "Failed to send email." }, 502);
   }
 

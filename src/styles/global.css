@@ -2189,6 +2189,7 @@ body {
   line-height: 1.6;
 }
 .bridge-hero .cta {
+  gap: 15px;
   box-shadow: 0 12px 32px rgba(4, 6, 25, 0.16);
 }
 .bridge-bottom a {
@@ -3096,11 +3097,18 @@ body {
 .footer-col a:hover:after {
   right: 0;
 }
-.footer-contact-address {
+.footer-col .footer-contact-address {
   display: flex;
+  width: auto;
+  padding-block: 0;
   gap: 12px;
   align-items: flex-start;
   margin-bottom: 16px;
+  color: white;
+  text-decoration: none;
+}
+.footer-col .footer-contact-address:after {
+  content: none;
 }
 .footer-contact-address address {
   margin: 0;
@@ -3109,6 +3117,11 @@ body {
   font-size: 15px;
   font-style: normal;
   line-height: 1.5;
+}
+.footer-contact-address:hover address,
+.footer-contact-address:focus-visible address {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .footer-contact-icon {
   flex-shrink: 0;
@@ -3123,6 +3136,7 @@ body {
 }
 .footer-contact-email {
   display: inline-block;
+  white-space: nowrap;
   padding-bottom: 4px;
   border-bottom: 1px solid #7e75a0;
   color: white;
@@ -5230,17 +5244,8 @@ body {
   }
 }
 
-/* About us hero: line break variants (desktop breaks after "this is") */
-.page-hero h1 .br-mobile {
-  display: none;
-}
+/* About us hero: always breaks after "this is" */
 @media (max-width: 700px) {
-  .page-hero h1 .br-mobile {
-    display: inline;
-  }
-  .page-hero h1 .br-desktop {
-    display: none;
-  }
   .page-hero h1 .title-fit {
     font-size: 0.82em;
   }

@@ -164,7 +164,13 @@ const legalLinks: [string, string][] = [
 
     <div class="footer-col footer-contact-col">
       <h3 class="footer-col-heading">Contact us</h3>
-      <div class="footer-contact-address">
+      <a
+        class="footer-contact-address"
+        href="https://www.google.com/maps/place/Rue+d'Arlon+25,+1050+Ixelles,+Belgium/@50.8401515,4.3701759,17z/data=!3m1!4b1!4m6!3m5!1s0x47c3c49ba80a0c9b:0x1b2d83e14a2cf58e!8m2!3d50.8401515!4d4.3727508!16s%2Fg%2F11bw40512s?entry=ttu&g_ep=EgoyMDI2MTEyMy4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open our address in Google Maps"
+      >
         <Image
           class="footer-contact-icon"
           src={placeholderIcon}
@@ -179,7 +185,7 @@ const legalLinks: [string, string][] = [
           <br />
           Belgium
         </address>
-      </div>
+      </a>
       <div class="footer-contact-email-wrapper">
         <Image
           class="footer-contact-icon"

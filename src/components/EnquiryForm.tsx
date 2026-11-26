@@ -65,29 +65,11 @@ export function EnquiryForm({
       return;
     }
 
+    // Email and (for membership/partnership) the Google Sheet row are both
+    // handled by /api/submit.
     setStatus("submitting");
-
-    const endpoint = import.meta.env.PUBLIC_MEMBERSHIP_FORM_URL;
-    const [sheetResult, emailOk] = await Promise.allSettled([
-      endpoint
-        ? fetch(endpoint, { method: "POST", body: data }).then(
-            async (response) => {
-              const result = (await response.json()) as { result?: string };
-              return result.result === "success";
-            },
-          )
-        : Promise.resolve(false),
-      sendToResend(data, "membership"),
-    ]);
-
-    const sheetOk = sheetResult.status === "fulfilled" && sheetResult.value;
-    const mailOk = emailOk.status === "fulfilled" && emailOk.value;
-    if (!mailOk) {
-      console.warn("Membership email notification via Resend failed.");
-    }
-
-    // The application is received if either channel delivered it.
-    if (sheetOk || mailOk) {
+    const ok = await sendToResend(data, "membership");
+    if (ok) {
       form.reset();
       setStatus("success");
     } else {
