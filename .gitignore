@@ -42,3 +42,10 @@ next-env.d.ts
 
 *.tsbuildinfo
 
+
+# AI agent tooling (local only)
+.agents/
+.claude/
+.cursor/
+.openai/
+skills-lock.json
