@@ -49,3 +49,5 @@ next-env.d.ts
 .cursor/
 .openai/
 skills-lock.json
+context/
+CLAUDE.md
