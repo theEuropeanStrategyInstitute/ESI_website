@@ -5,7 +5,6 @@ import { influenceTools, sectors } from "../data/esi-content";
 import publicationsEventsHero from "../assets/publicationsEvents_hero.png";
 import Arrow from "../components/helpers/Arrow.astro";
 import EntryDialog from "../components/helpers/EntryDialog.astro";
-// import programmes from "../data/esi-programmes";
 
 const pageTitle = "Programmes & Insights | The European Strategy Institute";
 const description =
@@ -145,23 +144,6 @@ const latestPublicationPdf = latestPublicationData?.pdf
       ))}
     </div>
   </section>
-
-  <!-- <section class="content-section programmes-section">
-    <div class="content-heading">
-      <p class="section-number">03 / Flagship programmes</p>
-      <h2>Two forums for Europe's defining questions.</h2>
-    </div>
-    <div class="programme-grid">
-      {programmes.map((programme) => (
-        <article>
-          <span>{programme.number}</span>
-          <h3>{programme.title}</h3>
-          <p>{programme.body}</p>
-          <small>{programme.note}</small>
-        </article>
-      ))}
-    </div>
-  </section> -->
 
   <section class="content-section section-dark pe-split" id="publications">
     <div class="pe-col pe-col-left pe-col-dark">

@@ -275,10 +275,6 @@ export const founders: Person[] = [
     bio: "An energy policy expert and former Lithuanian Minister of Energy, with more than 20 years of experience shaping national and European energy policy, advancing strategic energy infrastructure, and strengthening energy security. As Lithuania’s Minister of Energy across three governments, he led and contributed to key initiatives at the intersection of energy security, the energy transition, and European energy policy. He has also served as Acting Prime Minister, Acting Minister of Economy and Innovation, and Acting Minister of Environment. His career spans senior positions in the Lithuanian government, the Permanent Representation of Lithuania to the European Union, and the European Solar Manufacturing Council in Brussels, where he focused on European industrial policy for solar PV manufacturing. He has been closely involved in major strategic energy initiatives, including the synchronisation of the Baltic States’ electricity grids with Continental Europe, the development of renewable energy, and the deployment of battery energy storage systems. Žygimantas holds a Master’s degree in Political Science and European Studies and a Bachelor’s degree in Political Science from Vilnius University.",
   }),
   person({
-    name: "TBD",
-    role: "Founding member profile pending",
-  }),
-  person({
     name: "Matteo Maggiore",
     role: "Senior Adviser at the European Investment Bank (EIB) Group",
     bio: "Senior Adviser at the European Investment Bank (EIB) Group, where he previously served as Director of Communications from 2014 to 2025. With an extensive career in journalism, media and communications management, he has held senior positions across leading international organisations. Before joining the EIB Group, he served as Deputy Director of Communication and Public Affairs at the Organisation for Economic Co-operation and Development (OECD). Earlier in his career, he spent over two decades at the British Broadcasting Corporation (BBC), holding various roles spanning journalism, policy and strategy, with a focus on global communications, policy and media. His professional experience also includes working at the European Broadcasting Union in Geneva, serving as a senior consultant in media, telecommunications and technology in Brussels, and holding positions at the European Parliament and the European Commission. Matteo holds a master’s degree in international relations and is the author of both fiction and non-fiction works.",
@@ -300,16 +296,6 @@ export const executiveTeam: Person[] = [
     email: "daria.smolarek@esi-eu.com",
     photoSlug: "daria_smolarek",
     bio: "Communications and programme management professional with over 20 years of experience spanning media, public institutions, non-profit organisations and the creative sector. Prior to joining ESI, she worked at the Chancellery of the Sejm of the Republic of Poland, within the Office of the Marshal of the Sejm, where she was responsible for communications and public engagement activities for “Sejm Otwarty”, an initiative designed to strengthen connections between the Polish Parliament and citizens through social, cultural and educational programmes. She also developed and coordinated a range of projects aimed at increasing civic participation and public engagement. Earlier in her career, Daria spent more than twelve years at TVN, one of Poland's leading television broadcasters, contributing to a wide range of programmes and editorial projects. Her responsibilities included content development, production coordination and team management. She later joined Next Film, where she coordinated a team of project managers responsible for artist relations, communication strategies and budget oversight. Throughout her career, she has led multidisciplinary teams and delivered projects across the media, public and creative sectors, combining expertise in strategic communications, programme development and stakeholder engagement. At ESI, she leads the Institute's communications activities and supports the development and delivery of strategic programmes, partnerships and public engagement initiatives. She is currently pursuing a degree in Political Science with a specialisation in Communication and Public Relations at Vizja University in Warsaw.",
-  }),
-  person({
-    name: "TBD",
-    role: "Executive team",
-    email: "TBD@esi-eu.com",
-  }),
-  person({
-    name: "TBD",
-    role: "Executive team",
-    email: "TBD@esi-eu.com",
   }),
 ];
 
@@ -376,13 +362,8 @@ export const council: Person[] = [
     photoSlug: "piotr_wielgomas",
     bio: "Born in Warsaw, he is married and has three adult children. He graduated from the Faculty of Law at the University of Warsaw and has participated in international business scholarship programmes in the United Kingdom, including at Nottingham Trent University, and in the United States. He is the founder and President of BIGRAM, a human resources consultancy that has been successfully operating on the Polish market for more than 30 years. The company specialises in executive recruitment and HR advisory services, including management audits, 360-degree assessments and outplacement. BIGRAM is also the exclusive Polish partner of two renowned global networks: IIC Partners Executive Search, where Piotr Wielgomas served for several years as a member of the Global Board, and Career Star Group. For many years, BIGRAM has also been running Enactus Poland, part of the international Enactus student entrepreneurship initiative, which operates across 40 countries and 1,700 universities worldwide. Piotr Wielgomas also has extensive corporate governance experience, having served for many years on the supervisory boards of a number of companies. Beyond his professional activities, he has served for many years as Vice President of the Association of Collectors of Historical Securities. He is also a co-creator of a unique project reconstructing pre-war Warsaw in the form of a detailed scale model, developed together with the renowned Polish actor and director Emilian Kamiński.",
   }),
-  // person({
-  //   name: "Sameer Chauhan",
-  //   role: "Director of the United Nations International Computing Centre (UNICC), with over twenty years of experience across the public and private sectors, including senior roles at Deutsche Bank and Deloitte.",
-  // }),
 ];
 
-// Placeholder roster — replace with real names/roles/bios before launch.
 export const experts: Person[] = [
   person({
     name: "Jacek Siewiera",
@@ -416,13 +397,8 @@ export const experts: Person[] = [
     bio: "Senior executive and strategic advisor with extensive experience in aviation, critical infrastructure, corporate governance, business strategy and digital transformation. From 2024 to 2026, he served as Member of the Management Board for Strategy and Marketing at Polish Airports (PPL S.A.), overseeing corporate strategy, business development, marketing, communications, IT, cybersecurity and corporate governance. He has held several prominent supervisory board positions in Poland's aviation sector, including Chairman of the Supervisory Board of Centralny Port Komunikacyjny (CPK), Chairman of the Supervisory Board of Poznań–Ławica Airport, and Member of the Supervisory Board of Gdańsk Airport. He also served as a Board Member of Airports Council International (ACI Europe). His expertise focuses on strategic infrastructure development, European competitiveness, organizational transformation, cybersecurity and sustainable growth. Adam holds a Doctor of Business Administration (DBA) and an Executive MBA from Polish universities.",
     photoSlug: "adam_sanocki",
   }),
-  person({
-    name: "TBD",
-    role: "Expert profile pending",
-  }),
 ];
 
-// Placeholder roster — replace with real names/roles/bios before launch.
 export const board: Person[] = [
   person({
     name: "Agnieszka Sitek-Kobosko",
@@ -449,10 +425,6 @@ export const board: Person[] = [
     email: "daria.smolarek@esi-eu.com",
     photoSlug: "daria_smolarek",
     bio: "Communications and programme management professional with over 20 years of experience spanning media, public institutions, non-profit organisations and the creative sector. Prior to joining ESI, she worked at the Chancellery of the Sejm of the Republic of Poland, within the Office of the Marshal of the Sejm, where she was responsible for communications and public engagement activities for “Sejm Otwarty”, an initiative designed to strengthen connections between the Polish Parliament and citizens through social, cultural and educational programmes. She also developed and coordinated a range of projects aimed at increasing civic participation and public engagement. Earlier in her career, Daria spent more than twelve years at TVN, one of Poland's leading television broadcasters, contributing to a wide range of programmes and editorial projects. Her responsibilities included content development, production coordination and team management. She later joined Next Film, where she coordinated a team of project managers responsible for artist relations, communication strategies and budget oversight. Throughout her career, she has led multidisciplinary teams and delivered projects across the media, public and creative sectors, combining expertise in strategic communications, programme development and stakeholder engagement. At ESI, she leads the Institute's communications activities and supports the development and delivery of strategic programmes, partnerships and public engagement initiatives. She is currently pursuing a degree in Political Science with a specialisation in Communication and Public Relations at Vizja University in Warsaw.",
-  }),
-  person({
-    name: "TBD",
-    role: "Board member profile pending",
   }),
 ];
 

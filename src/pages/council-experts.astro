@@ -75,62 +75,6 @@ const cardGroups: Array<{
   description={description}
   heroImage={councilExpertsHero}
 >
-  <!-- <section class="content-section expert-section" id="executiveTeam">
-    <div class="expert-heading">
-      <p class="eyebrow">Executive team</p>
-      <p>The people who lead ESI's day-to-day work.</p>
-    </div>
-    <div class="expert-founder-grid">
-      {executiveTeam.map((person, index) => {
-        const dialogId = `founders-dialog-${index}`;
-        return (
-          <article class="expert-founder-card">
-            <div class="expert-founder-info">
-              <h3>{person.name}</h3>
-              <p>{person.role}</p>
-              {person.email && (
-                <a href={`mailto:${person.email}`}>{person.email}</a>
-              )}
-            </div>
-            <div class="expert-founder-photo">
-              {person.photo && (
-                <Image
-                  src={person.photo}
-                  alt=""
-                  widths={[302, 604]}
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                  class="expert-photo-img"
-                />
-              )}
-              <button
-                type="button"
-                class="expert-card-open"
-                aria-haspopup="dialog"
-                data-dialog-id={dialogId}
-                aria-label={`Read more about ${person.name}`}
-              >
-                <span aria-hidden="true">+</span>
-              </button>
-            </div>
-            <dialog id={dialogId} class="expert-card-dialog">
-              <button
-                type="button"
-                class="expert-card-close"
-                data-close-dialog
-                aria-label="Close"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-              <h3>{person.name}</h3>
-              <p class="expert-card-role">{person.role}</p>
-              <p class="expert-card-bio">{person.bio ?? "Bio coming soon."}</p>
-            </dialog>
-          </article>
-        );
-      })}
-    </div>
-  </section> -->
-
   {cardGroups.map((group) => (
     <section class="content-section expert-section" id={group.id}>
       <div class="expert-heading">

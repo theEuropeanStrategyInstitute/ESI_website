@@ -17,7 +17,13 @@ const description =
   description={description}
   heroImage={membershipHero}
 >
-  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position: absolute">
+  <svg
+    width="0"
+    height="0"
+    aria-hidden="true"
+    focusable="false"
+    style="position: absolute"
+  >
     <filter id="esi-navy" color-interpolation-filters="sRGB">
       <feColorMatrix
         type="matrix"
@@ -134,14 +140,6 @@ const description =
         Share a few details about you and your organisation. Our team will get
         in touch to discuss the next steps.
       </p>
-      <!-- <div class="form-intro-cta">
-        <p class="form-intro-cta-lead">
-          Looking for a one-off collaboration instead?
-        </p>
-        <a class="cta form-intro-cta-button" href="/partnership">
-          Partner with us <span aria-hidden="true">→</span>
-        </a>
-      </div> -->
     </div>
     <EnquiryForm kind="membership" client:load />
   </section>

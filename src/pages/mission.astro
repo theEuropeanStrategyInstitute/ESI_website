@@ -2,9 +2,6 @@
 import InnerLayout from "../layouts/InnerLayout.astro";
 import Eyebrow from "../components/helpers/Eyebrow.astro";
 import missionHero from "../assets/mission_hero.png";
-// import { strategicObjectives } from "../data/esi-content";
-// import { Image } from "astro:assets";
-//import missionPhoto from "../assets/frederic-koberl-x_0hW-KaCgI-unsplash.jpg";
 
 const pageTitle = "Mission | The European Strategy Institute";
 const description =
@@ -25,7 +22,6 @@ const representation = [
 ];
 ---
 
-<!-- We need a stronger, more competitive and resilient Europe where every region contributes to shaping the continent’s future, and where CEE are recognised as a driver of innovation, economic growth and strategic leadership. -->
 <InnerLayout
   eyebrow="Our mission"
   title="European in ambition. <br /> Brussels in presence. <br /> Central and Eastern European in perspective."
@@ -59,8 +55,9 @@ const representation = [
         <p>
           <strong>Our ambition</strong> is not only to discuss policy, but to
           ensure that European policy responds to real economic needs -
-          including those 
-          <strong>{" "}
+          including those
+          <strong>
+            {" "}
             companies, sectors and regions that currently have none or very
             limited access to institutional support
           </strong>{" "}
@@ -131,33 +128,6 @@ const representation = [
       </div>
     </div>
   </section>
-
-  <!-- <section class="content-section reveal-section">
-    <div class="reveal-track">
-      <div class="reveal-sticky">
-        <div class="reveal-text reveal-text-first">
-          <h3 class="evidence-note-navy">
-            ESI connects local and regional businesses - particularly those
-            operating in sectors with limited institutional representation or
-            support - with policymakers, experts, investors and European
-            institutions.
-          </h3>
-        </div>
-        <div class="reveal-image">
-          <Image src={missionPhoto} alt="" width={1600} height={1000} />
-        </div>
-        <div class="reveal-text reveal-text-second">
-          <h3 class="evidence-note-navy">
-            Our ambition is not only to discuss policy, but to ensure that
-            European policy responds to real economic needs - including those
-            companies, sectors and regions that currently have none or very
-            limited access to institutional support and decision-making
-            processes.
-          </h3>
-        </div>
-      </div>
-    </div>
-  </section> -->
 
   <section class="content-section sector-preview objectives-preview-dark">
     <div class="sector-heading sector-heading--objectives">
@@ -280,92 +250,6 @@ const representation = [
 
     counters.forEach((counter) => observer.observe(counter));
   </script>
-  <script>
-    const track = document.querySelector<HTMLElement>(".reveal-track");
-    const image = document.querySelector<HTMLElement>(".reveal-image");
-    const textFirst = document.querySelector<HTMLElement>(".reveal-text-first");
-    const textSecond = document.querySelector<HTMLElement>(
-      ".reveal-text-second",
-    );
-
-    if (track && image && textFirst && textSecond) {
-      const trackEl: HTMLElement = track;
-      const imageEl: HTMLElement = image;
-      const textFirstEl: HTMLElement = textFirst;
-      const textSecondEl: HTMLElement = textSecond;
-
-      const mq = window.matchMedia(
-        "(min-width: 900px) and (prefers-reduced-motion: no-preference)",
-      );
-
-      function clamp01(value: number): number {
-        return Math.min(1, Math.max(0, value));
-      }
-
-      function reset(): void {
-        imageEl.style.transform = "";
-        textFirstEl.style.opacity = "";
-        textFirstEl.style.transform = "";
-        textSecondEl.style.opacity = "";
-        textSecondEl.style.transform = "";
-      }
-
-      function update(): void {
-        const rect = trackEl.getBoundingClientRect();
-        const total = rect.height - window.innerHeight;
-        const progress = total > 0 ? clamp01(-rect.top / total) : 0;
-
-        imageEl.style.transform = `translateY(${60 - progress * 120}vh)`;
-
-        const fadeOut = clamp01(1 - progress / 0.45);
-        const fadeIn = clamp01((progress - 0.55) / 0.45);
-        textFirstEl.style.opacity = String(fadeOut);
-        textFirstEl.style.transform = `translateY(${-24 * (1 - fadeOut)}px)`;
-        textSecondEl.style.opacity = String(fadeIn);
-        textSecondEl.style.transform = `translateY(${24 * (1 - fadeIn)}px)`;
-      }
-
-      let ticking = false;
-      function onScroll(): void {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(() => {
-          update();
-          ticking = false;
-        });
-      }
-
-      function sync(): void {
-        if (mq.matches) {
-          window.addEventListener("scroll", onScroll, { passive: true });
-          window.addEventListener("resize", onScroll);
-          update();
-        } else {
-          window.removeEventListener("scroll", onScroll);
-          window.removeEventListener("resize", onScroll);
-          reset();
-        }
-      }
-
-      mq.addEventListener("change", sync);
-      sync();
-    }
-  </script>
-  <!-- <section class="content-section objectives-section">
-    <div>
-      <p class="section-number">02 / Our response</p>
-      <h2>From regulation-takers to regulation co-authors.</h2>
-    </div>
-    <ol class="objective-list">
-      {strategicObjectives.map((objective, index) => (
-        <li>
-          <span>{String(index + 1).padStart(2, "0")}</span>
-          <p>{objective}</p>
-        </li>
-      ))}
-    </ol>
-  </section> -->
-
   <section class="page-cta">
     <p class="eyebrow">Take part</p>
     <h2>A balanced European dialogue needs a credible CEE voice.</h2>
@@ -508,93 +392,5 @@ const representation = [
     margin-top: 8px;
     border-radius: 50%;
     background: white;
-  }
-
-  .reveal-section {
-    padding: 0;
-  }
-  .reveal-track {
-    position: relative;
-  }
-  .reveal-sticky {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-    padding: clamp(54px, 6vw, 89px) var(--space);
-  }
-  .reveal-text {
-    display: flex;
-  }
-  .reveal-text h3 {
-    max-width: 950px;
-  }
-  .reveal-text-first {
-    justify-content: flex-start;
-  }
-  .reveal-text-first h3 {
-    text-align: left;
-  }
-  .reveal-text-second {
-    justify-content: flex-end;
-  }
-  .reveal-text-second h3 {
-    text-align: right;
-    margin-left: auto;
-  }
-  .reveal-image {
-    height: clamp(350px, 40vw, 380px);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .reveal-image :global(img) {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center bottom;
-  }
-
-  @media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
-    .reveal-track {
-      height: 220vh;
-    }
-    .reveal-sticky {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      display: grid;
-      gap: 0;
-      overflow: hidden;
-      padding: 0 var(--space);
-    }
-    .reveal-text,
-    .reveal-image {
-      grid-area: 1 / 1;
-    }
-    .reveal-text {
-      align-items: center;
-    }
-    .reveal-image {
-      align-self: center;
-      position: relative;
-      height: clamp(300px, 32vw, 380px);
-      z-index: 2;
-      will-change: transform;
-    }
-    .reveal-text-first {
-      z-index: 1;
-    }
-    .reveal-text-second {
-      z-index: 0;
-    }
-    .reveal-image :global(img) {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 200%;
-      object-fit: cover;
-      object-position: center bottom;
-    }
   }
 </style>

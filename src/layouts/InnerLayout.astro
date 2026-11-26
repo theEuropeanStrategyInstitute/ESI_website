@@ -3,9 +3,7 @@ import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import SiteFooter from "../components/layout/SiteFooter.astro";
 import { SiteHeader } from "../components/layout/SiteHeader";
-import PartnerLogos from "../components/PartnerLogos.astro";
 import BaseLayout from "./BaseLayout.astro";
-import { partnerLogos } from "../data/esi-content";
 
 interface Props {
   eyebrow: string;
@@ -14,18 +12,10 @@ interface Props {
   pageTitle?: string;
   description?: string;
   heroImage?: ImageMetadata;
-  showPartnerLogos?: boolean;
 }
 
-const {
-  eyebrow,
-  title,
-  intro,
-  pageTitle,
-  description,
-  heroImage,
-  showPartnerLogos = true,
-} = Astro.props;
+const { eyebrow, title, intro, pageTitle, description, heroImage } =
+  Astro.props;
 
 const stripHtml = (value: string): string => value.replace(/<[^>]*>/g, "");
 const finalPageTitle =
@@ -59,11 +49,6 @@ const finalDescription = stripHtml(description || intro);
         <p class="page-intro" set:html={intro} />
       </header>
       <slot />
-      {showPartnerLogos && (
-        <section class="section partner-strip" aria-label="Our partners">
-          <PartnerLogos logos={partnerLogos} />
-        </section>
-      )}
     </main>
     <SiteFooter />
   </div>
